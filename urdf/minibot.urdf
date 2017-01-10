@@ -18,19 +18,19 @@
       <inertia ixx="3.1081800"  ixy="-0.25460189"  ixz="2.0318174" iyy="6.3787776" iyz="0.16417863" izz="5.3316425" />
     </inertial>
     <visual>
-      <!--origin xyz="-0.0235 0 -0.03525" rpy="0 0 0" /-->
-      <origin xyz="0 0 0" rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="1.5707963268 0 1.5707963268"/>
       <geometry>
         <!--box size="0.102 0.109 0.106" /-->
-        <mesh filename="package://minibot_description/meshes/torso_high.stl"  scale="0.001 0.001 0.001"/>
+        <mesh filename="package://minibot_description/meshes/torso_high.stl"  scale="1 1 1"/>
       </geometry>
       <material name="Grey">
         <color rgba="0.20 0.20 0.20 1.0"/>
       </material>
     </visual>
     <collision>
+      <origin xyz="0 0 0" rpy="1.5707963268 0 1.5707963268"/>
       <geometry>
-        <mesh filename="package://minibot_description/meshes/torso_low.stl"  scale="0.001 0.001 0.001"/>
+        <mesh filename="package://minibot_description/meshes/torso_low.stl"  scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
@@ -112,41 +112,43 @@
     </inertial>
     
     <visual>
-      <origin xyz="0 0 0" rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 1.5707963268 1.5707963268"/>
       <geometry>
         <!--box size="0.016 0.033 0.02165" /-->
-        <mesh filename="package://darwin_description/meshes/shoulder_l.STL"  scale="1 1 1"/>
+        <mesh filename="package://minibot_description/meshes/shoulder_con_high.stl"  scale="1 1 1"/>
       </geometry>
       <material name="Grey">
         <color rgba="0.20 0.20 0.20 1.0"/>
       </material>
     </visual>
     <collision>
+      <origin xyz="0 0 0" rpy="1.5707963268 0 1.5707963268"/>
       <geometry>
-        <mesh filename="package://darwin_description/meshes/shoulder_l_coll.stl"  scale="1 1 1"/>
+        <mesh filename="package://minibot_description/meshes/shoulder_con_low.stl"  scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
 
   <link name="MP_ARM_HIGH_L" >
     <inertial>
-      <origin xyz="-0.036239 0.000734 0.000660" />
+      <origin xyz="-0.036239 0.000734 0.000660"/>
       <mass value="0.16837715"/>
       <inertia ixx="0.12202839"  ixy="-0.0020812626"  ixz="-0.00088143449" iyx="-0.0020812626" iyy="0.038088441" iyz="0.0018251448" izx="-0.00088143449" izy="0.0018251448" izz="0.11340830" />
     </inertial>
     <visual>
-      <origin xyz="0 0 0" rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 -1.5707963268" />
       <geometry>
         <!--box size="0.06 0.032 0.035" /-->
-        <mesh filename="package://darwin_description/meshes/arm_high_l.STL"  scale="1 1 1"/>
+        <mesh filename="package://minibot_description/meshes/upper_arm_high.stl"  scale="1 1 1"/>
       </geometry>
       <material name="Grey">
         <color rgba="0.20 0.20 0.20 1.0"/>
       </material>
     </visual>
     <collision>
+      <origin xyz="0 0 0" rpy="0 0 -1.5707963268" />
       <geometry>
-        <mesh filename="package://darwin_description/meshes/arm_high_l_coll.stl"  scale="1 1 1"/>
+        <mesh filename="package://minibot_description/meshes/upper_arm_low.stl"  scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
@@ -207,19 +209,19 @@
       <inertia ixx="0.0097758165"  ixy="0.0016911839"  ixz="-0.00045174329" iyx="0.0016911839" iyy="0.010511104" iyz="0.00033406955" izx="-0.00045174329" izy="0.00033406955" izz="0.005476798" />
     </inertial>
     <visual>
-      <origin xyz="0 0 0" rpy="0 0 3.14" />
+      <origin xyz="0 0 0" rpy="0 1.5707963268 1.5707963268"/>
       <geometry>
         <!--box size="0.016 0.033 0.02165" /-->
-        <mesh filename="package://darwin_description/meshes/shoulder_r.STL"  scale="1 1 1"/>
+        <mesh filename="package://minibot_description/meshes/shoulder_con_high.stl"  scale="1 1 1"/>
       </geometry>
       <material name="Grey">
         <color rgba="0.20 0.20 0.20 1.0"/>
       </material>
     </visual>
     <collision>
-      <origin xyz="0 0 0" rpy="0 0 3.14" />
+      <origin xyz="0 0 0" rpy="1.5707963268 0 1.5707963268"/>
       <geometry>
-        <mesh filename="package://darwin_description/meshes/shoulder_r_coll.stl"  scale="1 1 1"/>
+        <mesh filename="package://minibot_description/meshes/shoulder_con_low.stl"  scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
@@ -231,18 +233,19 @@
       <inertia ixx="0.12202839"  ixy="-0.0020812626"  ixz="-0.00088143449" iyx="-0.0020812626" iyy="0.038088441" iyz="0.0018251448" izx="-0.00088143449" izy="0.0018251448" izz="0.11340830" />
     </inertial>
     <visual>
-      <origin xyz="0 0 0" rpy="3.14 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 -1.5707963268" />
       <geometry>
         <!--box size="0.06 0.032 0.035"/-->
-        <mesh filename="package://darwin_description/meshes/arm_high_r.STL"  scale="1 1 1"/>
+        <mesh filename="package://minibot_description/meshes/upper_arm_high.stl"  scale="1 1 1"/>
       </geometry>
       <material name="Grey">
         <color rgba="0.20 0.20 0.20 1.0"/>
       </material>
     </visual>
     <collision>
+      <origin xyz="0 0 0" rpy="0 0 -1.5707963268" />
       <geometry>
-        <mesh filename="package://darwin_description/meshes/arm_high_r_coll.stl"  scale="1 1 1"/>
+        <mesh filename="package://minibot_description/meshes/upper_arm_high.stl"  scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
@@ -594,8 +597,7 @@
   <joint name="j_back_l" type="fixed"> <!-- body -> shoulder pitch -->
     <parent link="MP_BODY"/>
     <child link="MP_BACK_L"/>
-    <origin xyz="0 0.06035 0" rpy="-1.5707963 0 0" />
-    <limit effort="2.8" velocity="5.6548668" lower="-2.6179939" upper="2.6179939" />
+    <origin xyz="0 0.08134 0" rpy="-1.5707963 0 0" />
   </joint>
 
   <joint name="LShoulderPitch" type="revolute">
@@ -626,8 +628,7 @@
   <joint name="j_back_r" type="fixed">
     <parent link="MP_BODY"/>
     <child link="MP_BACK_R"/>
-    <origin xyz="0 -0.06035 0" rpy="1.5707963 0 0" />
-    <limit effort="2.8" velocity="5.6548668" lower="-2.6179939" upper="2.6179939" />
+    <origin xyz="0 -0.08134 0" rpy="1.5707963 0 0" />
   </joint>
 
   <joint name="RShoulderPitch" type="revolute">
@@ -641,7 +642,7 @@
   <joint name="RShoulderRoll" type="revolute">
     <parent link="MP_SHOULDER_R"/>
     <child link="MP_ARM_HIGH_R"/>
-    <origin xyz="0.016 0 0.02165" rpy="-1.5707963 1.5707963 0" />
+    <origin xyz="0 0 0.029194" rpy="-1.5707963 1.5707963 0" />
     <axis xyz="0 0 1" />
     <limit effort="2.8" velocity="5.648668" lower="-2.6179939" upper="2.6179939" />
   </joint>
