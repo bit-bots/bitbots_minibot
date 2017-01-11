@@ -2,10 +2,15 @@
 
   <param name="robot_description" textfile="$(find minibot_description)/urdf/minibot.urdf" />  
 
+	<include file="$(find gazebo_ros)/launch/empty_world.launch">
+		<arg name="world_name" value="$(find nimbro_op_gazebo)/worlds/nimbro_op.world"/>
+		<arg name="paused" value="true" />
+	</include>
+  
+  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-file $(find minibot_description)/urdf/minibot.urdf -urdf -model minibot -z 0.5" />
 
-  <!--
-  <include file="$(find minibot_description)/launch/minibot_control.launch"/> 
-  -->
+
+  <include file="$(find minibot_description)/launch/minibot_control.launch"/>
 
   <!-- <node name="darwin_walker" pkg="darwin_gazebo" type="walker.py" /> -->
 
@@ -16,7 +21,7 @@
   </node>
 
 
-  <!-- We do not have a robot connected, so publish fake joint states -->
+  <!-- We do not have a robot connected, so publish fake joint states 
   <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
     <param name="/use_gui" value="true"/>
     <rosparam param="/source_list">[/config/fake_controller_joint_states]</rosparam>
@@ -26,6 +31,8 @@
     <param name="publish_frequency" type="double" value="100.0" />
     <param name="tf_prefix" type="string" value="" />
   </node>
+
+  -->
 
 
 </launch>

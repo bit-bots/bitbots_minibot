@@ -1024,6 +1024,13 @@
     
     
     <material>Gazebo/Grey</material>
+
+    <mu1>9000</mu1>
+    <mu2>9000</mu2>
+    <kp>1000000.0</kp>
+    <kd>10.0</kd>
+    <minDepth>0.001</minDepth>
+    <maxContacts>1</maxContacts>
     
   </gazebo>
 
@@ -1033,6 +1040,13 @@
     
     
     <material>Gazebo/Grey</material>
+
+    <mu1>9000</mu1>
+    <mu2>9000</mu2>
+    <kp>1000000.0</kp>
+    <kd>10.0</kd>
+    <minDepth>0.001</minDepth>
+    <maxContacts>1</maxContacts>
     
   </gazebo>
 
@@ -1042,6 +1056,13 @@
     
     
     <material>Gazebo/Grey</material>
+
+    <mu1>9000</mu1>
+    <mu2>9000</mu2>
+    <kp>1000000.0</kp>
+    <kd>10.0</kd>
+    <minDepth>0.001</minDepth>
+    <maxContacts>1</maxContacts>
     
   </gazebo>
 
@@ -1051,6 +1072,13 @@
     
     
     <material>Gazebo/Grey</material>
+
+    <mu1>9000</mu1>
+    <mu2>9000</mu2>
+    <kp>1000000.0</kp>
+    <kd>10.0</kd>
+    <minDepth>0.001</minDepth>
+    <maxContacts>1</maxContacts>
     
   </gazebo>
 
@@ -1060,6 +1088,13 @@
     
     
     <material>Gazebo/Grey</material>
+
+    <mu1>9000</mu1>
+    <mu2>9000</mu2>
+    <kp>1000000.0</kp>
+    <kd>10.0</kd>
+    <minDepth>0.001</minDepth>
+    <maxContacts>1</maxContacts>
     
   </gazebo>
 
@@ -1069,6 +1104,13 @@
     
     
     <material>Gazebo/Grey</material>
+
+    <mu1>9000</mu1>
+    <mu2>9000</mu2>
+    <kp>1000000.0</kp>
+    <kd>10.0</kd>
+    <minDepth>0.001</minDepth>
+    <maxContacts>1</maxContacts>
     
   </gazebo>
 
@@ -1078,6 +1120,13 @@
     
     
     <material>Gazebo/Grey</material>
+
+    <mu1>9000</mu1>
+    <mu2>9000</mu2>
+    <kp>1000000.0</kp>
+    <kd>10.0</kd>
+    <minDepth>0.001</minDepth>
+    <maxContacts>1</maxContacts>
     
   </gazebo>
 
@@ -1089,6 +1138,13 @@
     
     
     <material>Gazebo/Grey</material>
+
+    <mu1>9000</mu1>
+    <mu2>9000</mu2>
+    <kp>1000000.0</kp>
+    <kd>10.0</kd>
+    <minDepth>0.001</minDepth>
+    <maxContacts>1</maxContacts>
     
   </gazebo>
 
@@ -1098,6 +1154,13 @@
     
     
     <material>Gazebo/Grey</material>
+
+    <mu1>9000</mu1>
+    <mu2>9000</mu2>
+    <kp>1000000.0</kp>
+    <kd>10.0</kd>
+    <minDepth>0.001</minDepth>
+    <maxContacts>1</maxContacts>
     
   </gazebo>
 
@@ -1107,6 +1170,13 @@
     
     
     <material>Gazebo/Grey</material>
+
+    <mu1>9000</mu1>
+    <mu2>9000</mu2>
+    <kp>1000000.0</kp>
+    <kd>10.0</kd>
+    <minDepth>0.001</minDepth>
+    <maxContacts>1</maxContacts>
     
   </gazebo>
 
@@ -1116,6 +1186,13 @@
     
     
     <material>Gazebo/Grey</material>
+
+    <mu1>9000</mu1>
+    <mu2>9000</mu2>
+    <kp>1000000.0</kp>
+    <kd>10.0</kd>
+    <minDepth>0.001</minDepth>
+    <maxContacts>1</maxContacts>
     
   </gazebo>
 
@@ -1127,6 +1204,13 @@
     
     
     <material>Gazebo/Grey</material>
+
+    <mu1>9000</mu1>
+    <mu2>9000</mu2>
+    <kp>1000000.0</kp>
+    <kd>10.0</kd>
+    <minDepth>0.001</minDepth>
+    <maxContacts>1</maxContacts>
     
   </gazebo>
 
@@ -1136,6 +1220,13 @@
     
     
     <material>Gazebo/Grey</material>
+
+    <mu1>9000</mu1>
+    <mu2>9000</mu2>
+    <kp>1000000.0</kp>
+    <kd>10.0</kd>
+    <minDepth>0.001</minDepth>
+    <maxContacts>1</maxContacts>
     
   </gazebo>
 
@@ -1145,6 +1236,13 @@
     
     
     <material>Gazebo/Grey</material>
+
+    <mu1>9000</mu1>
+    <mu2>9000</mu2>
+    <kp>1000000.0</kp>
+    <kd>10.0</kd>
+    <minDepth>0.001</minDepth>
+    <maxContacts>1</maxContacts>
     
   </gazebo>
 
@@ -1154,6 +1252,13 @@
     
     
     <material>Gazebo/Grey</material>
+
+    <mu1>9000</mu1>
+    <mu2>9000</mu2>
+    <kp>1000000.0</kp>
+    <kd>10.0</kd>
+    <minDepth>0.001</minDepth>
+    <maxContacts>1</maxContacts>
     
   </gazebo>
 
@@ -1163,6 +1268,13 @@
     
     
     <material>Gazebo/Grey</material>
+
+    <mu1>9000</mu1>
+    <mu2>9000</mu2>
+    <kp>1000000.0</kp>
+    <kd>10.0</kd>
+    <minDepth>0.001</minDepth>
+    <maxContacts>1</maxContacts>
     
   </gazebo>
 
@@ -1187,6 +1299,13 @@
     
     
     <material>Gazebo/Grey</material>
+
+    <mu1>9000</mu1>
+    <mu2>9000</mu2>
+    <kp>1000000.0</kp>
+    <kd>10.0</kd>
+    <minDepth>0.001</minDepth>
+    <maxContacts>1</maxContacts>
     
   </gazebo>
 
@@ -1196,6 +1315,13 @@
     
     
     <material>Gazebo/Grey</material>
+
+    <mu1>9000</mu1>
+    <mu2>9000</mu2>
+    <kp>1000000.0</kp>
+    <kd>10.0</kd>
+    <minDepth>0.001</minDepth>
+    <maxContacts>1</maxContacts>
     
   </gazebo>
 
@@ -1205,7 +1331,15 @@
     
     
     <material>Gazebo/Grey</material>
-    
+
+
+    <mu1>9000</mu1>
+    <mu2>9000</mu2>
+    <kp>1000000.0</kp>
+    <kd>10.0</kd>
+    <minDepth>0.001</minDepth>
+    <maxContacts>1</maxContacts>
+
   </gazebo>
 
 
@@ -1214,7 +1348,14 @@
     
     
     <material>Gazebo/Grey</material>
-    
+
+    <mu1>9000</mu1>
+    <mu2>9000</mu2>
+    <kp>1000000.0</kp>
+    <kd>10.0</kd>
+    <minDepth>0.001</minDepth>
+    <maxContacts>1</maxContacts>
+
   </gazebo>
 
 
@@ -1223,7 +1364,16 @@
     
     
     <material>Gazebo/Grey</material>
-    
+
+
+
+    <mu1>9000</mu1>
+    <mu2>9000</mu2>
+    <kp>1000000.0</kp>
+    <kd>10.0</kd>
+    <minDepth>0.001</minDepth>
+    <maxContacts>1</maxContacts>
+
   </gazebo>
 
 
@@ -1272,8 +1422,8 @@
           <camera name='__default__'>
             <horizontal_fov>1.012300</horizontal_fov>
             <image>
-              <width>320</width>
-              <height>200</height>
+              <width>800</width>
+              <height>600</height>
             </image>
             <clip>
               <near>0.001000</near>
@@ -1306,7 +1456,7 @@
           <bodyName>MP_IMU</bodyName>
           <updateRate>50</updateRate>
           <serviceName>/minibot/imu_service</serviceName>
-          <topicName>/minibot/imu</topicName>
+          <topicName>/imu</topicName>
           <gaussianNoise>0</gaussianNoise>
           <xyzOffset>0 0 0</xyzOffset>
           <rpyOffset>0 0 -0.703220730592</rpyOffset>
