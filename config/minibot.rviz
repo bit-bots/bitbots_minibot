@@ -6,7 +6,6 @@ Panels:
       Expanded:
         - /Global Options1
         - /Status1
-        - /RobotModel1
         - /RobotModel1/Links1
         - /TF1
         - /TF1/Frames1
@@ -54,10 +53,10 @@ Visualization Manager:
       Value: true
     - Alpha: 0.5
       Class: rviz/RobotModel
-      Collision Enabled: false
+      Collision Enabled: true
       Enabled: true
       Links:
-        All Links Enabled: false
+        All Links Enabled: true
         Expand Joint Details: false
         Expand Link Details: false
         Expand Tree: false
@@ -66,67 +65,71 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: false
+          Value: true
         MP_ANKLE1_R:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: false
+          Value: true
         MP_ANKLE2_L:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: false
+          Value: true
         MP_ANKLE2_R:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: false
+          Value: true
         MP_ARM_HIGH_L:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: false
+          Value: true
         MP_ARM_HIGH_R:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: false
+          Value: true
         MP_ARM_LOW_L:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: false
+          Value: true
         MP_ARM_LOW_R:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: false
+          Value: true
         MP_BACK_L:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: false
+          Value: true
         MP_BACK_R:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: false
+          Value: true
         MP_BODY:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: false
+          Value: true
         MP_HEAD:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: false
+          Value: true
+        MP_IMU:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
         MP_NECK:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: false
+          Value: true
         MP_PELVIS_L:
           Alpha: 1
           Show Axes: false
@@ -145,12 +148,12 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: false
+          Value: true
         MP_SHOULDER_R:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: false
+          Value: true
         MP_THIGH1_L:
           Alpha: 1
           Show Axes: false
@@ -160,7 +163,7 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: false
+          Value: true
         MP_THIGH2_L:
           Alpha: 1
           Show Axes: false
@@ -170,17 +173,17 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: false
+          Value: true
         MP_TIBIA_L:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: false
+          Value: true
         MP_TIBIA_R:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: false
+          Value: true
         base_link:
           Alpha: 1
           Show Axes: false
@@ -190,62 +193,64 @@ Visualization Manager:
       TF Prefix: ""
       Update Interval: 0
       Value: true
-      Visual Enabled: true
+      Visual Enabled: false
     - Class: rviz/TF
       Enabled: true
       Frame Timeout: 15
       Frames:
-        All Enabled: false
+        All Enabled: true
         MP_ANKLE1_L:
-          Value: false
+          Value: true
         MP_ANKLE1_R:
-          Value: false
+          Value: true
         MP_ANKLE2_L:
-          Value: false
+          Value: true
         MP_ANKLE2_R:
-          Value: false
+          Value: true
         MP_ARM_HIGH_L:
-          Value: false
+          Value: true
         MP_ARM_HIGH_R:
-          Value: false
+          Value: true
         MP_ARM_LOW_L:
-          Value: false
+          Value: true
         MP_ARM_LOW_R:
-          Value: false
+          Value: true
         MP_BACK_L:
-          Value: false
+          Value: true
         MP_BACK_R:
-          Value: false
+          Value: true
         MP_BODY:
-          Value: false
+          Value: true
         MP_HEAD:
-          Value: false
+          Value: true
+        MP_IMU:
+          Value: true
         MP_NECK:
-          Value: false
+          Value: true
         MP_PELVIS_L:
-          Value: false
+          Value: true
         MP_PELVIS_R:
-          Value: false
+          Value: true
         MP_PMDCAMBOARD:
-          Value: false
+          Value: true
         MP_SHOULDER_L:
-          Value: false
+          Value: true
         MP_SHOULDER_R:
-          Value: false
+          Value: true
         MP_THIGH1_L:
-          Value: false
+          Value: true
         MP_THIGH1_R:
-          Value: false
+          Value: true
         MP_THIGH2_L:
           Value: true
         MP_THIGH2_R:
-          Value: false
+          Value: true
         MP_TIBIA_L:
-          Value: false
+          Value: true
         MP_TIBIA_R:
-          Value: false
+          Value: true
         base_link:
-          Value: false
+          Value: true
       Marker Scale: 0.2
       Name: TF
       Show Arrows: true
@@ -264,6 +269,8 @@ Visualization Manager:
                 MP_ARM_HIGH_R:
                   MP_ARM_LOW_R:
                     {}
+            MP_IMU:
+              {}
             MP_NECK:
               MP_HEAD:
                 MP_PMDCAMBOARD:
@@ -308,24 +315,24 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 0.219304
+      Distance: 0.594853
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.06
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: -0.0191037
-        Y: -0.00760297
-        Z: -0.211153
+        X: -1.5974e-05
+        Y: -0.00794435
+        Z: 0.594149
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05
       Name: Current View
       Near Clip Distance: 0.01
-      Pitch: 0.0303983
+      Pitch: 0.155764
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 4.77357
+      Yaw: 0.187274
     Saved: ~
 Window Geometry:
   Displays:
