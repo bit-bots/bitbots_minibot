@@ -1,16 +1,15 @@
 Panels:
   - Class: rviz/Displays
-    Help Height: 84
+    Help Height: 78
     Name: Displays
     Property Tree Widget:
       Expanded:
         - /Global Options1
         - /Status1
-        - /RobotModel1/Links1
+        - /RobotModel1
         - /TF1
-        - /TF1/Frames1
-      Splitter Ratio: 0.622222
-    Tree Height: 683
+      Splitter Ratio: 0.5
+    Tree Height: 689
   - Class: rviz/Selection
     Name: Selection
   - Class: rviz/Tool Properties
@@ -51,7 +50,7 @@ Visualization Manager:
       Plane Cell Count: 10
       Reference Frame: <Fixed Frame>
       Value: true
-    - Alpha: 0.5
+    - Alpha: 1
       Class: rviz/RobotModel
       Collision Enabled: true
       Enabled: true
@@ -60,130 +59,144 @@ Visualization Manager:
         Expand Joint Details: false
         Expand Link Details: false
         Expand Tree: false
+        L_ANKLE_PITCH_L:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        L_ANKLE_PITCH_R:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        L_ANKLE_ROLL_L:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        L_ANKLE_ROLL_R:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        L_CAMERA:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        L_ELBOW_L:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        L_ELBOW_R:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        L_FOOT_BOTTOM_L:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        L_FOOT_BOTTOM_R:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        L_FOOT_FRONT_L:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        L_FOOT_FRONT_R:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        L_HEAD_PAN:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        L_HEAD_TILT:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        L_HIP_PITCH_L:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        L_HIP_PITCH_R:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        L_HIP_ROLL_L:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        L_HIP_ROLL_R:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        L_HIP_YAW_L:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        L_HIP_YAW_R:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        L_Hand_L:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        L_Hand_R:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        L_IMU:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        L_KNEE_L:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        L_KNEE_R:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        L_SHOULDER_PITCH_L:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        L_SHOULDER_PITCH_R:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        L_SHOULDER_ROLL_L:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        L_SHOULDER_ROLL_R:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        L_TORSO:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
         Link Tree Style: Links in Alphabetic Order
-        MP_ANKLE1_L:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        MP_ANKLE1_R:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        MP_ANKLE2_L:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        MP_ANKLE2_R:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        MP_ARM_HIGH_L:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        MP_ARM_HIGH_R:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        MP_ARM_LOW_L:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        MP_ARM_LOW_R:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        MP_BACK_L:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        MP_BACK_R:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        MP_BODY:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        MP_HEAD:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        MP_IMU:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        MP_NECK:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        MP_PELVIS_L:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        MP_PELVIS_R:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        MP_PMDCAMBOARD:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        MP_SHOULDER_L:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        MP_SHOULDER_R:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        MP_THIGH1_L:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        MP_THIGH1_R:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        MP_THIGH2_L:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        MP_THIGH2_R:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        MP_TIBIA_L:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        MP_TIBIA_R:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
         base_link:
           Alpha: 1
           Show Axes: false
@@ -195,105 +208,22 @@ Visualization Manager:
       Value: true
       Visual Enabled: false
     - Class: rviz/TF
-      Enabled: true
+      Enabled: false
       Frame Timeout: 15
       Frames:
         All Enabled: true
-        MP_ANKLE1_L:
-          Value: true
-        MP_ANKLE1_R:
-          Value: true
-        MP_ANKLE2_L:
-          Value: true
-        MP_ANKLE2_R:
-          Value: true
-        MP_ARM_HIGH_L:
-          Value: true
-        MP_ARM_HIGH_R:
-          Value: true
-        MP_ARM_LOW_L:
-          Value: true
-        MP_ARM_LOW_R:
-          Value: true
-        MP_BACK_L:
-          Value: true
-        MP_BACK_R:
-          Value: true
-        MP_BODY:
-          Value: true
-        MP_HEAD:
-          Value: true
-        MP_IMU:
-          Value: true
-        MP_NECK:
-          Value: true
-        MP_PELVIS_L:
-          Value: true
-        MP_PELVIS_R:
-          Value: true
-        MP_PMDCAMBOARD:
-          Value: true
-        MP_SHOULDER_L:
-          Value: true
-        MP_SHOULDER_R:
-          Value: true
-        MP_THIGH1_L:
-          Value: true
-        MP_THIGH1_R:
-          Value: true
-        MP_THIGH2_L:
-          Value: true
-        MP_THIGH2_R:
-          Value: true
-        MP_TIBIA_L:
-          Value: true
-        MP_TIBIA_R:
-          Value: true
-        base_link:
-          Value: true
       Marker Scale: 0.2
       Name: TF
       Show Arrows: true
       Show Axes: true
       Show Names: true
       Tree:
-        base_link:
-          MP_BODY:
-            MP_BACK_L:
-              MP_SHOULDER_L:
-                MP_ARM_HIGH_L:
-                  MP_ARM_LOW_L:
-                    {}
-            MP_BACK_R:
-              MP_SHOULDER_R:
-                MP_ARM_HIGH_R:
-                  MP_ARM_LOW_R:
-                    {}
-            MP_IMU:
-              {}
-            MP_NECK:
-              MP_HEAD:
-                MP_PMDCAMBOARD:
-                  {}
-            MP_PELVIS_L:
-              MP_THIGH1_L:
-                MP_THIGH2_L:
-                  MP_TIBIA_L:
-                    MP_ANKLE1_L:
-                      MP_ANKLE2_L:
-                        {}
-            MP_PELVIS_R:
-              MP_THIGH1_R:
-                MP_THIGH2_R:
-                  MP_TIBIA_R:
-                    MP_ANKLE1_R:
-                      MP_ANKLE2_R:
-                        {}
+        {}
       Update Interval: 0
-      Value: true
+      Value: false
   Enabled: true
   Global Options:
-    Background Color: 170; 255; 255
+    Background Color: 48; 48; 48
     Fixed Frame: base_link
     Frame Rate: 30
   Name: root
@@ -315,24 +245,24 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 0.594853
+      Distance: 0.890884
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.06
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: -1.5974e-05
-        Y: -0.00794435
-        Z: 0.594149
+        X: -0.0112928
+        Y: -0.0408117
+        Z: 0.339229
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05
       Name: Current View
       Near Clip Distance: 0.01
-      Pitch: 0.155764
+      Pitch: 0.317895
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 0.187274
+      Yaw: 0.626227
     Saved: ~
 Window Geometry:
   Displays:

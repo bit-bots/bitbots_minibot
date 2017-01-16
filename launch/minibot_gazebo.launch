@@ -7,7 +7,7 @@
     <arg name="paused" value="true"/>
   </include>
   
-  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-file $(find minibot_description)/urdf/minibot.urdf -urdf -model minibot -z 0.5" />
+  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-file $(find minibot_description)/urdf/minibot.urdf -urdf -model minibot -z 0.0" />
 
 
   <include file="$(find minibot_description)/launch/minibot_control.launch"/>

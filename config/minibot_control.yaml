@@ -1,10 +1,63 @@
 minibot:
   # Publish all joint states -----------------------------------
+  # 100Hz is a compromise between fast reaction and CPU load
   joint_state_controller:
     type: joint_state_controller/JointStateController
-    publish_rate: 50  
-  
-  # Position Controllers ---------------------------------------
+    publish_rate: 100  
+
+
+  # TrajectoryActoin Controllers ------------------------------
+  # FNH: this is a single controller for all joints; of course,
+  # we could also set up controllers for the individual 'chains',
+  # e.g. head, left_arm, right_arm, left_leg, right_leg.
+  #
+  joint_trajectory_action_controller:
+    type: effort_controllers/JointTrajectoryController
+    joints:
+      - HeadPan
+      - HeadTilt
+      - LShoulderPitch
+      - LShoulderRoll
+      - LElbow
+      - RShoulderPitch
+      - RShoulderRoll
+      - RElbow
+      - LHipYaw
+      - LHipRoll
+      - LHipPitch
+      - LKnee
+      - LAnklePitch
+      - LAnkleRoll
+      - RHipYaw
+      - RHipRoll
+      - RHipPitch
+      - RKnee
+      - RAnklePitch
+      - RAnkleRoll
+    gains:
+      HeadPan:        { p: 4.0, i: 0.0, d: 0.0, i_clamp: 4.0 }
+      HeadTilt:       { p: 4.0, i: 0.0, d: 0.0, i_clamp: 4.0 }
+      LShoulderPitch: { p: 4.0, i: 0.0, d: 0.0, i_clamp: 4.0 }
+      LShoulderRoll:  { p: 4.0, i: 0.0, d: 0.0, i_clamp: 4.0 }
+      LElbow:         { p: 4.0, i: 0.0, d: 0.0, i_clamp: 4.0 }
+      RShoulderPitch: { p: 4.0, i: 0.0, d: 0.0, i_clamp: 4.0 }
+      RShoulderRoll:  { p: 4.0, i: 0.0, d: 0.0, i_clamp: 4.0 }
+      RElbow:         { p: 4.0, i: 0.0, d: 0.0, i_clamp: 4.0 }
+      LHipYaw:        { p: 4.0, i: 0.0, d: 0.0, i_clamp: 4.0 }
+      LHipRoll:       { p: 4.0, i: 0.0, d: 0.0, i_clamp: 4.0 }
+      LHipPitch:      { p: 4.0, i: 0.0, d: 0.0, i_clamp: 4.0 }
+      LKnee:          { p: 4.0, i: 0.0, d: 0.0, i_clamp: 4.0 }
+      LAnklePitch:    { p: 4.0, i: 0.0, d: 0.0, i_clamp: 4.0 }
+      LAnkleRoll:     { p: 4.0, i: 0.0, d: 0.0, i_clamp: 4.0 }
+      RHipYaw:        { p: 4.0, i: 0.0, d: 0.0, i_clamp: 4.0 }
+      RHipRoll:       { p: 4.0, i: 0.0, d: 0.0, i_clamp: 4.0 }
+      RHipPitch:      { p: 4.0, i: 0.0, d: 0.0, i_clamp: 4.0 }
+      RKnee:          { p: 4.0, i: 0.0, d: 0.0, i_clamp: 4.0 }
+      RAnklePitch:    { p: 4.0, i: 0.0, d: 0.0, i_clamp: 4.0 }
+      RAnkleRoll:     { p: 4.0, i: 0.0, d: 0.0, i_clamp: 4.0 }
+ 
+ 
+  # Individual Joint Position Controllers ---------------------------------------
 
   # HEAD
   HeadPanPositionController:
@@ -112,3 +165,5 @@ minibot:
     type: effort_controllers/JointPositionController
     joint: RAnkleRoll
     pid: {p: 100.0, i: 0.01, d: 10.0}
+
+# end of file
