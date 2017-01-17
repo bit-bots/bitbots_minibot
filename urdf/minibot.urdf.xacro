@@ -327,7 +327,7 @@
       <origin xyz="-0.072079 -0.00295 0.0" rpy="0 1.5707963268 1.5707963268"/>
       <mass value="0.055"/>
       <!--<inertia ixx="0.000094062"  ixy="0.0"  ixz="0.0" iyy="0.000043139" iyz="-0.000002344" izz="0.000125827" />-->
-      <inertia ixx="${insu+infa*0.000094062}"  ixy="0"  ixz="0" iyy="${insu+infa*0.000043139}" iyz="0" izz="${insu+infa*0.000125827}" />
+      <inertia ixx="${insu*0.1+infa*0.000094062}"  ixy="0"  ixz="0" iyy="${insu*0.1+infa*0.000043139}" iyz="0" izz="${insu*0.1+infa*0.000125827}" />
       <!--<inertia ixx="0.001"  ixy="0.001"  ixz="0.001" iyy="0.001" iyz="0.001" izz="0.001" />-->
     </inertial>
     <visual>
@@ -483,7 +483,7 @@
       <origin xyz="0.072079 -0.00295 0.0" rpy="0 1.5707963268 1.5707963268"/>
       <mass value="0.055"/>
       <!--<inertia ixx="0.000094062"  ixy="0.0"  ixz="0.0" iyy="0.000043139" iyz="-0.000002344" izz="0.000125827" />-->
-      <inertia ixx="${insu+infa*0.000094062}"  ixy="0"  ixz="0" iyy="${insu+infa*0.000043139}" iyz="0" izz="${insu+infa*0.000125827}" />
+      <inertia ixx="${insu*0.1+infa*0.000094062}"  ixy="0"  ixz="0" iyy="${insu*0.1+infa*0.000043139}" iyz="0" izz="${insu*0.1+infa*0.000125827}" />
       <!--<inertia ixx="0.001"  ixy="0.001"  ixz="0.001" iyy="0.001" iyz="0.001" izz="0.001" />-->
     </inertial>
     <visual>
