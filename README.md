@@ -12,5 +12,5 @@ Empty World simulation:
 
 Robocup Field Simulation:
     This launches a simulation of a robocup field. You need some additional stuff to run this!
-    Put the package nimbro_op_gazebo in your catkin workspace and compile it. Copy the content of the models folder of this package to ~./gazebo/models/
+    Put the package nimbro_op_gazebo( https://github.com/AIS-Bonn/humanoid_op_ros/tree/master/src/nimbro/hardware/nimbro_op_gazebo ) in your catkin workspace and compile it. Copy the content of the src/nimbo_op_gazebo/models folder of this package to ~/.gazebo/models/
     roslaunch minibot_description minibot_robocup.launch
