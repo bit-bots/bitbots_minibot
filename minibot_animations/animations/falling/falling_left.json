@@ -1,0 +1,37 @@
+{
+    "author": "Marc",
+    "description": "motor values if case of a fall to the left",
+    "hostname": "minibot",
+    "keyframes": [
+        {
+            "duration": "0.0001",
+            "goals": {
+                "RShoulderPitch":-170,
+                "LShoulderPitch":145,
+                "RShoulderRoll":40,
+                "LShoulderRoll":10,
+                "RElbow":-60,
+                "LElbow":25,
+                "RHipYaw":0,
+                "LHipYaw":0,
+                "RHipRoll":50,
+                "LHipRoll":-30,
+                "RHipPitch":30,
+                "LHipPitch":-30,
+                "RKnee":0,
+                "LKnee":-95,
+                "RAnklePitch":90,
+                "LAnklePitch":-90,
+                "RAnkleRoll":-20,
+                "LAnkleRoll":20,
+                "HeadTilt":0,
+                "HeadPan":0
+            },
+            "p": {},
+            "pause": "0.000"
+        }
+      ],
+    "last_edited": "2017-01-23 18:50:40.798386",
+    "name": "falling_left",
+    "version": 1
+}

@@ -1,0 +1,37 @@
+{
+    "author": "Marc",
+    "description": "motor values if case of a fall to the back",
+    "hostname": "minibot",
+    "keyframes": [
+        {
+            "duration": "0.0001",
+            "goals": {
+                "RShoulderPitch": 60,
+                "LShoulderPitch": -60,
+                "RShoulderRoll":0,
+                "LShoulderRoll":0,
+                "RElbow":-20,
+                "LElbow":20,
+                "RHipYaw":17,
+                "LHipYaw":-17,
+                "RHipRoll":0,
+                "LHipRoll":0,
+                "RHipPitch":-110,
+                "LHipPitch":110,
+                "RKnee":100,
+                "LKnee":-100,
+                "RAnklePitch":0,
+                "LAnklePitch":0,
+                "RAnkleRoll":0,
+                "LAnkleRoll":0,
+                "HeadTilt":0,
+                "HeadPan":0,
+            },
+            "p": {},
+            "pause": "0.000"
+        }
+      ],
+    "last_edited": "2017-01-23 18:50:40.798386",
+    "name": "falling_back",
+    "version": 1
+}
