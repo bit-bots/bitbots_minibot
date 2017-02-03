@@ -1,7 +1,10 @@
 {
+    "name": "falling_back",
     "author": "Marc",
     "description": "motor values if case of a fall to the back",
     "hostname": "minibot",
+    "last_edited": "2017-01-23 18:50:40.798386",
+    "version": 1,
     "keyframes": [
         {
             "duration": "0.0001",
@@ -25,13 +28,10 @@
                 "RAnkleRoll":0,
                 "LAnkleRoll":0,
                 "HeadTilt":0,
-                "HeadPan":0,
+                "HeadPan":0
             },
             "p": {},
             "pause": "0.000"
         }
-      ],
-    "last_edited": "2017-01-23 18:50:40.798386",
-    "name": "falling_back",
-    "version": 1
+      ]
 }

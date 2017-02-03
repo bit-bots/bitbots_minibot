@@ -1,7 +1,10 @@
 {
     "author": "Unknown", 
     "description": "Edit me!", 
-    "hostname": "minibot", 
+    "hostname": "minibot",
+    "last_edited": "2016-04-01 15:47:50.165630",
+    "name": "bottomup",
+    "version": 23,
     "keyframes": [
         {
             "duration": "0.500", 
@@ -233,8 +236,5 @@
             }, 
             "pause": 0.0
         }
-    ], 
-    "last_edited": "2016-04-01 15:47:50.165630", 
-    "name": "bottomup", 
-    "version": 23
+    ]
 }

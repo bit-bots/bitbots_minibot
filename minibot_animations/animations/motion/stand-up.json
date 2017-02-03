@@ -2,6 +2,9 @@
     "author": "Jessica",
     "description": "stand-up nach neuem Aufstehen für Minibot.",
     "hostname": "cascade",
+    "last_edited": "2015-09-20 18:50:40.798386",
+    "name": "stand_up_minbot",
+    "version": 13,
     "keyframes": [
     {
             "duration": "1.000",
@@ -108,8 +111,5 @@
             "p": {},
             "pause": "3.000"
         }
-        ],
-    "last_edited": "2015-09-20 18:50:40.798386",
-    "name": "stand_up_minbot",
-    "version": 13
+        ]
 }
