@@ -7,7 +7,7 @@
     "version": 1,
     "keyframes": [
         {
-            "duration": "0.0001",
+            "duration": "0.001",
             "goals": {
                 "RShoulderPitch":-170,
                 "LShoulderPitch":145,
