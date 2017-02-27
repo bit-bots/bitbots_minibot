@@ -1,16 +1,19 @@
 <launch>
-
+    <arg name="ns" />
   <param name="robot_description" textfile="$(find minibot_description)/urdf/minibot.urdf" />  
 
 	<include file="$(find gazebo_ros)/launch/empty_world.launch">
 		<arg name="world_name" value="$(find nimbro_op_gazebo)/worlds/nimbro_op.world"/>
-		<arg name="paused" value="true" />
+		<arg name="paused" value="false" />
+        <arg name="headless" value="true" />
 	</include>
   
-  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-file $(find minibot_description)/urdf/minibot.urdf -urdf -model minibot -x -1.5 -y 0.0 -z 0.0" />
+  <node name="spawn_urdf" pkg="gazebo_ros" ns="$(arg ns)" type="spawn_model" args="-file $(find minibot_description)/urdf/minibot.urdf -urdf -model minibot -x -1.5 -y 0.0 -z 0.0" />
 
 
-  <include file="$(find minibot_description)/launch/minibot_control.launch"/>
+  <include file="$(find minibot_description)/launch/minibot_control.launch">
+      <arg name="ns" value="$(arg ns)" />
+  </include>
 
   <!-- <node name="darwin_walker" pkg="darwin_gazebo" type="walker.py" /> -->
 
