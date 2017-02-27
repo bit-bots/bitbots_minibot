@@ -1,5 +1,5 @@
 <launch>
-    <arg name="ns" />
+    <arg name="ns" default="robot1"/>
   <param name="robot_description" textfile="$(find minibot_description)/urdf/minibot.urdf" />  
 
 	<include file="$(find gazebo_ros)/launch/empty_world.launch">
