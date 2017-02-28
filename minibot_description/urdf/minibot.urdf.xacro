@@ -1289,7 +1289,7 @@
           <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
             <alwaysOn>true</alwaysOn>
             <updateRate>30</updateRate>
-            <cameraName>minibot/camera</cameraName>
+            <cameraName>camera</cameraName>
             <imageTopicName>image_raw</imageTopicName>
             <cameraInfoTopicName>camera_info</cameraInfoTopicName>
             <frameName>L_CAMERA</frameName>
