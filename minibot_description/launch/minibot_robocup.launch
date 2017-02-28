@@ -3,7 +3,7 @@
   <param name="robot_description" textfile="$(find minibot_description)/urdf/minibot.urdf" />  
 
 	<include file="$(find gazebo_ros)/launch/empty_world.launch">
-		<arg name="world_name" value="$(find nimbro_op_gazebo)/worlds/nimbro_op.world"/>
+		<arg name="world_name" value="$(find humanoid_league_gazebo_world)/worlds/nimbro_op.world"/>
 		<arg name="paused" value="false" />
         <arg name="headless" value="true" />
 	</include>
