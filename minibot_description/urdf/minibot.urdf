@@ -1045,7 +1045,7 @@
       <plugin filename="libgazebo_ros_camera.so" name="camera_controller">
         <alwaysOn>true</alwaysOn>
         <updateRate>30</updateRate>
-        <cameraName>minibot/camera</cameraName>
+        <cameraName>/camera</cameraName>
         <imageTopicName>image_raw</imageTopicName>
         <cameraInfoTopicName>camera_info</cameraInfoTopicName>
         <frameName>L_CAMERA</frameName>
@@ -1060,7 +1060,7 @@
   </gazebo>
   <gazebo>
     <plugin filename="libhector_gazebo_ros_imu.so" name="gazebo_ros_imu">
-      <robotNamespace>minibot</robotNamespace>
+      <robotNamespace/>
       <bodyName>L_IMU</bodyName>
       <updateRate>50</updateRate>
       <serviceName>imu_service</serviceName>
@@ -1073,7 +1073,7 @@
   <!-- Groundtruth plugin: completely broken 
   <gazebo>
     <plugin name="robot_groundtruth_sim" filename="libgazebo_ros_p3d.so">
-      <robotNamespace>minibot</robotNamespace>
+      <robotNamespace></robotNamespace>
       <alwaysOn>true</alwaysOn>
       <updateRate>100.0</updateRate>
       <bodyName>base_link</bodyName>
@@ -1089,7 +1089,7 @@
   <!-- rostopic pub /minibot/cmd_vel geometry_msgs/Twist "{ linear: [ 0.1, 0, 0], angular: [0.2, 0, 0.1] }" -->
   <gazebo>
     <plugin filename="libgazebo_ros_planar_move.so" name="object_controller">
-      <robotNamespace>minibot</robotNamespace>
+      <robotNamespace/>
       <commandTopic>cmd_vel</commandTopic>
       <odometryTopic>odom</odometryTopic>
       <odometryFrame>odom</odometryFrame>
