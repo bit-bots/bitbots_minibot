@@ -279,7 +279,7 @@
       <!--<inertia ixx="0.001"  ixy="0.001"  ixz="0.001" iyy="0.001" iyz="0.001" izz="0.001" />-->
     </inertial>
     <visual>
-      <origin xyz="0 0 0" rpy="0 3.14 0" />
+      <origin xyz="0 0 -0.025" rpy="0 3.14 0" />
       <geometry>
         <!--box size="0.001 0.001 0.001"/-->
         <mesh filename="package://minibot_description/meshes/hip_roll_low.dae"  scale="1 1 1"/>
@@ -289,7 +289,7 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="0 0 0" rpy="0 3.14 0" />
+      <origin xyz="0 0 -0.025" rpy="0 3.14 0" />
       <geometry>
         <mesh filename="package://minibot_description/meshes/hip_roll_coll.dae"  scale="1 1 1"/>
       </geometry>
@@ -382,7 +382,7 @@
       <!--<inertia ixx="0.001"  ixy="0.001"  ixz="0.001" iyy="0.001" iyz="0.001" izz="0.001" />-->
     </inertial>
     <visual>
-      <origin xyz="0 0 0" rpy="0 0 -1.5707963268" />
+      <origin xyz="0 0 -0.025" rpy="0 0 -1.5707963268" />
       <geometry>
         <!--box size="0.008 0.066 0.104"/-->
         <mesh filename="package://minibot_description/meshes/foot_high.stl"  scale="1 1 1"/>
@@ -392,7 +392,7 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="0 0 0" rpy="0 0 -1.5707963268" />
+      <origin xyz="0 0 -0.025" rpy="0 0 -1.5707963268" />
       <geometry>
         <mesh filename="package://minibot_description/meshes/foot_coll.dae"  scale="1 1 1"/>
       </geometry>
@@ -433,7 +433,7 @@
       <!--<inertia ixx="0.001"  ixy="0.001"  ixz="0.001" iyy="0.001" iyz="0.001" izz="0.001" />-->
     </inertial>
     <visual>
-      <origin xyz="0 0 0" rpy="0 3.14 0" />
+      <origin xyz="0 0 -0.025" rpy="0 3.14 0" />
       <geometry>
         <!--box size="0.001 0.001 0.001"/-->
         <mesh filename="package://minibot_description/meshes/hip_roll_low.dae"  scale="1 1 1"/>
@@ -443,7 +443,7 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="0 0 0" rpy="0 3.14 0" />
+      <origin xyz="0 0 -0.025" rpy="0 3.14 0" />
       <geometry>
         <mesh filename="package://minibot_description/meshes/hip_roll_coll.dae"  scale="1 1 1"/>
       </geometry>
@@ -540,7 +540,7 @@
       <!--<inertia ixx="0.001"  ixy="0.001"  ixz="0.001" iyy="0.001" iyz="0.001" izz="0.001" />-->
     </inertial>
     <visual>
-      <origin xyz="0 0 0" rpy="0 0 1.5707963268" />
+      <origin xyz="0 0 -0.025" rpy="0 0 1.5707963268" />
       <geometry>
         <!--box size="0.008 0.066 0.104"/-->
         <mesh filename="package://minibot_description/meshes/foot_high.stl"  scale="1 1 1"/>
@@ -550,7 +550,7 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="0 0 0" rpy="0 0 1.5707963268" />
+      <origin xyz="0 0 -0.025" rpy="0 0 1.5707963268" />
       <geometry>
         <mesh filename="package://minibot_description/meshes/foot_coll.dae"  scale="1 1 1"/>
       </geometry>
@@ -673,7 +673,7 @@
   <joint name="LHipRoll" type="revolute">
     <parent link="L_HIP_YAW_L"/>
     <child link="L_HIP_ROLL_L"/>
-    <origin xyz="0 0 0.038444" rpy="-1.5707963 0 1.5707963" />
+    <origin xyz="-0.025 0 0.038444" rpy="-1.5707963 0 1.5707963" />
     <axis xyz="0 0 -1" />
     <limit effort="${tofa*6.0}" velocity="6.597344565" lower="-1.0122909661542001" upper="0.7853981633955001" />
   <dynamics damping="${d}" friction="0.0"/> </joint>
@@ -681,7 +681,7 @@
   <joint name="LHipPitch" type="revolute">
     <parent link="L_HIP_ROLL_L"/>
     <child link="L_HIP_PITCH_L"/>
-    <origin xyz="0 0 0" rpy="1.5707963 0 1.5707963" />
+    <origin xyz="0 0 -0.025" rpy="1.5707963 0 1.5707963" />
     <axis xyz="0 0 1" />
     <limit effort="${tofa*8.4}" velocity="4.712388975" lower="-0.48869219055720003" upper="1.919862177189" />
   <dynamics damping="${d}" friction="0.0"/> </joint>
@@ -705,7 +705,7 @@
   <joint name="LAnkleRoll" type="revolute">
     <parent link="L_ANKLE_PITCH_L"/>
     <child link="L_ANKLE_ROLL_L"/>
-    <origin xyz="0 0 0" rpy="-1.5707963 0 0" />
+    <origin xyz="0 -0.025 0" rpy="-1.5707963 0 0" />
     <axis xyz="0 0 1" />
     <limit effort="${tofa*6.0}" velocity="6.597344565" lower="-1.4660765716716" upper="1.4660765716716" />
   <dynamics damping="${d}" friction="0.0"/> </joint>
@@ -733,7 +733,7 @@
   <joint name="RHipRoll" type="revolute">
     <parent link="L_HIP_YAW_R"/>
     <child link="L_HIP_ROLL_R"/>
-    <origin xyz="0 0 0.038444" rpy="-1.5707963 0 1.5707963" />
+    <origin xyz="-0.025 0 0.038444" rpy="-1.5707963 0 1.5707963" />
     <axis xyz="0 0 1" />
     <limit effort="${tofa*6.0}" velocity="6.597344565" lower="-1.0122909661542001" upper="0.7853981633955001" />
   <dynamics damping="${d}" friction="0.0"/> </joint>
@@ -741,7 +741,7 @@
   <joint name="RHipPitch" type="revolute">
     <parent link="L_HIP_ROLL_R"/>
     <child link="L_HIP_PITCH_R"/>
-    <origin xyz="0 0 0" rpy="1.5707963 0 -1.5707963" />
+    <origin xyz="0 0 -0.025" rpy="1.5707963 0 -1.5707963" />
     <axis xyz="0 0 1" />
     <limit effort="${tofa*8.4}" velocity="4.712388975" lower="-1.919862177189" upper="0.48869219055720003" />
   <dynamics damping="${d}" friction="0.0"/> </joint>
@@ -765,7 +765,7 @@
   <joint name="RAnkleRoll" type="revolute">
     <parent link="L_ANKLE_PITCH_R"/>
     <child link="L_ANKLE_ROLL_R"/>
-    <origin xyz="0 0 0" rpy="-1.5707963 0 0" />
+    <origin xyz="0 -0.025 0" rpy="-1.5707963 0 0" />
     <axis xyz="0 0 1" />
     <limit effort="${tofa*6.0}" velocity="6.597344565" lower="-1.4660765716716" upper="1.4660765716716" />
   <dynamics damping="${d}" friction="0.0"/> </joint>
