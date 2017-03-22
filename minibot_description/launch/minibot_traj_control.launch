@@ -1,5 +1,5 @@
 <launch>
-
+<arg name="ns" default="robot1"/>
   <rosparam file="$(find minibot_description)/config/minibot_control.yaml" command="load"/>
 
 
