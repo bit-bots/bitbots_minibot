@@ -55,6 +55,7 @@ minibot:
       RKnee:          { p: 50.0, i: 0.00, d: 0.4, i_clamp: 4.0 }
       RAnklePitch:    { p: 50.0, i: 0.00, d: 0.4, i_clamp: 4.0 }
       RAnkleRoll:     { p: 50.0, i: 0.00, d: 0.4, i_clamp: 4.0 }
+    allow_partial_joints_goal: true
  
  
   # Individual Joint Position Controllers ---------------------------------------
