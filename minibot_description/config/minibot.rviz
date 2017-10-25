@@ -50,7 +50,7 @@ Visualization Manager:
       Plane Cell Count: 10
       Reference Frame: <Fixed Frame>
       Value: true
-    - Alpha: 0.400000006
+    - Alpha: 1
       Class: rviz/RobotModel
       Collision Enabled: false
       Enabled: true
@@ -223,8 +223,8 @@ Visualization Manager:
       Value: false
   Enabled: true
   Global Options:
-    Background Color: 48; 48; 48
-    Fixed Frame: L_FOOT_BOTTOM_R
+    Background Color: 255; 255; 255
+    Fixed Frame: base_link
     Frame Rate: 30
   Name: root
   Tools:
@@ -260,10 +260,10 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.00999999978
-      Pitch: 0.00289371237
+      Pitch: 0.0378937274
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 3.09122014
+      Yaw: 1.51622367
     Saved: ~
 Window Geometry:
   Displays:
