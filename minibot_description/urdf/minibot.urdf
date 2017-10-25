@@ -9,7 +9,7 @@
   <joint name="base_link_to_body" type="fixed">
     <parent link="base_link"/>
     <child link="L_TORSO"/>
-    <origin rpy="0 0.26 0" xyz="0 0 0.545"/>
+    <origin rpy="0 0 0" xyz="0 0 0.545"/>
   </joint>
   <link name="L_TORSO">
     <inertial>
@@ -637,7 +637,7 @@
     <parent link="L_HIP_ROLL_L"/>
     <child link="L_HIP_PITCH_L"/>
     <origin rpy="1.5707963 0 1.5707963" xyz="0 0 -0.025"/>
-    <axis xyz="0 0 -1"/>
+    <axis xyz="0 0 1"/>
     <limit effort="33.6" lower="-0.48869219055720003" upper="1.919862177189" velocity="4.712388975"/>
     <dynamics damping="0" friction="0.0"/>
   </joint>
@@ -645,7 +645,7 @@
     <parent link="L_HIP_PITCH_L"/>
     <child link="L_KNEE_L"/>
     <origin rpy="0 0 0" xyz="-0.150 0 0"/>
-    <axis xyz="0 0 -1"/>
+    <axis xyz="0 0 1"/>
     <limit effort="33.6" lower="-2.268928027587" upper="0" velocity="4.712388975"/>
     <dynamics damping="0" friction="0.0"/>
   </joint>
@@ -653,7 +653,7 @@
     <parent link="L_KNEE_L"/>
     <child link="L_ANKLE_PITCH_L"/>
     <origin rpy="3.14159 0 0" xyz="-0.150 0 0"/>
-    <axis xyz="0 0 1"/>
+    <axis xyz="0 0 -1"/>
     <limit effort="33.6" lower="-1.6406094968706" upper="1.2391837689129" velocity="4.712388975"/>
     <dynamics damping="0" friction="0.0"/>
   </joint>
@@ -687,7 +687,7 @@
     <parent link="L_HIP_YAW_R"/>
     <child link="L_HIP_ROLL_R"/>
     <origin rpy="-1.5707963 0 1.5707963" xyz="-0.025 0 0.038444"/>
-    <axis xyz="0 0 -1"/>
+    <axis xyz="0 0 1"/>
     <limit effort="24.0" lower="-1.0122909661542001" upper="0.7853981633955001" velocity="6.597344565"/>
     <dynamics damping="0" friction="0.0"/>
   </joint>

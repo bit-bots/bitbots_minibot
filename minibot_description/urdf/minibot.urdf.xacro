@@ -12,7 +12,7 @@
   <joint name="base_link_to_body" type="fixed">
     <parent link="base_link"/>
     <child link="L_TORSO"/>
-    <origin xyz="0 0 0.545" rpy="0 0.26 0" />
+    <origin xyz="0 0 0.545" rpy="0 0 0" />
   </joint>
 
 
@@ -682,7 +682,7 @@
     <parent link="L_HIP_ROLL_L"/>
     <child link="L_HIP_PITCH_L"/>
     <origin xyz="0 0 -0.025" rpy="1.5707963 0 1.5707963" />
-    <axis xyz="0 0 -1" />
+    <axis xyz="0 0 1" />
     <limit effort="${tofa*8.4}" velocity="4.712388975" lower="-0.48869219055720003" upper="1.919862177189" />
   <dynamics damping="${d}" friction="0.0"/> </joint>
 
@@ -690,7 +690,7 @@
     <parent link="L_HIP_PITCH_L"/>
     <child link="L_KNEE_L"/>
     <origin xyz="-0.150 0 0" rpy="0 0 0" />
-    <axis xyz="0 0 -1" />
+    <axis xyz="0 0 1" />
     <limit effort="${tofa*8.4}" velocity="4.712388975" lower="-2.268928027587" upper="0" />
   <dynamics damping="${d}" friction="0.0"/> </joint>
 
@@ -698,7 +698,7 @@
     <parent link="L_KNEE_L"/>
     <child link="L_ANKLE_PITCH_L"/>
     <origin xyz="-0.150 0 0" rpy="3.14159 0 0" />
-    <axis xyz="0 0 1" />
+    <axis xyz="0 0 -1" />
     <limit effort="${tofa*8.4}" velocity="4.712388975" lower="-1.6406094968706" upper="1.2391837689129" />
   <dynamics damping="${d}" friction="0.0"/> </joint>
 
@@ -734,7 +734,7 @@
     <parent link="L_HIP_YAW_R"/>
     <child link="L_HIP_ROLL_R"/>
     <origin xyz="-0.025 0 0.038444" rpy="-1.5707963 0 1.5707963" />
-    <axis xyz="0 0 -1" />
+    <axis xyz="0 0 1" />
     <limit effort="${tofa*6.0}" velocity="6.597344565" lower="-1.0122909661542001" upper="0.7853981633955001" />
   <dynamics damping="${d}" friction="0.0"/> </joint>
 
@@ -1351,3 +1351,4 @@
   </gazebo>
 
 </robot>
+
