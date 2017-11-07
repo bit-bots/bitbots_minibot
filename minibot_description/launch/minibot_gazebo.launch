@@ -10,29 +10,6 @@
   <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-file $(find minibot_description)/urdf/minibot.urdf -urdf -model minibot -z 0.0" />
 
 
-  <include file="$(find minibot_description)/launch/minibot_control.launch"/>
-
-  <!-- <node name="darwin_walker" pkg="darwin_gazebo" type="walker.py" /> -->
-
-
-  <!--<node name="rviz" pkg="rviz" type="rviz" output="screen"
-      args="-d $(find minibot_description)/config/minibot.rviz" >
-
-  </node>-->
-
-
-  <!-- We do not have a robot connected, so publish fake joint states 
-  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
-    <param name="/use_gui" value="true"/>
-    <rosparam param="/source_list">[/config/fake_controller_joint_states]</rosparam>
-  </node>
-
-  <node pkg="robot_state_publisher" type="state_publisher" name="robot_state_publisher">
-    <param name="publish_frequency" type="double" value="100.0" />
-    <param name="tf_prefix" type="string" value="" />
-  </node>
-
-  -->
-
+  <include file="$(find minibot_description)/launch/minibot_control.launch"/> 
 
 </launch>

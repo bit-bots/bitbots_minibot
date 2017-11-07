@@ -33,12 +33,12 @@
         <color rgba="0.20 0.20 0.20 1.0"/>
       </material>
     </visual>
-    <collision>
+    <!-- collision>
       <origin xyz="0 0 0" rpy="1.5707963268 0 1.5707963268"/>
       <geometry>
         <mesh filename="package://minibot_description/meshes/torso_coll.dae"  scale="1 1 1"/>
       </geometry>
-    </collision>
+    </collision> -->
   </link>
 
   <link name="L_HEAD_PAN">
@@ -58,12 +58,12 @@
         <color rgba="0.20 0.20 0.20 1.0"/>
       </material>
     </visual>
-    <collision>
+    <!--<collision>
       <origin xyz="0 0 0" rpy="1.5707963268 0 0" />
       <geometry>
         <mesh filename="package://minibot_description/meshes/head_lower_coll.dae"  scale="1 1 1"/>
       </geometry>
-    </collision>
+    </collision>-->
   </link>
 
   <link name="L_HEAD_TILT">
@@ -82,12 +82,12 @@
         <color rgba="0.20 0.20 0.20 1.0"/>
       </material>
     </visual>
-    <collision>
+    <!--<collision>
       <origin xyz="0 0 0" rpy="3.14 1.5707963268 0" />
       <geometry>
         <mesh filename="package://minibot_description/meshes/head_upper_coll.dae"  scale="1 1 1"/>
       </geometry>
-    </collision>
+    </collision>-->
   </link>
 
 
@@ -108,12 +108,12 @@
         <color rgba="0.20 0.20 0.20 1.0"/>
       </material>
     </visual>
-    <collision>
+    <!--<collision>
       <origin xyz="0 0 0" rpy="0 1.5707963268 1.5707963268"/>
       <geometry>
         <mesh filename="package://minibot_description/meshes/shoulder_con_coll.dae"  scale="1 1 1"/>
       </geometry>
-    </collision>
+    </collision>-->
   </link>
 
   <link name="L_SHOULDER_ROLL_L" >
@@ -133,12 +133,12 @@
         <color rgba="0.20 0.20 0.20 1.0"/>
       </material>
     </visual>
-    <collision>
+   <!-- <collision>
       <origin xyz="0 0 0" rpy="0 0 -1.5707963268" />
       <geometry>
         <mesh filename="package://minibot_description/meshes/upper_arm_coll.dae"  scale="1 1 1"/>
       </geometry>
-    </collision>
+    </collision>-->
   </link>
 
   <link name="L_ELBOW_L" >
@@ -158,12 +158,12 @@
         <color rgba="0.20 0.20 0.20 1.0"/>
       </material>
     </visual>
-    <collision>
+    <!--<collision>
       <origin xyz="0 0 0" rpy="0 1.5707963268 -1.5707963268" />
       <geometry>
         <mesh filename="package://minibot_description/meshes/lower_arm_coll.dae"  scale="1 1 1"/>
       </geometry>
-    </collision>
+    </collision>-->
   </link>
 
 
@@ -184,12 +184,12 @@
         <color rgba="0.20 0.20 0.20 1.0"/>
       </material>
     </visual>
-    <collision>
+    <!--<collision>
       <origin xyz="0 0 0" rpy="0 1.5707963268 1.5707963268"/>
       <geometry>
         <mesh filename="package://minibot_description/meshes/shoulder_con_coll.dae"  scale="1 1 1"/>
       </geometry>
-    </collision>
+    </collision>-->
   </link>
 
   <link name="L_SHOULDER_ROLL_R" >
@@ -210,12 +210,12 @@
         <color rgba="0.20 0.20 0.20 1.0"/>
       </material>
     </visual>
-    <collision>
+    <!--<collision>
       <origin xyz="0 0 0" rpy="0 0 -1.5707963268" />
       <geometry>
         <mesh filename="package://minibot_description/meshes/upper_arm_coll.dae"  scale="1 1 1"/>
       </geometry>
-    </collision>
+    </collision>-->
   </link>
 
   <link name="L_ELBOW_R" >
@@ -236,12 +236,12 @@
         <color rgba="0.20 0.20 0.20 1.0"/>
       </material>
     </visual>
-    <collision>
+    <!--<collision>
       <origin xyz="0 0 0" rpy="0 1.5707963268 1.5707963268" />
       <geometry>
         <mesh filename="package://minibot_description/meshes/lower_arm_coll.dae"  scale="1 1 1"/>
       </geometry>
-    </collision>
+    </collision>-->
   </link>
 
 
@@ -262,12 +262,12 @@
         <color rgba="0.20 0.20 0.20 1.0"/>
       </material>
     </visual>
-    <collision>
+    <!--<collision>
       <origin xyz="0 0 0" rpy="1.5707963268 0 0" />
       <geometry>
         <mesh filename="package://minibot_description/meshes/yaw_con_coll.dae"  scale="1 1 1"/>
       </geometry>
-    </collision>
+    </collision>-->
   </link>
 
   <link name="L_HIP_ROLL_L" >
@@ -288,12 +288,12 @@
         <color rgba="0.20 0.20 0.20 1.0"/>
       </material>
     </visual>
-    <collision>
+    <!--<collision>
       <origin xyz="0 0 -0.025" rpy="0 3.14 0" />
       <geometry>
         <mesh filename="package://minibot_description/meshes/hip_roll_coll.dae"  scale="1 1 1"/>
       </geometry>
-    </collision>
+    </collision>-->
   </link>
 
   <link name="L_HIP_PITCH_L" >
@@ -314,12 +314,12 @@
         <color rgba="0.20 0.20 0.20 1.0"/>
       </material>
     </visual>
-    <collision>
+    <!--<collision>
       <origin xyz="0 0 0" rpy="1.5707963268 1.5707963268 0" />
       <geometry>
         <mesh filename="package://minibot_description/meshes/upper_leg_coll.dae"  scale="1 1 1"/>
       </geometry>
-    </collision>
+    </collision>-->
   </link>
 
   <link name="L_KNEE_L" >
@@ -340,12 +340,12 @@
         <color rgba="0.20 0.20 0.20 1.0"/>
       </material>
     </visual>
-    <collision>
+    <!--<collision>
       <origin xyz="0 0 0" rpy="1.5707963268 1.5707963268 0" />
       <geometry>
         <mesh filename="package://minibot_description/meshes/lower_leg_coll.dae"  scale="1 1 1"/>
       </geometry>
-    </collision>
+    </collision>-->
   </link>
 
   <link name="L_ANKLE_PITCH_L" >
@@ -366,12 +366,12 @@
         <color rgba="0.20 0.20 0.20 1.0"/>
       </material>
     </visual>
-    <collision>
+    <!--<collision>
       <origin xyz="0 0 0" rpy="3.14 -1.5707963268 1.5707963268" />
       <geometry>
         <mesh filename="package://minibot_description/meshes/ankle_roll_coll.dae"  scale="1 1 1"/>
       </geometry>
-    </collision>
+    </collision>-->
   </link>
 
   <link name="L_ANKLE_ROLL_L" >
@@ -416,12 +416,12 @@
         <color rgba="0.20 0.20 0.20 1.0"/>
       </material>
     </visual>
-    <collision>
+    <!--<collision>
       <origin xyz="0 0 0" rpy="1.5707963268 0 0" />
       <geometry>
         <mesh filename="package://minibot_description/meshes/yaw_con_coll.dae"  scale="1 1 1"/>
       </geometry>
-    </collision>
+    </collision>-->
   </link>
 
   <link name="L_HIP_ROLL_R" >
@@ -442,12 +442,12 @@
         <color rgba="0.20 0.20 0.20 1.0"/>
       </material>
     </visual>
-    <collision>
+    <!--<collision>
       <origin xyz="0 0 -0.025" rpy="0 3.14 0" />
       <geometry>
         <mesh filename="package://minibot_description/meshes/hip_roll_coll.dae"  scale="1 1 1"/>
       </geometry>
-    </collision>
+    </collision>-->
 
   </link>
 
@@ -469,12 +469,12 @@
         <color rgba="0.20 0.20 0.20 1.0"/>
       </material>
     </visual>
-    <collision>
+    <!--<collision>
       <origin xyz="0 0 0" rpy="1.5707963268 -1.5707963268 0" />
       <geometry>
         <mesh filename="package://minibot_description/meshes/upper_leg_coll.dae"  scale="1 1 1"/>
       </geometry>
-    </collision>
+    </collision>-->
 
   </link>
 
@@ -496,12 +496,12 @@
         <color rgba="0.20 0.20 0.20 1.0"/>
       </material>
     </visual>
-    <collision>
+    <!--<collision>
       <origin xyz="0 0 0" rpy="1.5707963268 -1.5707963268 0" />
       <geometry>
         <mesh filename="package://minibot_description/meshes/lower_leg_coll.dae"  scale="1 1 1"/>
       </geometry>
-    </collision>
+    </collision>-->
 
   </link>
 
@@ -523,12 +523,12 @@
         <color rgba="0.20 0.20 0.20 1.0"/>
       </material>
     </visual>
-    <collision>
+    <!--<collision>
       <origin xyz="0 0 0" rpy="0 1.5707963268 1.5707963268" />
       <geometry>
         <mesh filename="package://minibot_description/meshes/ankle_roll_coll.dae"  scale="1 1 1"/>
       </geometry>
-    </collision>
+    </collision>-->
 
   </link>
 
@@ -555,7 +555,6 @@
         <mesh filename="package://minibot_description/meshes/foot_coll.dae"  scale="1 1 1"/>
       </geometry>
     </collision>
-
   </link>
   
   <link name="L_CAMERA" />
@@ -1269,7 +1268,7 @@
     </plugin>
   </gazebo>
 
-  <gazebo reference="L_CAMERA">
+  <!--<gazebo reference="L_CAMERA">
         <sensor name='camera' type='camera'>
           <pose>-0.050000 -0.010000 0.000000 -1.5708 0.000000 -3.141592</pose>
           <camera name='__default__'>
@@ -1301,7 +1300,7 @@
             <distortionT2>0.0</distortionT2>
           </plugin>        
       </sensor>
-  </gazebo>
+  </gazebo> -->
 
 
       <gazebo>
@@ -1338,7 +1337,7 @@
 
    <!-- fake controller that allows us to move the robot and to get its oposition -->
    <!-- rostopic pub /minibot/cmd_vel geometry_msgs/Twist "{ linear: [ 0.1, 0, 0], angular: [0.2, 0, 0.1] }" -->
-   <gazebo>
+   <!--<gazebo>
     <plugin name="object_controller" filename="libgazebo_ros_planar_move.so">
       <robotNamespace>minibot</robotNamespace>
       
@@ -1348,7 +1347,7 @@
       <odometryRate>100.0</odometryRate>
       <robotBaseFrame>base_link</robotBaseFrame>
     </plugin>
-  </gazebo>
+  </gazebo> -->
 
 </robot>
 

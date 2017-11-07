@@ -3,7 +3,7 @@ minibot:
   # 100Hz is a compromise between fast reaction and CPU load
   joint_state_controller:
     type: joint_state_controller/JointStateController
-    publish_rate: 1000
+    publish_rate: 100
 
 
   # TrajectoryActoin Controllers ------------------------------
@@ -56,7 +56,8 @@ minibot:
       RAnklePitch:    { p: 50.0, i: 0.00, d: 0.4, i_clamp: 4.0 }
       RAnkleRoll:     { p: 50.0, i: 0.00, d: 0.4, i_clamp: 4.0 }
     allow_partial_joints_goal: true
- 
+    constraints:
+        goal_time: 10
  
   # Individual Joint Position Controllers ---------------------------------------
 

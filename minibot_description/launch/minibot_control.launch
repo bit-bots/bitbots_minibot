@@ -5,7 +5,7 @@
 
   <!-- load the controllers -->
     <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
-    output="screen" ns="minibot" args="joint_state_controller HeadPanPositionController HeadTiltPositionController LHipYawPositionController LHipRollPositionController LHipPitchPositionController LKneePositionController LAnklePitchPositionController LAnkleRollPositionController  RHipYawPositionController RHipRollPositionController RHipPitchPositionController RKneePositionController RAnklePitchPositionController RAnkleRollPositionController LShoulderPitchPositionController LShoulderRollPositionController LElbowPositionController RShoulderPitchPositionController RShoulderRollPositionController RElbowPositionController --shutdown-timeout 1" />
+    output="screen" ns="minibot" args="joint_state_controller HeadPanPositionController HeadTiltPositionController LHipYawPositionController LHipRollPositionController LHipPitchPositionController LKneePositionController LAnklePitchPositionController LAnkleRollPositionController  RHipYawPositionController RHipRollPositionController RHipPitchPositionController RKneePositionController RAnklePitchPositionController RAnkleRollPositionController LShoulderPitchPositionController LShoulderRollPositionController LElbowPositionController RShoulderPitchPositionController RShoulderRollPositionController RElbowPositionController --shutdown-timeout 0" />
 
   <!-- convert joint states to TF transforms for rviz, etc -->
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
