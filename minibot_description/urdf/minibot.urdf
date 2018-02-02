@@ -4,7 +4,7 @@
 <!-- |    EDITING THIS FILE BY HAND IS NOT RECOMMENDED                                 | -->
 <!-- =================================================================================== -->
 <robot name="Minibot" xmlns:xacro="http://www.ros.org/wiki/xacro">
-  <!-- friction -->
+  <!-- position (0) or effort(1) joint interfaces -->
   <link name="base_link"/>
   <joint name="base_link_to_body" type="fixed">
     <parent link="base_link"/>
@@ -550,7 +550,7 @@
     <child link="L_HEAD_TILT"/>
     <origin rpy="-1.5707963 0 1.5707963" xyz="0 0 0.02715"/>
     <axis xyz="0 0 1"/>
-    <limit effort="2.5" lower="-1.5707963267910001" upper="0" velocity="5.6548668"/>
+    <limit effort="5.0" lower="-1.5707963267910001" upper="0" velocity="5.6548668"/>
     <dynamics damping="0" friction="0.0"/>
   </joint>
   <joint name="HeadPan" type="revolute">
@@ -558,7 +558,7 @@
     <child link="L_HEAD_PAN"/>
     <origin rpy="0 0 1.5707963" xyz="0 0 0.050593"/>
     <axis xyz="0 0 1"/>
-    <limit effort="2.5" lower="-2.1816615649875" upper="2.1816615649875" velocity="5.6548668"/>
+    <limit effort="5.0" lower="-2.1816615649875" upper="2.1816615649875" velocity="5.6548668"/>
     <dynamics damping="0" friction="0.0"/>
   </joint>
   <joint name="LShoulderPitch" type="revolute">
@@ -566,7 +566,7 @@
     <child link="L_SHOULDER_PITCH_L"/>
     <origin rpy="0 -1.5707963 -1.5707963" xyz="0 0.08134 0"/>
     <axis xyz="0 0 1"/>
-    <limit effort="6.0" lower="-3.1415926535820002" upper="3.1415926535820002" velocity="6.597344565"/>
+    <limit effort="12.0" lower="-3.1415926535820002" upper="3.1415926535820002" velocity="6.597344565"/>
     <dynamics damping="0" friction="0.0"/>
   </joint>
   <joint name="LShoulderRoll" type="revolute">
@@ -574,7 +574,7 @@
     <child link="L_SHOULDER_ROLL_L"/>
     <origin rpy="-1.5707963 0.7853981633955001 0" xyz="0 0 0.029194"/>
     <axis xyz="0 0 -1"/>
-    <limit effort="2.5" lower="-2.3561944901865" upper="0.7853981633955001" velocity="5.648668"/>
+    <limit effort="5.0" lower="-2.3561944901865" upper="0.7853981633955001" velocity="5.648668"/>
     <dynamics damping="0" friction="0.0"/>
   </joint>
   <joint name="LElbow" type="revolute">
@@ -582,7 +582,7 @@
     <child link="L_ELBOW_L"/>
     <origin rpy="1.5707963 1.5707963 0" xyz="-0.14 0 0"/>
     <axis xyz="0 0 1"/>
-    <limit effort="2.5" lower="-1.1344640137935" upper="1.5707963267910001" velocity="5.6548668"/>
+    <limit effort="5.0" lower="-1.1344640137935" upper="1.5707963267910001" velocity="5.6548668"/>
     <dynamics damping="0" friction="0.0"/>
   </joint>
   <joint name="j_LHand" type="fixed">
@@ -595,7 +595,7 @@
     <child link="L_SHOULDER_PITCH_R"/>
     <origin rpy="0 1.5707963 -1.5707963" xyz="0 -0.08134 0"/>
     <axis xyz="0 0 1"/>
-    <limit effort="6.0" lower="-3.1415926535820002" upper="3.1415926535820002" velocity="6.597344565"/>
+    <limit effort="12.0" lower="-3.1415926535820002" upper="3.1415926535820002" velocity="6.597344565"/>
     <dynamics damping="0" friction="0.0"/>
   </joint>
   <joint name="RShoulderRoll" type="revolute">
@@ -603,7 +603,7 @@
     <child link="L_SHOULDER_ROLL_R"/>
     <origin rpy="-1.5707963 2.356194463 0" xyz="0 0 0.029194"/>
     <axis xyz="0 0 -1"/>
-    <limit effort="2.5" lower="-0.7853981633955001" upper="2.3561944901865" velocity="5.648668"/>
+    <limit effort="5.0" lower="-0.7853981633955001" upper="2.3561944901865" velocity="5.648668"/>
     <dynamics damping="0" friction="0.0"/>
   </joint>
   <joint name="RElbow" type="revolute">
@@ -611,7 +611,7 @@
     <child link="L_ELBOW_R"/>
     <origin rpy="-1.5707963 -1.5707963 0" xyz="-0.14 0 0"/>
     <axis xyz="0 0 1"/>
-    <limit effort="2.5" lower="-1.635" upper="1.5707963267910001" velocity="5.6548668"/>
+    <limit effort="5.0" lower="-1.635" upper="1.5707963267910001" velocity="5.6548668"/>
     <dynamics damping="0" friction="0.0"/>
   </joint>
   <joint name="j_RHand" type="fixed">
@@ -624,7 +624,7 @@
     <child link="L_HIP_YAW_L"/>
     <origin rpy="0 3.14159 3.14159" xyz="-0.022 0.057775 -0.160593"/>
     <axis xyz="0 0 1"/>
-    <limit effort="2.5" lower="-0.9250245035547" upper="0.9250245035547" velocity="5.6548668"/>
+    <limit effort="5.0" lower="-0.9250245035547" upper="0.9250245035547" velocity="5.6548668"/>
     <dynamics damping="0" friction="0.0"/>
   </joint>
   <joint name="LHipRoll" type="revolute">
@@ -632,7 +632,7 @@
     <child link="L_HIP_ROLL_L"/>
     <origin rpy="-1.5707963 0 1.5707963" xyz="-0.025 0 0.038444"/>
     <axis xyz="0 0 -1"/>
-    <limit effort="6.0" lower="-1.0122909661542001" upper="0.7853981633955001" velocity="6.597344565"/>
+    <limit effort="12.0" lower="-1.0122909661542001" upper="0.7853981633955001" velocity="6.597344565"/>
     <dynamics damping="0" friction="0.0"/>
   </joint>
   <joint name="LHipPitch" type="revolute">
@@ -640,7 +640,7 @@
     <child link="L_HIP_PITCH_L"/>
     <origin rpy="1.5707963 0 1.5707963" xyz="0 0 -0.025"/>
     <axis xyz="0 0 1"/>
-    <limit effort="8.4" lower="-0.48869219055720003" upper="1.919862177189" velocity="4.712388975"/>
+    <limit effort="16.8" lower="-0.48869219055720003" upper="1.919862177189" velocity="4.712388975"/>
     <dynamics damping="0" friction="0.0"/>
   </joint>
   <joint name="LKnee" type="revolute">
@@ -648,7 +648,7 @@
     <child link="L_KNEE_L"/>
     <origin rpy="0 0 0" xyz="-0.150 0 0"/>
     <axis xyz="0 0 1"/>
-    <limit effort="8.4" lower="-2.268928027587" upper="0" velocity="4.712388975"/>
+    <limit effort="16.8" lower="-2.268928027587" upper="0" velocity="4.712388975"/>
     <dynamics damping="0" friction="0.0"/>
   </joint>
   <joint name="LAnklePitch" type="revolute">
@@ -656,7 +656,7 @@
     <child link="L_ANKLE_PITCH_L"/>
     <origin rpy="3.14159 0 0" xyz="-0.150 0 0"/>
     <axis xyz="0 0 1"/>
-    <limit effort="8.4" lower="-1.6406094968706" upper="1.2391837689129" velocity="4.712388975"/>
+    <limit effort="16.8" lower="-1.6406094968706" upper="1.2391837689129" velocity="4.712388975"/>
     <dynamics damping="0" friction="0.0"/>
   </joint>
   <joint name="LAnkleRoll" type="revolute">
@@ -664,7 +664,7 @@
     <child link="L_ANKLE_ROLL_L"/>
     <origin rpy="-1.5707963 0 0" xyz="0 0.0275 0"/>
     <axis xyz="0 0 1"/>
-    <limit effort="6.0" lower="-1.4660765716716" upper="1.4660765716716" velocity="6.597344565"/>
+    <limit effort="12.0" lower="-1.4660765716716" upper="1.4660765716716" velocity="6.597344565"/>
     <dynamics damping="0" friction="0.0"/>
   </joint>
   <joint name="j_LFootBottom" type="fixed">
@@ -682,7 +682,7 @@
     <child link="L_HIP_YAW_R"/>
     <origin rpy="0 3.14159 3.14159" xyz="-0.022 -0.057775 -0.160593"/>
     <axis xyz="0 0 1"/>
-    <limit effort="2.5" lower="-0.9250245035547" upper="0.9250245035547" velocity="5.6548668"/>
+    <limit effort="5.0" lower="-0.9250245035547" upper="0.9250245035547" velocity="5.6548668"/>
     <dynamics damping="0" friction="0.0"/>
   </joint>
   <joint name="RHipRoll" type="revolute">
@@ -690,7 +690,7 @@
     <child link="L_HIP_ROLL_R"/>
     <origin rpy="-1.5707963 0 1.5707963" xyz="-0.025 0 0.038444"/>
     <axis xyz="0 0 1"/>
-    <limit effort="6.0" lower="-1.0122909661542001" upper="0.7853981633955001" velocity="6.597344565"/>
+    <limit effort="12.0" lower="-1.0122909661542001" upper="0.7853981633955001" velocity="6.597344565"/>
     <dynamics damping="0" friction="0.0"/>
   </joint>
   <joint name="RHipPitch" type="revolute">
@@ -698,7 +698,7 @@
     <child link="L_HIP_PITCH_R"/>
     <origin rpy="1.5707963 0 -1.5707963" xyz="0 0 -0.025"/>
     <axis xyz="0 0 1"/>
-    <limit effort="8.4" lower="-1.919862177189" upper="0.48869219055720003" velocity="4.712388975"/>
+    <limit effort="16.8" lower="-1.919862177189" upper="0.48869219055720003" velocity="4.712388975"/>
     <dynamics damping="0" friction="0.0"/>
   </joint>
   <joint name="RKnee" type="revolute">
@@ -706,7 +706,7 @@
     <child link="L_KNEE_R"/>
     <origin rpy="0 0 0" xyz="0.150 0 0"/>
     <axis xyz="0 0 1"/>
-    <limit effort="8.4" lower="0" upper="2.268928027587" velocity="4.712388975"/>
+    <limit effort="16.8" lower="0" upper="2.268928027587" velocity="4.712388975"/>
     <dynamics damping="0" friction="0.0"/>
   </joint>
   <joint name="RAnklePitch" type="revolute">
@@ -714,7 +714,7 @@
     <child link="L_ANKLE_PITCH_R"/>
     <origin rpy="3.14159 0 0" xyz="0.150 0 0"/>
     <axis xyz="0 0 1"/>
-    <limit effort="8.4" lower="-1.2391837689129" upper="1.6406094968706" velocity="4.712388975"/>
+    <limit effort="16.8" lower="-1.2391837689129" upper="1.6406094968706" velocity="4.712388975"/>
     <dynamics damping="0" friction="0.0"/>
   </joint>
   <joint name="RAnkleRoll" type="revolute">
@@ -722,7 +722,7 @@
     <child link="L_ANKLE_ROLL_R"/>
     <origin rpy="-1.5707963 0 0" xyz="0 0.0275 0"/>
     <axis xyz="0 0 1"/>
-    <limit effort="6.0" lower="-1.4660765716716" upper="1.4660765716716" velocity="6.597344565"/>
+    <limit effort="12.0" lower="-1.4660765716716" upper="1.4660765716716" velocity="6.597344565"/>
     <dynamics damping="0" friction="0.0"/>
   </joint>
   <joint name="j_RFootBottom" type="fixed">
@@ -738,200 +738,200 @@
   <transmission name="HeadPanTransmission">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="HeadPan">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="HeadPanMotor">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
   <transmission name="HeadTiltTransmission">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="HeadTilt">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="HeadTiltMotor">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
   <transmission name="LShoulderPitchTransmission">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="LShoulderPitch">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="LShoulderPitchMotor">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
   <transmission name="LShoulderRollTransmission">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="LShoulderRoll">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="LShoulderRollTransmission">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
   <transmission name="LElbowTransmission">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="LElbow">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="LElbowMotor">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
   <transmission name="RShoulderPitchTransmission">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="RShoulderPitch">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="RShoulderPitchMotor">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
   <transmission name="RShoulderRollTransmission">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="RShoulderRoll">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="RShoulderRollMotor">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
   <transmission name="RElbowTransmission">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="RElbow">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="RElbowMotor">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
   <transmission name="LHipYawTransmission">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="LHipYaw">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="LHipYawMotor">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
   <transmission name="LHipRollTransmission">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="LHipRoll">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="LHipRollMotor">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
   <transmission name="LHipPitchTransmission">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="LHipPitch">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="LHipPitchMotor">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
   <transmission name="LKneeTransmission">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="LKnee">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="LKneeMotor">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
   <transmission name="LAnklePitchTransmission">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="LAnklePitch">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="LAnklePitchMotor">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
   <transmission name="LAnkleRollTransmission">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="LAnkleRoll">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="LAnkleRollMotor">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
   <transmission name="RHipYawTransmission">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="RHipYaw">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="RHipYawMotor">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
   <transmission name="RHipRollTransmission">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="RHipRoll">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="RHipRollMotor">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
   <transmission name="RHipPitchTransmission">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="RHipPitch">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="RHipPitchMotor">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
   <transmission name="RKneeTransmission">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="RKnee">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="RKneeMotor">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
   <transmission name="RAnklePitchTransmission">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="RAnklePitch">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="RAnklePitchMotor">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
   <transmission name="RAnkleRollTransmission">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="RAnkleRoll">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="RAnkleRollMotor">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/hardware_interface/EffortJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>

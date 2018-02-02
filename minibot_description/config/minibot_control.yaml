@@ -11,7 +11,7 @@ minibot:
   # we could also set up controllers for the individual 'chains',
   # e.g. head, left_arm, right_arm, left_leg, right_leg.
   #
-  joint_trajectory_action_controller:
+  controller:
     type: effort_controllers/JointTrajectoryController
     joints:
       - HeadPan
@@ -34,30 +34,30 @@ minibot:
       - RKnee
       - RAnklePitch
       - RAnkleRoll
-    gains:
-      HeadPan:        { p: 50.0, i: 0.00, d: 0.4, i_clamp: 4.0 }
-      HeadTilt:       { p: 50.0, i: 0.00, d: 0.4, i_clamp: 4.0 }
-      LShoulderPitch: { p: 50.0, i: 0.00, d: 0.4, i_clamp: 4.0 }
-      LShoulderRoll:  { p: 50.0, i: 0.00, d: 0.4, i_clamp: 4.0 }
-      LElbow:         { p: 50.0, i: 0.00, d: 0.4, i_clamp: 4.0 }
-      RShoulderPitch: { p: 50.0, i: 0.00, d: 0.4, i_clamp: 4.0 }
-      RShoulderRoll:  { p: 50.0, i: 0.00, d: 0.4, i_clamp: 4.0 }
-      RElbow:         { p: 50.0, i: 0.00, d: 0.4, i_clamp: 4.0 }
-      LHipYaw:        { p: 50.0, i: 0.00, d: 0.4, i_clamp: 4.0 }
-      LHipRoll:       { p: 50.0, i: 0.00, d: 0.4, i_clamp: 4.0 }
-      LHipPitch:      { p: 50.0, i: 0.00, d: 0.4, i_clamp: 4.0 }
-      LKnee:          { p: 50.0, i: 0.00, d: 0.4, i_clamp: 4.0 }
-      LAnklePitch:    { p: 50.0, i: 0.00, d: 0.4, i_clamp: 4.0 }
-      LAnkleRoll:     { p: 50.0, i: 0.00, d: 0.4, i_clamp: 4.0 }
-      RHipYaw:        { p: 50.0, i: 0.00, d: 0.4, i_clamp: 4.0 }
-      RHipRoll:       { p: 50.0, i: 0.00, d: 0.4, i_clamp: 4.0 }
-      RHipPitch:      { p: 50.0, i: 0.00, d: 0.4, i_clamp: 4.0 }
-      RKnee:          { p: 50.0, i: 0.00, d: 0.4, i_clamp: 4.0 }
-      RAnklePitch:    { p: 50.0, i: 0.00, d: 0.4, i_clamp: 4.0 }
-      RAnkleRoll:     { p: 50.0, i: 0.00, d: 0.4, i_clamp: 4.0 }
     allow_partial_joints_goal: true
     constraints:
         goal_time: 10
+    gains:
+      HeadPan:        { p: 50.0, i: 0.00, d: 0.1, i_clamp: 4.0 }
+      HeadTilt:       { p: 50.0, i: 0.00, d: 0.1, i_clamp: 4.0 }
+      LShoulderPitch: { p: 50.0, i: 0.00, d: 0.1, i_clamp: 4.0 }
+      LShoulderRoll:  { p: 50.0, i: 0.00, d: 0.1, i_clamp: 4.0 }
+      LElbow:         { p: 50.0, i: 0.00, d: 0.1, i_clamp: 4.0 }
+      RShoulderPitch: { p: 50.0, i: 0.00, d: 0.1, i_clamp: 4.0 }
+      RShoulderRoll:  { p: 50.0, i: 0.00, d: 0.1, i_clamp: 4.0 }
+      RElbow:         { p: 50.0, i: 0.00, d: 0.1, i_clamp: 4.0 }
+      LHipYaw:        { p: 50.0, i: 0.00, d: 0.1, i_clamp: 4.0 }
+      LHipRoll:       { p: 50.0, i: 0.00, d: 0.1, i_clamp: 4.0 }
+      LHipPitch:      { p: 50.0, i: 0.00, d: 0.1, i_clamp: 4.0 }
+      LKnee:          { p: 50.0, i: 0.00, d: 0.1, i_clamp: 4.0 }
+      LAnklePitch:    { p: 50.0, i: 0.00, d: 0.1, i_clamp: 4.0 }
+      LAnkleRoll:     { p: 50.0, i: 0.00, d: 0.1, i_clamp: 4.0 }
+      RHipYaw:        { p: 50.0, i: 0.00, d: 0.1, i_clamp: 4.0 }
+      RHipRoll:       { p: 50.0, i: 0.00, d: 0.1, i_clamp: 4.0 }
+      RHipPitch:      { p: 50.0, i: 0.00, d: 0.1, i_clamp: 4.0 }
+      RKnee:          { p: 50.0, i: 0.00, d: 0.1, i_clamp: 4.0 }
+      RAnklePitch:    { p: 50.0, i: 0.00, d: 0.1, i_clamp: 4.0 }
+      RAnkleRoll:     { p: 50.0, i: 0.00, d: 0.1, i_clamp: 4.0 }
  
   # Individual Joint Position Controllers ---------------------------------------
 
@@ -65,107 +65,107 @@ minibot:
   HeadPanPositionController:
     type: effort_controllers/JointPositionController
     joint: HeadPan
-    pid: {p: 50.0, i: 0.00, d: 0.4}
+    pid: {p: 50.0, i: 0.00, d: 0.1}
 
   HeadTiltPositionController:
     type: effort_controllers/JointPositionController
     joint: HeadTilt
-    pid: {p: 50.0, i: 0.00, d: 0.4}
+    pid: {p: 50.0, i: 0.00, d: 0.1}
 
   # ARMS
 
   LShoulderPitchPositionController:
     type: effort_controllers/JointPositionController
     joint: LShoulderPitch
-    pid: {p: 50.0, i: 0.00, d: 0.4}
+    pid: {p: 50.0, i: 0.00, d: 0.1}
 
   LShoulderRollPositionController:
     type: effort_controllers/JointPositionController
     joint: LShoulderRoll
-    pid: {p: 50.0, i: 0.00, d: 0.4}
+    pid: {p: 50.0, i: 0.00, d: 0.1}
 
   LElbowPositionController:
     type: effort_controllers/JointPositionController
     joint: LElbow
-    pid: {p: 50.0, i: 0.00, d: 0.4}
+    pid: {p: 50.0, i: 0.00, d: 0.1}
 
   RShoulderPitchPositionController:
     type: effort_controllers/JointPositionController
     joint: RShoulderPitch
-    pid: {p: 50.0, i: 0.00, d: 0.4}
+    pid: {p: 50.0, i: 0.00, d: 0.1}
 
   RShoulderRollPositionController:
     type: effort_controllers/JointPositionController
     joint: RShoulderRoll
-    pid: {p: 50.0, i: 0.00, d: 0.4}
+    pid: {p: 50.0, i: 0.00, d: 0.1}
 
   RElbowPositionController:
     type: effort_controllers/JointPositionController
     joint: RElbow
-    pid: {p: 50.0, i: 0.00, d: 0.4}
+    pid: {p: 50.0, i: 0.00, d: 0.1}
 
   # Left leg
 
   LHipYawPositionController:
     type: effort_controllers/JointPositionController
     joint: LHipYaw
-    pid: {p: 50.0, i: 0.00, d: 0.4}
+    pid: {p: 50.0, i: 0.00, d: 0.1}
 
   LHipRollPositionController:
     type: effort_controllers/JointPositionController
     joint: LHipRoll
-    pid: {p: 50.0, i: 0.00, d: 0.4}
+    pid: {p: 50.0, i: 0.00, d: 0.1}
 
   LHipPitchPositionController:
     type: effort_controllers/JointPositionController
     joint: LHipPitch
-    pid: {p: 50.0, i: 0.00, d: 0.4}
+    pid: {p: 50.0, i: 0.00, d: 0.1}
 
   LKneePositionController:
     type: effort_controllers/JointPositionController
     joint: LKnee
-    pid: {p: 50.0, i: 0.00, d: 0.4}
+    pid: {p: 50.0, i: 0.00, d: 0.1}
 
   LAnklePitchPositionController:
     type: effort_controllers/JointPositionController
     joint: LAnklePitch
-    pid: {p: 50.0, i: 0.00, d: 0.4}
+    pid: {p: 50.0, i: 0.00, d: 0.1}
 
   LAnkleRollPositionController:
     type: effort_controllers/JointPositionController
     joint: LAnkleRoll
-    pid: {p: 50.0, i: 0.00, d: 0.4}
+    pid: {p: 50.0, i: 0.00, d: 0.1}
 
   # Right leg
 
   RHipYawPositionController:
     type: effort_controllers/JointPositionController
     joint: RHipYaw
-    pid: {p: 50.0, i: 0.00, d: 0.4}
+    pid: {p: 50.0, i: 0.00, d: 0.1}
 
   RHipRollPositionController:
     type: effort_controllers/JointPositionController
     joint: RHipRoll
-    pid: {p: 50.0, i: 0.00, d: 0.4}
+    pid: {p: 50.0, i: 0.00, d: 0.1}
 
   RHipPitchPositionController:
     type: effort_controllers/JointPositionController
     joint: RHipPitch
-    pid: {p: 50.0, i: 0.00, d: 0.4}
+    pid: {p: 50.0, i: 0.00, d: 0.1}
 
   RKneePositionController:
     type: effort_controllers/JointPositionController
     joint: RKnee
-    pid: {p: 50.0, i: 0.00, d: 0.4}
+    pid: {p: 50.0, i: 0.00, d: 0.1}
 
   RAnklePitchPositionController:
     type: effort_controllers/JointPositionController
     joint: RAnklePitch
-    pid: {p: 50.0, i: 0.00, d: 0.4}
+    pid: {p: 50.0, i: 0.00, d: 0.1}
 
   RAnkleRollPositionController:
     type: effort_controllers/JointPositionController
     joint: RAnkleRoll
-    pid: {p: 50.0, i: 0.00, d: 0.4}
+    pid: {p: 50.0, i: 0.00, d: 0.1}
 
 # end of file

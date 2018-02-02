@@ -6,6 +6,7 @@
 <xacro:property name="insu" value="0" /> <!--inertia summand-->
 <xacro:property name="d" value="0" /> <!-- damping -->
 <xacro:property name="f" value="0" /> <!-- friction -->
+<xacro:property name="pos_or_eff" value="1" /> <!-- position (0) or effort(1) joint interfaces -->
 
 <link name="base_link"/>
   
@@ -786,11 +787,21 @@
    <transmission name="HeadPanTransmission">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="HeadPan">
-        <hardwareInterface>EffortJointInterface</hardwareInterface>
+    <xacro:if value="${pos_or_eff == 0}">
+        <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </xacro:if>
+    <xacro:if value="${pos_or_eff == 1}">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </xacro:if>
     </joint>
     <actuator name="HeadPanMotor">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-      <mechanicalReduction>1</mechanicalReduction>
+        <xacro:if value="${pos_or_eff == 0}">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </xacro:if>
+        <xacro:if value="${pos_or_eff == 1}">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </xacro:if>
+        <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
   
@@ -798,10 +809,20 @@
    <transmission name="HeadTiltTransmission">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="HeadTilt">
-        <hardwareInterface>EffortJointInterface</hardwareInterface>
+        <xacro:if value="${pos_or_eff == 0}">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </xacro:if>
+        <xacro:if value="${pos_or_eff == 1}">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </xacro:if>
     </joint>
     <actuator name="HeadTiltMotor">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+        <xacro:if value="${pos_or_eff == 0}">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </xacro:if>
+        <xacro:if value="${pos_or_eff == 1}">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </xacro:if>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
@@ -810,10 +831,20 @@
    <transmission name="LShoulderPitchTransmission">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="LShoulderPitch">
-        <hardwareInterface>EffortJointInterface</hardwareInterface>
+        <xacro:if value="${pos_or_eff == 0}">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </xacro:if>
+        <xacro:if value="${pos_or_eff == 1}">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </xacro:if>
     </joint>
     <actuator name="LShoulderPitchMotor">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+        <xacro:if value="${pos_or_eff == 0}">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </xacro:if>
+        <xacro:if value="${pos_or_eff == 1}">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </xacro:if>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
@@ -822,10 +853,20 @@
    <transmission name="LShoulderRollTransmission">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="LShoulderRoll">
-        <hardwareInterface>EffortJointInterface</hardwareInterface>
+        <xacro:if value="${pos_or_eff == 0}">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </xacro:if>
+        <xacro:if value="${pos_or_eff == 1}">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </xacro:if>
     </joint>
     <actuator name="LShoulderRollTransmission">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+        <xacro:if value="${pos_or_eff == 0}">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </xacro:if>
+        <xacro:if value="${pos_or_eff == 1}">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </xacro:if>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
@@ -834,10 +875,20 @@
    <transmission name="LElbowTransmission">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="LElbow">
-        <hardwareInterface>EffortJointInterface</hardwareInterface>
+        <xacro:if value="${pos_or_eff == 0}">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </xacro:if>
+        <xacro:if value="${pos_or_eff == 1}">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </xacro:if>
     </joint>
     <actuator name="LElbowMotor">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+        <xacro:if value="${pos_or_eff == 0}">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </xacro:if>
+        <xacro:if value="${pos_or_eff == 1}">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </xacro:if>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
@@ -846,10 +897,20 @@
    <transmission name="RShoulderPitchTransmission">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="RShoulderPitch">
-        <hardwareInterface>EffortJointInterface</hardwareInterface>
+        <xacro:if value="${pos_or_eff == 0}">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </xacro:if>
+        <xacro:if value="${pos_or_eff == 1}">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </xacro:if>
     </joint>
     <actuator name="RShoulderPitchMotor">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+        <xacro:if value="${pos_or_eff == 0}">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </xacro:if>
+        <xacro:if value="${pos_or_eff == 1}">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </xacro:if>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
@@ -858,10 +919,20 @@
    <transmission name="RShoulderRollTransmission">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="RShoulderRoll">
-        <hardwareInterface>EffortJointInterface</hardwareInterface>
+        <xacro:if value="${pos_or_eff == 0}">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </xacro:if>
+        <xacro:if value="${pos_or_eff == 1}">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </xacro:if>
     </joint>
     <actuator name="RShoulderRollMotor">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+        <xacro:if value="${pos_or_eff == 0}">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </xacro:if>
+        <xacro:if value="${pos_or_eff == 1}">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </xacro:if>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
@@ -870,10 +941,20 @@
    <transmission name="RElbowTransmission">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="RElbow">
-        <hardwareInterface>EffortJointInterface</hardwareInterface>
+        <xacro:if value="${pos_or_eff == 0}">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </xacro:if>
+        <xacro:if value="${pos_or_eff == 1}">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </xacro:if>
     </joint>
     <actuator name="RElbowMotor">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+        <xacro:if value="${pos_or_eff == 0}">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </xacro:if>
+        <xacro:if value="${pos_or_eff == 1}">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </xacro:if>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
@@ -883,10 +964,20 @@
    <transmission name="LHipYawTransmission">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="LHipYaw">
-        <hardwareInterface>EffortJointInterface</hardwareInterface>
+        <xacro:if value="${pos_or_eff == 0}">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </xacro:if>
+        <xacro:if value="${pos_or_eff == 1}">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </xacro:if>
     </joint>
     <actuator name="LHipYawMotor">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+        <xacro:if value="${pos_or_eff == 0}">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </xacro:if>
+        <xacro:if value="${pos_or_eff == 1}">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </xacro:if>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
@@ -895,10 +986,20 @@
    <transmission name="LHipRollTransmission">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="LHipRoll">
-        <hardwareInterface>EffortJointInterface</hardwareInterface>
+        <xacro:if value="${pos_or_eff == 0}">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </xacro:if>
+        <xacro:if value="${pos_or_eff == 1}">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </xacro:if>
     </joint>
     <actuator name="LHipRollMotor">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+        <xacro:if value="${pos_or_eff == 0}">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </xacro:if>
+        <xacro:if value="${pos_or_eff == 1}">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </xacro:if>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
@@ -907,10 +1008,20 @@
    <transmission name="LHipPitchTransmission">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="LHipPitch">
-        <hardwareInterface>EffortJointInterface</hardwareInterface>
+        <xacro:if value="${pos_or_eff == 0}">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </xacro:if>
+        <xacro:if value="${pos_or_eff == 1}">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </xacro:if>
     </joint>
     <actuator name="LHipPitchMotor">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+        <xacro:if value="${pos_or_eff == 0}">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </xacro:if>
+        <xacro:if value="${pos_or_eff == 1}">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </xacro:if>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
@@ -919,10 +1030,20 @@
    <transmission name="LKneeTransmission">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="LKnee">
-        <hardwareInterface>EffortJointInterface</hardwareInterface>
+        <xacro:if value="${pos_or_eff == 0}">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </xacro:if>
+        <xacro:if value="${pos_or_eff == 1}">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </xacro:if>
     </joint>
     <actuator name="LKneeMotor">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+        <xacro:if value="${pos_or_eff == 0}">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </xacro:if>
+        <xacro:if value="${pos_or_eff == 1}">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </xacro:if>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
@@ -931,10 +1052,20 @@
    <transmission name="LAnklePitchTransmission">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="LAnklePitch">
-        <hardwareInterface>EffortJointInterface</hardwareInterface>
+        <xacro:if value="${pos_or_eff == 0}">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </xacro:if>
+        <xacro:if value="${pos_or_eff == 1}">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </xacro:if>
     </joint>
     <actuator name="LAnklePitchMotor">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+        <xacro:if value="${pos_or_eff == 0}">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </xacro:if>
+        <xacro:if value="${pos_or_eff == 1}">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </xacro:if>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
@@ -943,10 +1074,20 @@
    <transmission name="LAnkleRollTransmission">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="LAnkleRoll">
-        <hardwareInterface>EffortJointInterface</hardwareInterface>
+        <xacro:if value="${pos_or_eff == 0}">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </xacro:if>
+        <xacro:if value="${pos_or_eff == 1}">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </xacro:if>
     </joint>
     <actuator name="LAnkleRollMotor">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+        <xacro:if value="${pos_or_eff == 0}">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </xacro:if>
+        <xacro:if value="${pos_or_eff == 1}">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </xacro:if>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
@@ -955,10 +1096,20 @@
    <transmission name="RHipYawTransmission">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="RHipYaw">
-        <hardwareInterface>EffortJointInterface</hardwareInterface>
+        <xacro:if value="${pos_or_eff == 0}">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </xacro:if>
+        <xacro:if value="${pos_or_eff == 1}">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </xacro:if>
     </joint>
     <actuator name="RHipYawMotor">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+        <xacro:if value="${pos_or_eff == 0}">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </xacro:if>
+        <xacro:if value="${pos_or_eff == 1}">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </xacro:if>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
@@ -967,10 +1118,20 @@
    <transmission name="RHipRollTransmission">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="RHipRoll">
-        <hardwareInterface>EffortJointInterface</hardwareInterface>
+        <xacro:if value="${pos_or_eff == 0}">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </xacro:if>
+        <xacro:if value="${pos_or_eff == 1}">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </xacro:if>
     </joint>
     <actuator name="RHipRollMotor">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+        <xacro:if value="${pos_or_eff == 0}">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </xacro:if>
+        <xacro:if value="${pos_or_eff == 1}">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </xacro:if>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
@@ -979,10 +1140,20 @@
    <transmission name="RHipPitchTransmission">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="RHipPitch">
-        <hardwareInterface>EffortJointInterface</hardwareInterface>
+        <xacro:if value="${pos_or_eff == 0}">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </xacro:if>
+        <xacro:if value="${pos_or_eff == 1}">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </xacro:if>
     </joint>
     <actuator name="RHipPitchMotor">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+        <xacro:if value="${pos_or_eff == 0}">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </xacro:if>
+        <xacro:if value="${pos_or_eff == 1}">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </xacro:if>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
@@ -991,10 +1162,20 @@
    <transmission name="RKneeTransmission">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="RKnee">
-        <hardwareInterface>EffortJointInterface</hardwareInterface>
+        <xacro:if value="${pos_or_eff == 0}">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </xacro:if>
+        <xacro:if value="${pos_or_eff == 1}">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </xacro:if>
     </joint>
     <actuator name="RKneeMotor">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+        <xacro:if value="${pos_or_eff == 0}">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </xacro:if>
+        <xacro:if value="${pos_or_eff == 1}">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </xacro:if>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
@@ -1003,10 +1184,20 @@
    <transmission name="RAnklePitchTransmission">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="RAnklePitch">
-        <hardwareInterface>EffortJointInterface</hardwareInterface>
+        <xacro:if value="${pos_or_eff == 0}">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </xacro:if>
+        <xacro:if value="${pos_or_eff == 1}">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </xacro:if>
     </joint>
     <actuator name="RAnklePitchMotor">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+        <xacro:if value="${pos_or_eff == 0}">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </xacro:if>
+        <xacro:if value="${pos_or_eff == 1}">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </xacro:if>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
@@ -1015,10 +1206,20 @@
    <transmission name="RAnkleRollTransmission">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="RAnkleRoll">
-        <hardwareInterface>EffortJointInterface</hardwareInterface>
+        <xacro:if value="${pos_or_eff == 0}">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </xacro:if>
+        <xacro:if value="${pos_or_eff == 1}">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </xacro:if>
     </joint>
     <actuator name="RAnkleRollMotor">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+        <xacro:if value="${pos_or_eff == 0}">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </xacro:if>
+        <xacro:if value="${pos_or_eff == 1}">
+            <hardwareInterface>hardware_interface/hardware_interface/EffortJointInterface</hardwareInterface>
+        </xacro:if>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
