@@ -1022,11 +1022,13 @@
     <material>Gazebo/Grey</material>
     <self_collide>0</self_collide>
   </gazebo>
+  <!-- joint controller -->
   <gazebo>
     <plugin filename="libgazebo_ros_control.so" name="gazebo_ros_control">
       <robotNamespace>minibot</robotNamespace>
     </plugin>
   </gazebo>
+  <!-- camera sensor -->
   <gazebo reference="L_CAMERA">
     <sensor name="camera" type="camera">
       <pose>-0.050000 -0.010000 0.000000 -1.5708 0.000000 -3.141592</pose>
@@ -1060,33 +1062,26 @@
       </plugin>
     </sensor>
   </gazebo>
-  <gazebo>
-    <plugin filename="libhector_gazebo_ros_imu.so" name="gazebo_ros_imu">
-      <robotNamespace>minibot</robotNamespace>
-      <bodyName>L_IMU</bodyName>
-      <updateRate>50</updateRate>
-      <serviceName>imu_service</serviceName>
-      <topicName>imu</topicName>
-      <gaussianNoise>0</gaussianNoise>
-      <xyzOffset>0 0 0</xyzOffset>
-      <rpyOffset>0 0 -0.703220730592</rpyOffset>
-    </plugin>
+  <!-- IMU sensor -->
+  <gazebo reference="L_IMU">
+    <gravity>true</gravity>
+    <sensor name="imu_sensor" type="imu">
+      <always_on>true</always_on>
+      <update_rate>100</update_rate>
+      <visualize>true</visualize>
+      <topic>__default_topic__</topic>
+      <plugin filename="libgazebo_ros_imu_sensor.so" name="imu_plugin">
+        <topicName>imu</topicName>
+        <bodyName>L_IMU</bodyName>
+        <updateRateHZ>100.0</updateRateHZ>
+        <gaussianNoise>0.0</gaussianNoise>
+        <xyzOffset>0 0 0</xyzOffset>
+        <rpyOffset>0 0 0</rpyOffset>
+        <frameName>L_IMU</frameName>
+      </plugin>
+      <pose>0 0 0 0 0 0</pose>
+    </sensor>
   </gazebo>
-  <!-- Groundtruth plugin: completely broken 
-  <gazebo>
-    <plugin name="robot_groundtruth_sim" filename="libgazebo_ros_p3d.so">
-      <robotNamespace>minibot</robotNamespace>
-      <alwaysOn>true</alwaysOn>
-      <updateRate>100.0</updateRate>
-      <bodyName>base_link</bodyName>
-      <topicName>odom</topicName>
-      <gaussianNoise>0.0</gaussianNoise>
-      <frameName>map</frameName> 
-      <xyzOffsets>0 0 0</xyzOffsets>
-      <rpyOffsets>0 0 0</rpyOffsets>
-    </plugin> 
-  </gazebo>
-  -->
   <!-- fake controller that allows us to move the robot and to get its oposition -->
   <!-- rostopic pub /minibot/cmd_vel geometry_msgs/Twist "{ linear: [ 0.1, 0, 0], angular: [0.2, 0, 0.1] }" -->
   <!--<gazebo>

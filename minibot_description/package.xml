@@ -2,7 +2,7 @@
 <package>
   <name>minibot_description</name>
   <version>1.1.0</version>
-  <description>Describes Bit-Bots minibot robot model with camera plugin and accelerometer plugin (hector) for RViz and Gazebo</description>
+  <description>Describes Bit-Bots minibot robot model with camera plugin and accelerometer plugin for RViz and Gazebo</description>
   
   <maintainer email="info@bit-bots.de">Hamburg Bit-Bots</maintainer>
 
