@@ -6,11 +6,7 @@ import rospy
 import time
 from trajectory_msgs.msg import JointTrajectory, JointTrajectoryPoint
 
-if __name__ == "__main__":
-    rospy.init_node('pub_joint_goals_sim')
-    joint_goal_publisher = rospy.Publisher('/minibot/controller/command', JointTrajectory,
-                                           queue_size=10)
-    rospy.sleep(1)
+def send_zero_position():
     rospy.loginfo("publishing 0 goals for joints")
     msg = JointTrajectoryPoint()
     msg.positions = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
@@ -26,5 +22,18 @@ if __name__ == "__main__":
 
     joint_goal_publisher.publish(traj_msg)
 
-    rospy.sleep(2)
-    rospy.spin()
+if __name__ == "__main__":
+    rospy.init_node('pub_joint_goals_sim')
+    joint_goal_publisher = rospy.Publisher('/minibot/controller/command', JointTrajectory,
+                                           queue_size=10)
+    rospy.sleep(1)
+    send_zero_position()
+    while not rospy.is_shutdown():
+        try:
+            # catch exeption of moving backwarts in time, when restarting simulator
+            rospy.sleep(10000000000000000)
+        except rospy.exceptions.ROSTimeMovedBackwardsException:
+            rospy.logwarn(
+                "Simulator reset. I will do position reset to zero")
+            send_zero_position()
+
