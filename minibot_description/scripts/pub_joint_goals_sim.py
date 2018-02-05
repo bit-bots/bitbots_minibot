@@ -6,6 +6,7 @@ import rospy
 import time
 from trajectory_msgs.msg import JointTrajectory, JointTrajectoryPoint
 
+
 def send_zero_position():
     rospy.loginfo("publishing 0 goals for joints")
     msg = JointTrajectoryPoint()
@@ -22,6 +23,7 @@ def send_zero_position():
 
     joint_goal_publisher.publish(traj_msg)
 
+
 if __name__ == "__main__":
     rospy.init_node('pub_joint_goals_sim')
     joint_goal_publisher = rospy.Publisher('/minibot/controller/command', JointTrajectory,
@@ -36,4 +38,5 @@ if __name__ == "__main__":
             rospy.logwarn(
                 "Simulator reset. I will do position reset to zero")
             send_zero_position()
-
+        except rospy.exceptions.ROSInterruptException:
+            exit()
