@@ -26,7 +26,9 @@ def send_zero_position():
 
 if __name__ == "__main__":
     rospy.init_node('pub_joint_goals_sim')
-    joint_goal_publisher = rospy.Publisher('/minibot/controller/command', JointTrajectory,
+    # get namespace
+    ns = rospy.get_param("ns", "/minibot")
+    joint_goal_publisher = rospy.Publisher(ns + '/controller/command', JointTrajectory,
                                            queue_size=10)
     rospy.sleep(1)
     send_zero_position()
