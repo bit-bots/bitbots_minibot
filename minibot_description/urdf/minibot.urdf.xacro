@@ -674,7 +674,7 @@
     <parent link="L_HIP_YAW_L"/>
     <child link="L_HIP_ROLL_L"/>
     <origin xyz="-0.025 0 0.038444" rpy="-1.5707963 0 1.5707963" />
-    <axis xyz="0 0 -1" />
+    <axis xyz="0 0 1" />
     <limit effort="${tofa*6.0}" velocity="6.597344565" lower="-1.0122909661542001" upper="0.7853981633955001" />
   <dynamics damping="${d}" friction="0.0"/> </joint>
 
