@@ -38,26 +38,26 @@ minibot:
     constraints:
         goal_time: 10
     gains:
-      HeadPan:        { p: 850.0, i: 0.00, d: 1.0, i_clamp: 4.0 }
-      HeadTilt:       { p: 850.0, i: 0.00, d: 1.0, i_clamp: 4.0 }
-      LShoulderPitch: { p: 850.0, i: 0.00, d: 1.0, i_clamp: 4.0 }
-      LShoulderRoll:  { p: 850.0, i: 0.00, d: 1.0, i_clamp: 4.0 }
-      LElbow:         { p: 850.0, i: 0.00, d: 1.0, i_clamp: 4.0 }
-      RShoulderPitch: { p: 850.0, i: 0.00, d: 1.0, i_clamp: 4.0 }
-      RShoulderRoll:  { p: 850.0, i: 0.00, d: 1.0, i_clamp: 4.0 }
-      RElbow:         { p: 850.0, i: 0.00, d: 1.0, i_clamp: 4.0 }
-      LHipYaw:        { p: 850.0, i: 0.00, d: 1.0, i_clamp: 4.0 }
-      LHipRoll:       { p: 850.0, i: 0.00, d: 1.0, i_clamp: 4.0 }
-      LHipPitch:      { p: 850.0, i: 0.00, d: 1.0, i_clamp: 4.0 }
-      LKnee:          { p: 850.0, i: 0.00, d: 1.0, i_clamp: 4.0 }
-      LAnklePitch:    { p: 850.0, i: 0.00, d: 1.0, i_clamp: 4.0 }
-      LAnkleRoll:     { p: 850.0, i: 0.00, d: 1.0, i_clamp: 4.0 }
-      RHipYaw:        { p: 850.0, i: 0.00, d: 1.0, i_clamp: 4.0 }
-      RHipRoll:       { p: 850.0, i: 0.00, d: 1.0, i_clamp: 4.0 }
-      RHipPitch:      { p: 850.0, i: 0.00, d: 1.0, i_clamp: 4.0 }
-      RKnee:          { p: 850.0, i: 0.00, d: 1.0, i_clamp: 4.0 }
-      RAnklePitch:    { p: 850.0, i: 0.00, d: 1.0, i_clamp: 4.0 }
-      RAnkleRoll:     { p: 850.0, i: 0.00, d: 1.0, i_clamp: 4.0 }
+      HeadPan:        { p: 200.0, i: 0.00, d: 1.0, i_clamp: 4.0 }
+      HeadTilt:       { p: 200.0, i: 0.00, d: 1.0, i_clamp: 4.0 }
+      LShoulderPitch: { p: 200.0, i: 0.00, d: 1.0, i_clamp: 4.0 }
+      LShoulderRoll:  { p: 200.0, i: 0.00, d: 1.0, i_clamp: 4.0 }
+      LElbow:         { p: 200.0, i: 0.00, d: 1.0, i_clamp: 4.0 }
+      RShoulderPitch: { p: 200.0, i: 0.00, d: 1.0, i_clamp: 4.0 }
+      RShoulderRoll:  { p: 200.0, i: 0.00, d: 1.0, i_clamp: 4.0 }
+      RElbow:         { p: 200.0, i: 0.00, d: 1.0, i_clamp: 4.0 }
+      LHipYaw:        { p: 200.0, i: 0.00, d: 1.0, i_clamp: 4.0 }
+      LHipRoll:       { p: 200.0, i: 0.00, d: 1.0, i_clamp: 4.0 }
+      LHipPitch:      { p: 200.0, i: 0.00, d: 1.0, i_clamp: 4.0 }
+      LKnee:          { p: 200.0, i: 0.00, d: 1.0, i_clamp: 4.0 }
+      LAnklePitch:    { p: 200.0, i: 0.00, d: 1.0, i_clamp: 4.0 }
+      LAnkleRoll:     { p: 200.0, i: 0.00, d: 1.0, i_clamp: 4.0 }
+      RHipYaw:        { p: 200.0, i: 0.00, d: 1.0, i_clamp: 4.0 }
+      RHipRoll:       { p: 200.0, i: 0.00, d: 1.0, i_clamp: 4.0 }
+      RHipPitch:      { p: 200.0, i: 0.00, d: 1.0, i_clamp: 4.0 }
+      RKnee:          { p: 200.0, i: 0.00, d: 1.0, i_clamp: 4.0 }
+      RAnklePitch:    { p: 200.0, i: 0.00, d: 1.0, i_clamp: 4.0 }
+      RAnkleRoll:     { p: 200.0, i: 0.00, d: 1.0, i_clamp: 4.0 }
  
   # Individual Joint Position Controllers ---------------------------------------
 

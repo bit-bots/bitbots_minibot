@@ -25,7 +25,8 @@
 
   <!-- The export tag contains other, unspecified, tags -->
   <export>
-    <gazebo_ros gazebo_media_path="${prefix}" />  <!-- for standalone Gazebo, ROS Hydro and up -->
+    <gazebo_ros gazebo_media_path="${prefix}"
+                gazebo_model_path="${prefix}/.." />  <!-- for standalone Gazebo, ROS Hydro and up -->
     <gazebo gazebo_media_path="${prefix}" />
     <gazebo plugin_path="${prefix}/lib" />
     <rviz rviz_media_path="${prefix}/Media/materials/scripts:${prefix}/Media/textures"/>

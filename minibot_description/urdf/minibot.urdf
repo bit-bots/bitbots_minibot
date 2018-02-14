@@ -1069,7 +1069,7 @@
       <always_on>true</always_on>
       <update_rate>100</update_rate>
       <visualize>true</visualize>
-      <topic>__default_topic__</topic>
+      <topic>imu</topic>
       <plugin filename="libgazebo_ros_imu_sensor.so" name="imu_plugin">
         <topicName>imu</topicName>
         <bodyName>L_IMU</bodyName>
@@ -1082,6 +1082,18 @@
       <pose>0 0 0 0 0 0</pose>
     </sensor>
   </gazebo>
+  <!--<gazebo>
+    <plugin filename="libhector_gazebo_ros_imu.so" name="gazebo_ros_imu">
+      <robotNamespace>minibot</robotNamespace>
+      <bodyName>L_IMU</bodyName>
+      <updateRate>50</updateRate>
+      <serviceName>imu_service</serviceName>
+      <topicName>imu</topicName>
+      <gaussianNoise>0</gaussianNoise>
+      <xyzOffset>0 0 0</xyzOffset>
+      <rpyOffset>0 0 0</rpyOffset>
+    </plugin>
+  </gazebo>-->
   <!-- fake controller that allows us to move the robot and to get its oposition -->
   <!-- rostopic pub /minibot/cmd_vel geometry_msgs/Twist "{ linear: [ 0.1, 0, 0], angular: [0.2, 0, 0.1] }" -->
   <!--<gazebo>
@@ -1095,5 +1107,17 @@
       <robotBaseFrame>base_link</robotBaseFrame>
     </plugin>
   </gazebo> -->
+  <!-- Enable the Joint Feedback -->
+  <gazebo reference="RKnee">
+    <provideFeedback>true</provideFeedback>
+  </gazebo>
+  <!-- The ft_sensor plugin -->
+  <gazebo>
+    <plugin filename="libgazebo_ros_ft_sensor.so" name="ft_sensor">
+      <updateRate>100.0</updateRate>
+      <topicName>ft_sensor_topic</topicName>
+      <jointName>RKnee</jointName>
+    </plugin>
+  </gazebo>
 </robot>
 
