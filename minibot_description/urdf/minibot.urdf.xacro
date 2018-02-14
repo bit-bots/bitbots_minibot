@@ -45,9 +45,11 @@
   <link name="L_HEAD_PAN">
     <inertial>
       <origin xyz="0.000002 -0.001022 0.008994"/>
-      <mass value="0.012"/>
+            <mass value="0.001"/>
+      <inertia ixx="0"  ixy="0"  ixz="0" iyy="0" iyz="0" izz="0" />
+      <!--<mass value="0.012"/>-->
       <!--<inertia ixx="0.000001769"  ixy="0.0"  ixz="0.0" iyy="0.000004625" iyz="-0.000000082" izz="0.000005125" />-->
-      <inertia ixx="${insu*0.1+infa*0.000001769}"  ixy="0.0"  ixz="0" iyy="${insu*0.1+infa*0.000004625}" iyz="0.0" izz="${insu*0.1+infa*0.000005125}" />
+      <!--<inertia ixx="${insu*0.1+infa*0.000001769}"  ixy="0.0"  ixz="0" iyy="${insu*0.1+infa*0.000004625}" iyz="0.0" izz="${insu*0.1+infa*0.000005125}" />-->
       <!--<inertia ixx="0.001"  ixy="0.001"  ixz="0.001" iyy="0.001" iyz="0.001" izz="0.001" />-->
     </inertial>
     <visual>
@@ -70,8 +72,10 @@
   <link name="L_HEAD_TILT">
     <inertial>
       <origin xyz="-0.000223 -0.028433 0.0" rpy="0 1.5707963268 0"/>
-      <mass value="0.139"/>
-      <inertia ixx="${insu*0.1+infa*0.000097954}"  ixy="0"  ixz="0" iyy="${insu*0.1+infa*0.000025415}" iyz="0" izz="${insu*0.1+infa*0.000107764}" />
+      <mass value="0.001"/>
+      <inertia ixx="0"  ixy="0"  ixz="0" iyy="0" iyz="0" izz="0" />
+      <!--<mass value="0.139"/>
+      <inertia ixx="${insu*0.1+infa*0.000097954}"  ixy="0"  ixz="0" iyy="${insu*0.1+infa*0.000025415}" iyz="0" izz="${insu*0.1+infa*0.000107764}" /> -->
       <!--<inertia ixx="0.001"  ixy="0.001"  ixz="0.001" iyy="0.001" iyz="0.001" izz="0.001" />-->
     </inertial>
     <visual>
