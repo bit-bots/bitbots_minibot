@@ -8,10 +8,10 @@
   <link name="base_link"/>
   <joint name="base_link_to_body" type="fixed">
     <parent link="base_link"/>
-    <child link="L_TORSO"/>
+    <child link="trunk_link"/>
     <origin rpy="0 0 0" xyz="0 0 0.545"/>
   </joint>
-  <link name="L_TORSO">
+  <link name="trunk_link">
     <inertial>
       <origin rpy=" 1.5707963268 0 1.5707963268" xyz="-0.025019 0.000832 -0.054364"/>
       <mass value="1.423"/>
@@ -531,14 +531,14 @@
   <link name="L_CAMERA"/>
   <link name="L_Hand_L"/>
   <link name="L_Hand_R"/>
-  <link name="L_FOOT_BOTTOM_L"/>
-  <link name="L_FOOT_BOTTOM_R"/>
+  <link name="left_foot_sole_link"/>
+  <link name="right_foot_sole_link"/>
   <link name="L_FOOT_FRONT_L"/>
   <link name="L_FOOT_FRONT_R"/>
   <link name="L_IMU">
   </link>
   <joint name="j_imu" type="fixed">
-    <parent link="L_TORSO"/>
+    <parent link="trunk_link"/>
     <child link="L_IMU"/>
     <origin rpy="0 0 0" xyz="-0.03 0 -0.05"/>
     <axis xyz="0 0 1"/>
@@ -558,7 +558,7 @@
     <dynamics damping="0" friction="0.0"/>
   </joint>
   <joint name="HeadPan" type="revolute">
-    <parent link="L_TORSO"/>
+    <parent link="trunk_link"/>
     <child link="L_HEAD_PAN"/>
     <origin rpy="0 0 1.5707963" xyz="0 0 0.050593"/>
     <axis xyz="0 0 1"/>
@@ -566,7 +566,7 @@
     <dynamics damping="0" friction="0.0"/>
   </joint>
   <joint name="LShoulderPitch" type="revolute">
-    <parent link="L_TORSO"/>
+    <parent link="trunk_link"/>
     <child link="L_SHOULDER_PITCH_L"/>
     <origin rpy="0 -1.5707963 -1.5707963" xyz="0 0.08134 0"/>
     <axis xyz="0 0 1"/>
@@ -595,7 +595,7 @@
     <origin rpy="0 0 3.14159" xyz="-0.1573 0 0"/>
   </joint>
   <joint name="RShoulderPitch" type="revolute">
-    <parent link="L_TORSO"/>
+    <parent link="trunk_link"/>
     <child link="L_SHOULDER_PITCH_R"/>
     <origin rpy="0 1.5707963 -1.5707963" xyz="0 -0.08134 0"/>
     <axis xyz="0 0 1"/>
@@ -624,7 +624,7 @@
     <origin xyz="0.1573 0 0"/>
   </joint>
   <joint name="LHipYaw" type="revolute">
-    <parent link="L_TORSO"/>
+    <parent link="trunk_link"/>
     <child link="L_HIP_YAW_L"/>
     <origin rpy="0 3.14159 3.14159" xyz="-0.022 0.057775 -0.160593"/>
     <axis xyz="0 0 1"/>
@@ -673,16 +673,16 @@
   </joint>
   <joint name="j_LFootBottom" type="fixed">
     <parent link="L_ANKLE_ROLL_L"/>
-    <child link="L_FOOT_BOTTOM_L"/>
+    <child link="left_foot_sole_link"/>
     <origin rpy="3.14159 -1.5707963 0" xyz="-0.040444 0 0"/>
   </joint>
   <joint name="j_LFootFront" type="fixed">
-    <parent link="L_FOOT_BOTTOM_L"/>
+    <parent link="left_foot_sole_link"/>
     <child link="L_FOOT_FRONT_L"/>
     <origin xyz="0.0849 0 0 "/>
   </joint>
   <joint name="RHipYaw" type="revolute">
-    <parent link="L_TORSO"/>
+    <parent link="trunk_link"/>
     <child link="L_HIP_YAW_R"/>
     <origin rpy="0 3.14159 3.14159" xyz="-0.022 -0.057775 -0.160593"/>
     <axis xyz="0 0 1"/>
@@ -731,11 +731,11 @@
   </joint>
   <joint name="j_RFootBottom" type="fixed">
     <parent link="L_ANKLE_ROLL_R"/>
-    <child link="L_FOOT_BOTTOM_R"/>
+    <child link="right_foot_sole_link"/>
     <origin rpy="0 -1.5707963 0" xyz="0.040444 0 0"/>
   </joint>
   <joint name="j_RFootFront" type="fixed">
-    <parent link="L_FOOT_BOTTOM_R"/>
+    <parent link="right_foot_sole_link"/>
     <child link="L_FOOT_FRONT_R"/>
     <origin xyz="0.0849 0 0 "/>
   </joint>
@@ -939,7 +939,7 @@
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
-  <gazebo reference="L_TORSO">
+  <gazebo reference="trunk_link">
     <material>Gazebo/Grey</material>
   </gazebo>
   <gazebo reference="L_HEAD_PAN">
