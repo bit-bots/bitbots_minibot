@@ -1,0 +1,217 @@
+minibot:
+  # Publish all joint states -----------------------------------
+  # 100Hz is a compromise between fast reaction and CPU load
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 100
+
+
+  # TrajectoryActoin Controllers ------------------------------
+  # FNH: this is a single controller for all joints; of course,
+  # we could also set up controllers for the individual 'chains',
+  # e.g. head, left_arm, right_arm, left_leg, right_leg.
+  #
+  trajcontroller:
+    type: effort_controllers/JointTrajectoryController
+    joints:
+      - head_yaw
+      - head_pitch
+      - left_shoulder_pitch
+      - left_shoulder_roll
+      - left_elbow
+      - right_shoulder_pitch
+      - right_shoulder_roll
+      - right_elbow
+      - left_hip_yaw
+      - left_hip_roll
+      - left_hip_pitch
+      - left_knee
+      - left_ankle_pitch
+      - left_ankle_roll
+      - right_hip_yaw
+      - right_hip_roll
+      - right_hip_pitch
+      - right_knee
+      - right_ankle_pitch
+      - right_ankle_roll
+    allow_partial_joints_goal: true
+    constraints:
+        goal_time: 10
+    gains:
+      head_yaw:        { p: 200.0, i: 0.00, d: 1.0, i_clamp: 4.0 }
+      head_pitch:       { p: 200.0, i: 0.00, d: 1.0, i_clamp: 4.0 }
+      left_shoulder_pitch: { p: 200.0, i: 0.00, d: 1.0, i_clamp: 4.0 }
+      left_shoulder_roll:  { p: 200.0, i: 0.00, d: 1.0, i_clamp: 4.0 }
+      left_elbow:         { p: 200.0, i: 0.00, d: 1.0, i_clamp: 4.0 }
+      right_shoulder_pitch: { p: 200.0, i: 0.00, d: 1.0, i_clamp: 4.0 }
+      right_shoulder_roll:  { p: 200.0, i: 0.00, d: 1.0, i_clamp: 4.0 }
+      right_elbow:         { p: 200.0, i: 0.00, d: 1.0, i_clamp: 4.0 }
+      left_hip_yaw:        { p: 200.0, i: 0.00, d: 1.0, i_clamp: 4.0 }
+      left_hip_roll:       { p: 200.0, i: 0.00, d: 1.0, i_clamp: 4.0 }
+      left_hip_pitch:      { p: 200.0, i: 0.00, d: 1.0, i_clamp: 4.0 }
+      left_knee:          { p: 200.0, i: 0.00, d: 1.0, i_clamp: 4.0 }
+      left_ankle_pitch:    { p: 200.0, i: 0.00, d: 1.0, i_clamp: 4.0 }
+      left_ankle_roll:     { p: 200.0, i: 0.00, d: 1.0, i_clamp: 4.0 }
+      right_hip_yaw:        { p: 200.0, i: 0.00, d: 1.0, i_clamp: 4.0 }
+      right_hip_roll:       { p: 200.0, i: 0.00, d: 1.0, i_clamp: 4.0 }
+      right_hip_pitch:      { p: 200.0, i: 0.00, d: 1.0, i_clamp: 4.0 }
+      right_knee:          { p: 200.0, i: 0.00, d: 1.0, i_clamp: 4.0 }
+      right_ankle_pitch:    { p: 200.0, i: 0.00, d: 1.0, i_clamp: 4.0 }
+      right_ankle_roll:     { p: 200.0, i: 0.00, d: 1.0, i_clamp: 4.0 }
+
+  controller:
+    type: effort_controllers/JointGroupPositionController
+    joints:
+      - head_yaw
+      - head_pitch
+      - left_shoulder_pitch
+      - left_shoulder_roll
+      - left_elbow
+      - right_shoulder_pitch
+      - right_shoulder_roll
+      - right_elbow
+      - left_hip_yaw
+      - left_hip_roll
+      - left_hip_pitch
+      - left_knee
+      - left_ankle_pitch
+      - left_ankle_roll
+      - right_hip_yaw
+      - right_hip_roll
+      - right_hip_pitch
+      - right_knee
+      - right_ankle_pitch
+      - right_ankle_roll
+    head_yaw/pid:        { p: 200.0, i: 0.00, d: 1.0, i_clamp: 4.0 }
+    head_pitch/pid:       { p: 200.0, i: 0.00, d: 1.0, i_clamp: 4.0 }
+    left_shoulder_pitch/pid: { p: 200.0, i: 0.00, d: 1.0, i_clamp: 4.0 }
+    left_shoulder_roll/pid:  { p: 200.0, i: 0.00, d: 1.0, i_clamp: 4.0 }
+    left_elbow/pid:         { p: 200.0, i: 0.00, d: 1.0, i_clamp: 4.0 }
+    right_shoulder_pitch/pid: { p: 200.0, i: 0.00, d: 1.0, i_clamp: 4.0 }
+    right_shoulder_roll/pid:  { p: 200.0, i: 0.00, d: 1.0, i_clamp: 4.0 }
+    right_elbow/pid:         { p: 200.0, i: 0.00, d: 1.0, i_clamp: 4.0 }
+    left_hip_yaw/pid:        { p: 200.0, i: 0.00, d: 1.0, i_clamp: 4.0 }
+    left_hip_roll/pid:       { p: 200.0, i: 0.00, d: 1.0, i_clamp: 4.0 }
+    left_hip_pitch/pid:      { p: 200.0, i: 0.00, d: 1.0, i_clamp: 4.0 }
+    left_knee/pid:          { p: 200.0, i: 0.00, d: 1.0, i_clamp: 4.0 }
+    left_ankle_pitch/pid:    { p: 200.0, i: 0.00, d: 1.0, i_clamp: 4.0 }
+    left_ankle_roll/pid:     { p: 200.0, i: 0.00, d: 1.0, i_clamp: 4.0 }
+    right_hip_yaw/pid:        { p: 200.0, i: 0.00, d: 1.0, i_clamp: 4.0 }
+    right_hip_roll/pid:       { p: 200.0, i: 0.00, d: 1.0, i_clamp: 4.0 }
+    right_hip_pitch/pid:      { p: 200.0, i: 0.00, d: 1.0, i_clamp: 4.0 }
+    right_knee/pid:          { p: 200.0, i: 0.00, d: 1.0, i_clamp: 4.0 }
+    right_ankle_pitch/pid:    { p: 200.0, i: 0.00, d: 1.0, i_clamp: 4.0 }
+    right_ankle_roll/pid:     { p: 200.0, i: 0.00, d: 1.0, i_clamp: 4.0 }
+
+
+
+  # Individual Joint Position Controllers ---------------------------------------
+
+  # HEAD
+  head_yawPositionController:
+    type: effort_controllers/JointPositionController
+    joint: head_yaw
+    pid: {p: 50.0, i: 0.00, d: 0.1}
+
+  head_pitchPositionController:
+    type: effort_controllers/JointPositionController
+    joint: head_pitch
+    pid: {p: 50.0, i: 0.00, d: 0.1}
+
+  # ARMS
+
+  left_shoulder_pitchPositionController:
+    type: effort_controllers/JointPositionController
+    joint: left_shoulder_pitch
+    pid: {p: 50.0, i: 0.00, d: 0.1}
+
+  left_shoulder_rollPositionController:
+    type: effort_controllers/JointPositionController
+    joint: left_shoulder_roll
+    pid: {p: 50.0, i: 0.00, d: 0.1}
+
+  left_elbowPositionController:
+    type: effort_controllers/JointPositionController
+    joint: left_elbow
+    pid: {p: 50.0, i: 0.00, d: 0.1}
+
+  right_shoulder_pitchPositionController:
+    type: effort_controllers/JointPositionController
+    joint: right_shoulder_pitch
+    pid: {p: 50.0, i: 0.00, d: 0.1}
+
+  right_shoulder_rollPositionController:
+    type: effort_controllers/JointPositionController
+    joint: right_shoulder_roll
+    pid: {p: 50.0, i: 0.00, d: 0.1}
+
+  right_elbowPositionController:
+    type: effort_controllers/JointPositionController
+    joint: right_elbow
+    pid: {p: 50.0, i: 0.00, d: 0.1}
+
+  # Left leg
+
+  left_hip_yawPositionController:
+    type: effort_controllers/JointPositionController
+    joint: left_hip_yaw
+    pid: {p: 50.0, i: 0.00, d: 0.1}
+
+  left_hip_rollPositionController:
+    type: effort_controllers/JointPositionController
+    joint: left_hip_roll
+    pid: {p: 50.0, i: 0.00, d: 0.1}
+
+  left_hip_pitchPositionController:
+    type: effort_controllers/JointPositionController
+    joint: left_hip_pitch
+    pid: {p: 50.0, i: 0.00, d: 0.1}
+
+  left_kneePositionController:
+    type: effort_controllers/JointPositionController
+    joint: left_knee
+    pid: {p: 50.0, i: 0.00, d: 0.1}
+
+  left_ankle_pitchPositionController:
+    type: effort_controllers/JointPositionController
+    joint: left_ankle_pitch
+    pid: {p: 50.0, i: 0.00, d: 0.1}
+
+  left_ankle_rollPositionController:
+    type: effort_controllers/JointPositionController
+    joint: left_ankle_roll
+    pid: {p: 50.0, i: 0.00, d: 0.1}
+
+  # Right leg
+
+  right_hip_yawPositionController:
+    type: effort_controllers/JointPositionController
+    joint: right_hip_yaw
+    pid: {p: 50.0, i: 0.00, d: 0.1}
+
+  right_hip_rollPositionController:
+    type: effort_controllers/JointPositionController
+    joint: right_hip_roll
+    pid: {p: 50.0, i: 0.00, d: 0.1}
+
+  right_hip_pitchPositionController:
+    type: effort_controllers/JointPositionController
+    joint: right_hip_pitch
+    pid: {p: 50.0, i: 0.00, d: 0.1}
+
+  right_kneePositionController:
+    type: effort_controllers/JointPositionController
+    joint: right_knee
+    pid: {p: 50.0, i: 0.00, d: 0.1}
+
+  right_ankle_pitchPositionController:
+    type: effort_controllers/JointPositionController
+    joint: right_ankle_pitch
+    pid: {p: 50.0, i: 0.00, d: 0.1}
+
+  right_ankle_rollPositionController:
+    type: effort_controllers/JointPositionController
+    joint: right_ankle_roll
+    pid: {p: 50.0, i: 0.00, d: 0.1}
+
+# end of file

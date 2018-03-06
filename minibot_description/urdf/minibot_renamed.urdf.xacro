@@ -1,0 +1,1579 @@
+<?xml version="1.0" ?>
+<robot name="Minibot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:property name="tofa" value="1" /> <!--Torque factor-->
+<xacro:property name="infa" value="1" /> <!--inertia factor-->
+<xacro:property name="insu" value="0" /> <!--inertia summand-->
+<xacro:property name="d" value="0" /> <!-- damping -->
+<xacro:property name="f" value="0" /> <!-- friction -->
+<xacro:property name="pos_or_eff" value="1" /> <!-- position (0) or effort(1) joint interfaces -->
+
+<link name="base_link"/>
+  
+  <joint name="base_link_to_body" type="fixed">
+    <parent link="base_link"/>
+    <child link="trunk_link"/>
+    <origin xyz="0 0 0.545" rpy="0 0 0" />
+  </joint>
+
+
+  <link name="trunk_link">
+    <inertial>
+      <origin xyz="-0.025019 0.000832 -0.054364" rpy=" 1.5707963268 0 1.5707963268"/>
+      <mass value="1.423"/>
+      <!--<inertia ixx="0.009125471"  ixy="0.000053223"  ixz="-0.000006850" iyy="0.005276569" iyz="0.000672794" izz="0.010426914" />-->
+      <inertia ixx="${insu*10+infa* 0.009125471}"  ixy="0.0"  ixz="0" iyy="${insu*10+infa*0.005276569}" iyz="0.0" izz="${insu*10+infa*0.010426914}" />
+      <!--<inertia ixx="0.001"  ixy="0.001"  ixz="0.001" iyy="0.001" iyz="0.001" izz="0.001" />-->
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963268 0 1.5707963268"/>
+      <geometry>
+        <mesh filename="package://minibot_description/meshes/torso_low.dae"  scale="1 1 1"/>
+      </geometry>
+      <material name="Grey">
+        <color rgba="0.20 0.20 0.20 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="1.5707963268 0 1.5707963268"/>
+      <geometry>
+        <mesh filename="package://minibot_description/meshes/torso_coll.dae"  scale="1 1 1"/>
+      </geometry>
+    </collision> -->
+  </link>
+
+  <link name="L_HEAD_PAN">
+    <inertial>
+      <origin xyz="0.000002 -0.001022 0.008994"/>
+            <mass value="0.001"/>
+      <inertia ixx="0"  ixy="0"  ixz="0" iyy="0" iyz="0" izz="0" />
+      <!--<mass value="0.012"/>-->
+      <!--<inertia ixx="0.000001769"  ixy="0.0"  ixz="0.0" iyy="0.000004625" iyz="-0.000000082" izz="0.000005125" />-->
+      <!--<inertia ixx="${insu*0.1+infa*0.000001769}"  ixy="0.0"  ixz="0" iyy="${insu*0.1+infa*0.000004625}" iyz="0.0" izz="${insu*0.1+infa*0.000005125}" />-->
+      <!--<inertia ixx="0.001"  ixy="0.001"  ixz="0.001" iyy="0.001" iyz="0.001" izz="0.001" />-->
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963268 0 0" />
+      <geometry>
+        <mesh filename="package://minibot_description/meshes/head_lower_high.stl"  scale="1 1 1"/>
+      </geometry>
+      <material name="Grey">
+        <color rgba="0.20 0.20 0.20 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="1.5707963268 0 0" />
+      <geometry>
+        <mesh filename="package://minibot_description/meshes/head_lower_coll.dae"  scale="1 1 1"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="L_HEAD_TILT">
+    <inertial>
+      <origin xyz="-0.000223 -0.028433 0.0" rpy="0 1.5707963268 0"/>
+      <mass value="0.001"/>
+      <inertia ixx="0"  ixy="0"  ixz="0" iyy="0" iyz="0" izz="0" />
+      <!--<mass value="0.139"/>
+      <inertia ixx="${insu*0.1+infa*0.000097954}"  ixy="0"  ixz="0" iyy="${insu*0.1+infa*0.000025415}" iyz="0" izz="${insu*0.1+infa*0.000107764}" /> -->
+      <!--<inertia ixx="0.001"  ixy="0.001"  ixz="0.001" iyy="0.001" iyz="0.001" izz="0.001" />-->
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="3.14 1.5707963268 0" />
+      <geometry>
+        <mesh filename="package://minibot_description/meshes/head_upper_high.stl"  scale="1 1 1"/>
+      </geometry>
+      <material name="Grey">
+        <color rgba="0.20 0.20 0.20 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="3.14 1.5707963268 0" />
+      <geometry>
+        <mesh filename="package://minibot_description/meshes/head_upper_coll.dae"  scale="1 1 1"/>
+      </geometry>
+    </collision>
+  </link>
+
+
+  <link name="L_SHOULDER_PITCH_L">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0087"/>
+      <mass value="0.018"/>
+      <inertia ixx="${insu*0.1+infa*0.000006948}"  ixy="0"  ixz="0" iyy="${insu*0.1+infa*0.000007574}" iyz="0" izz="${insu*0.1+infa*0.000003585}" />
+      <!--<inertia ixx="0.001"  ixy="0.001"  ixz="0.001" iyy="0.001" iyz="0.001" izz="0.001" />-->
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 1.5707963268 1.5707963268"/>
+      <geometry>
+        <!--box size="0.016 0.033 0.02165" /-->
+        <mesh filename="package://minibot_description/meshes/shoulder_con_high.stl"  scale="1 1 1"/>
+      </geometry>
+      <material name="Grey">
+        <color rgba="0.20 0.20 0.20 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 1.5707963268 1.5707963268"/>
+      <geometry>
+        <mesh filename="package://minibot_description/meshes/shoulder_con_coll.dae"  scale="1 1 1"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="L_SHOULDER_ROLL_L" >
+    <inertial>
+      <origin xyz="-0.071053 0.000432 0.000046"/>
+      <mass value="0.190"/>
+      <!--<inertia ixx="0.0000409"  ixy="-0.000005512"  ixz="0.000003819" iyy="0.000667366" iyz="0.000000024" izz="0.000664711" />-->
+      <inertia ixx="${insu+infa*0.0000409}"  ixy="0"  ixz="0" iyy="${insu+infa*0.000667366}" iyz="0" izz="${insu+infa*0.000664711}" />
+      <!--<inertia ixx="0.001"  ixy="0.001"  ixz="0.001" iyy="0.001" iyz="0.001" izz="0.001" />-->
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 -1.5707963268" />
+      <geometry>
+        <mesh filename="package://minibot_description/meshes/upper_arm_high.dae"  scale="1 1 1"/>
+      </geometry>
+      <material name="Grey">
+        <color rgba="0.20 0.20 0.20 1.0"/>
+      </material>
+    </visual>
+   <collision>
+      <origin xyz="0 0 0" rpy="0 0 -1.5707963268" />
+      <geometry>
+        <mesh filename="package://minibot_description/meshes/upper_arm_coll.dae"  scale="1 1 1"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="L_ELBOW_L" >
+    <inertial>
+      <origin xyz="-0.108 0.0 0.0" rpy="0 0 -3.141"/>
+      <mass value="0.097"/>
+      <inertia ixx="${insu*0.1+infa*0.00004315}"  ixy="0"  ixz="0" iyy="${insu*0.1+infa*0.000170889}" iyz="0" izz="${insu*0.1+infa*0.000179088}" />
+      <!--<inertia ixx="0.001"  ixy="0.001"  ixz="0.001" iyy="0.001" iyz="0.001" izz="0.001" />-->
+    </inertial>
+
+    <visual>
+      <origin xyz="0 0 0" rpy="0 1.5707963268 -1.5707963268" />
+      <geometry>
+        <mesh filename="package://minibot_description/meshes/lower_arm_high.stl"  scale="1 1 1"/>
+      </geometry>
+      <material name="Grey">
+        <color rgba="0.20 0.20 0.20 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 1.5707963268 -1.5707963268" />
+      <geometry>
+        <mesh filename="package://minibot_description/meshes/lower_arm_coll.dae"  scale="1 1 1"/>
+      </geometry>
+    </collision>
+  </link>
+
+
+  <link name="L_SHOULDER_PITCH_R" >
+    <inertial>
+      <origin xyz="0.0 0.0 0.0087"/>
+      <mass value="0.018"/>
+      <inertia ixx="${insu*0.1+infa*0.000006948}"  ixy="0"  ixz="0" iyy="${insu*0.1+infa*0.000007574}" iyz="0" izz="${insu*0.1+infa*0.000003585}" />
+      <!--<inertia ixx="0.001"  ixy="0.001"  ixz="0.001" iyy="0.001" iyz="0.001" izz="0.001" />-->
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 1.5707963268 1.5707963268"/>
+      <geometry>
+        <!--box size="0.016 0.033 0.02165" /-->
+        <mesh filename="package://minibot_description/meshes/shoulder_con_high.stl"  scale="1 1 1"/>
+      </geometry>
+      <material name="Grey">
+        <color rgba="0.20 0.20 0.20 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 1.5707963268 1.5707963268"/>
+      <geometry>
+        <mesh filename="package://minibot_description/meshes/shoulder_con_coll.dae"  scale="1 1 1"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="L_SHOULDER_ROLL_R" >
+    <inertial>
+      <origin xyz="-0.071053 0.000432 0.000046"/>
+      <mass value="0.190"/>
+      <!--<inertia ixx="0.0000409"  ixy="-0.000005512"  ixz="0.000003819" iyy="0.000667366" iyz="0.000000024" izz="0.000664711" />-->
+      <inertia ixx="${insu*0.1+infa*0.0000409}"  ixy="0"  ixz="0" iyy="${insu*0.1+infa*0.000667366}" iyz="0" izz="${insu*0.1+infa*0.000664711}" />
+      <!--<inertia ixx="0.001"  ixy="0.001"  ixz="0.001" iyy="0.001" iyz="0.001" izz="0.001" />-->
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 -1.5707963268" />
+      <geometry>
+        <!--box size="0.06 0.032 0.035"/-->
+        <mesh filename="package://minibot_description/meshes/upper_arm_high.dae"  scale="1 1 1"/>
+      </geometry>
+      <material name="Grey">
+        <color rgba="0.20 0.20 0.20 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 -1.5707963268" />
+      <geometry>
+        <mesh filename="package://minibot_description/meshes/upper_arm_coll.dae"  scale="1 1 1"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="L_ELBOW_R" >
+    <inertial>
+      <!--<origin xyz="0.108 0.0 0.0" rpy="0 1.5707963268 1.5707963268"/>-->
+      <origin xyz="0.108 0.0 0.0"/>
+      <mass value="0.097"/>
+      <inertia ixx="${insu*0.1+infa*0.00004315}"  ixy="0"  ixz="0" iyy="${insu*0.1+infa*0.000170889}" iyz="0" izz="${insu*0.1+infa*0.000179088}" />
+      <!--<inertia ixx="0.001"  ixy="0.001"  ixz="0.001" iyy="0.001" iyz="0.001" izz="0.001" />-->
+    </inertial>
+
+    <visual>
+      <origin xyz="0 0 0" rpy="0 1.5707963268 1.5707963268" />
+      <geometry>
+        <mesh filename="package://minibot_description/meshes/lower_arm_high.stl"  scale="1 1 1"/>
+      </geometry>
+      <material name="Grey">
+        <color rgba="0.20 0.20 0.20 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 1.5707963268 1.5707963268" />
+      <geometry>
+        <mesh filename="package://minibot_description/meshes/lower_arm_coll.dae"  scale="1 1 1"/>
+      </geometry>
+    </collision>
+  </link>
+
+
+  <link name="L_HIP_YAW_L" >
+    <inertial>
+      <origin xyz="0.0 0.0 0.011" rpy="1.5707963268 0 1.5707963268"/>
+      <mass value="0.022"/>
+      <inertia ixx="${insu*0.1+infa*0.000014143}"  ixy="0"  ixz="0" iyy="${insu*0.1+infa*0.000013017}" iyz="0" izz="${insu*0.1+infa*0.0000052}" />
+      <!--<inertia ixx="0.001"  ixy="0.001"  ixz="0.001" iyy="0.001" iyz="0.001" izz="0.001" />-->
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963268 0 0" />
+      <geometry>
+        <!--box size="0.045 0.08175 0.028652" /-->
+        <mesh filename="package://minibot_description/meshes/yaw_con_high.stl"  scale="1 1 1"/>
+      </geometry>
+      <material name="Grey">
+        <color rgba="0.20 0.20 0.20 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="1.5707963268 0 0" />
+      <geometry>
+        <mesh filename="package://minibot_description/meshes/yaw_con_coll.dae"  scale="1 1 1"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="L_HIP_ROLL_L" >
+    <inertial>
+      <origin xyz="-0.00057 -0.013721 0.02013 "/>
+      <mass value="0.325"/>
+      <!--<inertia ixx="0.000315619"  ixy="0.000001631"  ixz="0.000002302" iyy="0.000280296" iyz="-0.000009041" izz="0.0001431" />-->
+      <inertia ixx="${insu+infa*0.000315619}"  ixy="0"  ixz="0" iyy="${insu+infa*0.000280296}" iyz="0" izz="${insu+infa*0.0001431}" />
+      <!--<inertia ixx="0.001"  ixy="0.001"  ixz="0.001" iyy="0.001" iyz="0.001" izz="0.001" />-->
+    </inertial>
+    <visual>
+      <origin xyz="0 0 -0.025" rpy="0 3.14 0" />
+      <geometry>
+        <!--box size="0.001 0.001 0.001"/-->
+        <mesh filename="package://minibot_description/meshes/hip_roll_low.dae"  scale="1 1 1"/>
+      </geometry>
+      <material name="Grey">
+        <color rgba="0.20 0.20 0.20 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 -0.025" rpy="0 3.14 0" />
+      <geometry>
+        <mesh filename="package://minibot_description/meshes/hip_roll_coll.dae"  scale="1 1 1"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="L_HIP_PITCH_L" >
+    <inertial>
+      <origin xyz="-0.12799 -0.000699 0.000454" rpy="0 1.5707963268 1.5707963268"/>
+      <mass value="0.215"/>
+      <!--<inertia ixx="0.000295153"  ixy="-0.000003736"  ixz="-0.000000065" iyy="0.000085463" iyz="-0.000003231" izz="0.000344449" />-->
+      <inertia ixx="${insu+infa*0.000295153}"  ixy="0"  ixz="0" iyy="${insu+infa*0.000085463}" iyz="0" izz="${insu+infa*0.000344449}" />
+      <!--<inertia ixx="0.001"  ixy="0.001"  ixz="0.001" iyy="0.001" iyz="0.001" izz="0.001" />-->
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963268 1.5707963268 0" />
+      <geometry>
+        <!--box size="0.093 0.035 0.045"-->
+        <mesh filename="package://minibot_description/meshes/upper_leg_high.stl"  scale="1 1 1"/>
+      </geometry>
+      <material name="Grey">
+        <color rgba="0.20 0.20 0.20 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="1.5707963268 1.5707963268 0" />
+      <geometry>
+        <mesh filename="package://minibot_description/meshes/upper_leg_coll.dae"  scale="1 1 1"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="L_KNEE_L" >
+    <inertial>
+      <origin xyz="-0.072079 -0.00295 0.0" rpy="0 1.5707963268 1.5707963268"/>
+      <mass value="0.055"/>
+      <!--<inertia ixx="0.000094062"  ixy="0.0"  ixz="0.0" iyy="0.000043139" iyz="-0.000002344" izz="0.000125827" />-->
+      <inertia ixx="${insu*0.1+infa*0.000094062}"  ixy="0"  ixz="0" iyy="${insu*0.1+infa*0.000043139}" iyz="0" izz="${insu*0.1+infa*0.000125827}" />
+      <!--<inertia ixx="0.001"  ixy="0.001"  ixz="0.001" iyy="0.001" iyz="0.001" izz="0.001" />-->
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963268 1.5707963268 0" />
+      <geometry>
+        <!--box size="0.093 0.035 0.045"/-->
+        <mesh filename="package://minibot_description/meshes/lower_leg_high.stl"  scale="1 1 1"/>
+      </geometry>
+      <material name="Grey">
+        <color rgba="0.20 0.20 0.20 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="1.5707963268 1.5707963268 0" />
+      <geometry>
+        <mesh filename="package://minibot_description/meshes/lower_leg_coll.dae"  scale="1 1 1"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="L_ANKLE_PITCH_L" >
+    <inertial>
+      <origin xyz="0.014045 -0.020134 -0.000053" rpy="1.5707963268 1.5707963268 0"/>
+      <mass value="0.325"/>
+      <!--<inertia ixx="0.00041644"  ixy="-0.000001658"  ixz="0.000002316" iyy="0.0002803" iyz="0.0000095" izz="0.000144" />-->
+      <inertia ixx="${insu+infa*0.000315619}"  ixy="0"  ixz="0" iyy="${insu+infa*0.000280296}" iyz="0" izz="${insu+infa*0.0001431}" />
+      <!--<inertia ixx="0.001"  ixy="0.001"  ixz="0.001" iyy="0.001" iyz="0.001" izz="0.001" />-->
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="3.14 -1.5707963268 1.5707963268" />
+      <geometry>
+        <!--box size="0.028652 0.08175 0.045"/-->
+        <mesh filename="package://minibot_description/meshes/ankle_roll_low.dae"  scale="1 1 1"/>
+      </geometry>
+      <material name="Grey">
+        <color rgba="0.20 0.20 0.20 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="3.14 -1.5707963268 1.5707963268" />
+      <geometry>
+        <mesh filename="package://minibot_description/meshes/ankle_roll_coll.dae"  scale="1 1 1"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="L_ANKLE_ROLL_L" >
+    <inertial>
+      <origin xyz="-0.0364 0.0003 0.002423" rpy="0 0 1.5707963268"/>
+      <mass value="0.086"/>
+      <inertia ixx="${insu*0.1+infa*0.000165687}"  ixy="0"  ixz="0" iyy="${insu*0.1+infa*0.000197792}" iyz="0" izz="${insu*0.1+infa*0.00004318}" />
+      <!--<inertia ixx="0.001"  ixy="0.001"  ixz="0.001" iyy="0.001" iyz="0.001" izz="0.001" />-->
+    </inertial>
+    <visual>
+      <origin xyz="0 0 -0.025" rpy="0 0 -1.5707963268" />
+      <geometry>
+        <!--box size="0.008 0.066 0.104"/-->
+        <mesh filename="package://minibot_description/meshes/foot_high.stl"  scale="1 1 1"/>
+      </geometry>
+      <material name="Grey">
+        <color rgba="0.20 0.20 0.20 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 -0.025" rpy="0 0 -1.5707963268" />
+      <geometry>
+        <mesh filename="package://minibot_description/meshes/foot_coll.dae"  scale="1 1 1"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="L_HIP_YAW_R" >
+    <inertial>
+      <origin xyz="0.0 0.0 0.011" rpy="1.5707963268 0 1.5707963268"/>
+      <mass value="0.022"/>
+      <inertia ixx="${insu*0.1+infa*0.000014143}"  ixy="0"  ixz="0" iyy="${insu*0.1+infa*0.000013017}" iyz="0" izz="${insu*0.1+infa*0.0000052}" />
+      <!--<inertia ixx="0.001"  ixy="0.001"  ixz="0.001" iyy="0.001" iyz="0.001" izz="0.001" />-->
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963268 0 0" />
+      <geometry>
+        <!--box size="0.045 0.08175 0.028652" /-->
+        <mesh filename="package://minibot_description/meshes/yaw_con_high.stl"  scale="1 1 1"/>
+      </geometry>
+      <material name="Grey">
+        <color rgba="0.20 0.20 0.20 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="1.5707963268 0 0" />
+      <geometry>
+        <mesh filename="package://minibot_description/meshes/yaw_con_coll.dae"  scale="1 1 1"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="L_HIP_ROLL_R" >
+    <inertial>
+      <origin xyz="-0.00057 -0.013721 0.02013 "/>
+      <mass value="0.325"/>
+      <!--<inertia ixx="0.000315619"  ixy="0.000001631"  ixz="0.000002302" iyy="0.000280296" iyz="-0.000009041" izz="0.0001431" />-->
+      <inertia ixx="${insu+infa*0.000315619}"  ixy="0"  ixz="0" iyy="${insu+infa*0.000280296}" iyz="0" izz="${insu+infa*0.0001431}" />
+      <!--<inertia ixx="0.001"  ixy="0.001"  ixz="0.001" iyy="0.001" iyz="0.001" izz="0.001" />-->
+    </inertial>
+    <visual>
+      <origin xyz="0 0 -0.025" rpy="0 3.14 0" />
+      <geometry>
+        <!--box size="0.001 0.001 0.001"/-->
+        <mesh filename="package://minibot_description/meshes/hip_roll_low.dae"  scale="1 1 1"/>
+      </geometry>
+      <material name="Grey">
+        <color rgba="0.20 0.20 0.20 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 -0.025" rpy="0 3.14 0" />
+      <geometry>
+        <mesh filename="package://minibot_description/meshes/hip_roll_coll.dae"  scale="1 1 1"/>
+      </geometry>
+    </collision>
+
+  </link>
+
+  <link name="L_HIP_PITCH_R" >
+    <inertial>
+      <origin xyz="0.12799 -0.000699 0.000454" rpy="0 1.5707963268 1.5707963268"/>
+      <mass value="0.215"/>
+      <!--<inertia ixx="0.000295153"  ixy="-0.000003736"  ixz="-0.000000065" iyy="0.000085463" iyz="-0.000003231" izz="0.000344449" />-->
+      <inertia ixx="${insu+infa*0.000295153}"  ixy="0"  ixz="0" iyy="${insu+infa*0.000085463}" iyz="0" izz="${insu+infa*0.000344449}" />
+      <!--<inertia ixx="0.001"  ixy="0.001"  ixz="0.001" iyy="0.001" iyz="0.001" izz="0.001" />-->
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963268 -1.5707963268 0" />
+      <geometry>
+        <!--box size="0.093 0.035 0.045"/-->
+        <mesh filename="package://minibot_description/meshes/upper_leg_high.stl"  scale="1 1 1"/>
+      </geometry>
+      <material name="Grey">
+        <color rgba="0.20 0.20 0.20 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="1.5707963268 -1.5707963268 0" />
+      <geometry>
+        <mesh filename="package://minibot_description/meshes/upper_leg_coll.dae"  scale="1 1 1"/>
+      </geometry>
+    </collision>
+
+  </link>
+
+  <link name="L_KNEE_R" >
+    <inertial>
+      <origin xyz="0.072079 -0.00295 0.0" rpy="0 1.5707963268 1.5707963268"/>
+      <mass value="0.055"/>
+      <!--<inertia ixx="0.000094062"  ixy="0.0"  ixz="0.0" iyy="0.000043139" iyz="-0.000002344" izz="0.000125827" />-->
+      <inertia ixx="${insu*0.1+infa*0.000094062}"  ixy="0"  ixz="0" iyy="${insu*0.1+infa*0.000043139}" iyz="0" izz="${insu*0.1+infa*0.000125827}" />
+      <!--<inertia ixx="0.001"  ixy="0.001"  ixz="0.001" iyy="0.001" iyz="0.001" izz="0.001" />-->
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963268 -1.5707963268 0" />
+      <geometry>
+        <!--box size="0.093 0.035 0.045"/-->
+        <mesh filename="package://minibot_description/meshes/lower_leg_high.stl"  scale="1 1 1"/>
+      </geometry>
+      <material name="Grey">
+        <color rgba="0.20 0.20 0.20 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="1.5707963268 -1.5707963268 0" />
+      <geometry>
+        <mesh filename="package://minibot_description/meshes/lower_leg_coll.dae"  scale="1 1 1"/>
+      </geometry>
+    </collision>
+
+  </link>
+
+  <link name="L_ANKLE_PITCH_R" >
+    <inertial>
+      <origin xyz="-0.014045 -0.020134 -0.000053" rpy="1.5707963268 1.5707963268 0"/>
+      <mass value="0.325"/>
+      <!--<inertia ixx="0.00041644"  ixy="-0.000001658"  ixz="0.000002316" iyy="0.0002803" iyz="0.0000095" izz="0.000144" />-->
+      <inertia ixx="${insu+infa*0.000315619}"  ixy="0"  ixz="0" iyy="${insu+infa*0.000280296}" iyz="0" izz="${insu+infa*0.0001431}" />
+      <!--<inertia ixx="0.001"  ixy="0.001"  ixz="0.001" iyy="0.001" iyz="0.001" izz="0.001" />-->
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 1.5707963268 1.5707963268" />
+      <geometry>
+        <!--box size="0.028652 0.08175 0.045"/-->
+        <mesh filename="package://minibot_description/meshes/ankle_roll_low.dae"  scale="1 1 1"/>
+      </geometry>
+      <material name="Grey">
+        <color rgba="0.20 0.20 0.20 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 1.5707963268 1.5707963268" />
+      <geometry>
+        <mesh filename="package://minibot_description/meshes/ankle_roll_coll.dae"  scale="1 1 1"/>
+      </geometry>
+    </collision>
+
+  </link>
+
+  <link name="L_ANKLE_ROLL_R" >
+    <inertial>
+      <origin xyz="0.0364 0.0003 0.002423" rpy="0 0 1.5707963268"/>
+      <mass value="0.086"/>
+      <inertia ixx="${insu*0.1+infa*0.000165687}"  ixy="0"  ixz="0" iyy="${insu*0.1+infa*0.000197792}" iyz="0" izz="${insu*0.1+infa*0.00004318}" />
+      <!--<inertia ixx="0.001"  ixy="0.001"  ixz="0.001" iyy="0.001" iyz="0.001" izz="0.001" />-->
+    </inertial>
+    <visual>
+      <origin xyz="0 0 -0.025" rpy="0 0 1.5707963268" />
+      <geometry>
+        <!--box size="0.008 0.066 0.104"/-->
+        <mesh filename="package://minibot_description/meshes/foot_high.stl"  scale="1 1 1"/>
+      </geometry>
+      <material name="Grey">
+        <color rgba="0.20 0.20 0.20 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 -0.025" rpy="0 0 1.5707963268" />
+      <geometry>
+        <mesh filename="package://minibot_description/meshes/foot_coll.dae"  scale="1 1 1"/>
+      </geometry>
+    </collision>
+  </link>
+  
+  <link name="L_CAMERA" />
+  <link name="L_Hand_L" />
+  <link name="L_Hand_R" />
+  <link name="left_foot_sole_link" />
+  <link name="right_foot_sole_link" />
+  <link name="L_FOOT_FRONT_L" />
+  <link name="L_FOOT_FRONT_R" />
+
+
+  <link name="L_IMU">
+  </link>
+
+  <joint name="j_imu" type="fixed">
+  <parent link="trunk_link"/>
+  <child link="L_IMU"/>
+  <origin xyz="-0.03 0 -0.05" rpy="0 0 0" />
+  <axis xyz="0 0 1" />
+  </joint>
+
+
+  <joint name="j_camboard" type="fixed">
+  <parent link="L_HEAD_TILT"/>
+  <child link="L_CAMERA"/>
+  <origin xyz="0 -0.055 0 " rpy="-1.5707963 0 3.14159" />
+  <axis xyz="0 0 1" />
+  </joint>
+
+  <joint name="head_pitch" type="revolute">
+    <parent link="L_HEAD_PAN"/>
+    <child link="L_HEAD_TILT"/>
+    <origin xyz="0 0 0.02715" rpy="-1.5707963 0 1.5707963" />
+    <axis xyz="0 0 1" />
+    <limit effort="${tofa*2.5}" velocity="5.6548668" lower="-1.5707963267910001" upper="0" />
+  <dynamics damping="${d}" friction="0.0"/> </joint>
+
+  <joint name="head_yaw" type="revolute">
+    <parent link="trunk_link"/>
+    <child link="L_HEAD_PAN"/>
+    <origin xyz="0 0 0.050593" rpy="0 0 1.5707963" />
+    <axis xyz="0 0 1" />
+    <limit effort="${tofa*2.5}" velocity="5.6548668" lower="-2.1816615649875" upper="2.1816615649875" />
+  <dynamics damping="${d}" friction="0.0"/> </joint>
+
+  <joint name="left_shoulder_pitch" type="revolute">
+    <parent link="trunk_link"/>
+    <child link="L_SHOULDER_PITCH_L"/>
+    <origin xyz="0 0.08134 0" rpy="0 -1.5707963 -1.5707963" />
+    <axis xyz="0 0 1" />
+    <limit effort="${tofa*6.0}" velocity="6.597344565" lower="-3.1415926535820002" upper="3.1415926535820002" />
+  <dynamics damping="${d}" friction="0.0"/> </joint>
+
+  <joint name="left_shoulder_roll" type="revolute">
+    <parent link="L_SHOULDER_PITCH_L"/>
+    <child link="L_SHOULDER_ROLL_L"/>
+    <origin xyz="0 0 0.029194" rpy="-1.5707963 0.7853981633955001 0" />
+    <axis xyz="0 0 -1" />
+    <limit effort="${tofa*2.5}" velocity="5.648668" lower="-2.3561944901865" upper="0.7853981633955001" />
+  <dynamics damping="${d}" friction="0.0"/> </joint>
+
+  <joint name="left_elbow" type="revolute">
+    <parent link="L_SHOULDER_ROLL_L"/>
+    <child link="L_ELBOW_L"/>
+    <origin xyz="-0.14 0 0" rpy="1.5707963 1.5707963 0" />
+    <axis xyz="0 0 1" />
+    <limit effort="${tofa*2.5}" velocity="5.6548668" lower="-1.1344640137935" upper="1.5707963267910001" />
+  <dynamics damping="${d}" friction="0.0"/> </joint>
+
+  <joint name="j_LHand" type="fixed">
+   <parent link="L_ELBOW_L"/>
+   <child link="L_Hand_L" />
+   <origin xyz="-0.1573 0 0" rpy="0 0 3.14159"/>
+  </joint>
+
+
+  <joint name="right_shoulder_pitch" type="revolute">
+    <parent link="trunk_link"/>
+    <child link="L_SHOULDER_PITCH_R"/>
+    <origin xyz="0 -0.08134 0" rpy="0 1.5707963 -1.5707963" />
+    <axis xyz="0 0 1" />
+    <limit effort="${tofa*6.0}" velocity="6.597344565" lower="-3.1415926535820002" upper="3.1415926535820002" />
+  <dynamics damping="${d}" friction="0.0"/> </joint>
+
+  <joint name="right_shoulder_roll" type="revolute">
+    <parent link="L_SHOULDER_PITCH_R"/>
+    <child link="L_SHOULDER_ROLL_R"/>
+    <origin xyz="0 0 0.029194" rpy="-1.5707963 2.356194463 0" />
+    <axis xyz="0 0 -1" />
+    <limit effort="${tofa*2.5}" velocity="5.648668" lower="-0.7853981633955001" upper="2.3561944901865" />
+  <dynamics damping="${d}" friction="0.0"/> </joint>
+
+  <joint name="right_elbow" type="revolute">
+    <parent link="L_SHOULDER_ROLL_R"/>
+    <child link="L_ELBOW_R"/>
+    <origin xyz="-0.14 0 0" rpy="-1.5707963 -1.5707963 0" />
+    <axis xyz="0 0 1" />
+    <limit effort="${tofa*2.5}" velocity="5.6548668" lower="-1.635" upper="1.5707963267910001" />
+  <dynamics damping="${d}" friction="0.0"/> </joint>
+
+  <joint name="j_RHand" type="fixed">
+   <parent link="L_ELBOW_R"/>
+   <child link="L_Hand_R" />
+   <origin xyz="0.1573 0 0"/>
+  </joint>
+
+  <joint name="left_hip_yaw" type="revolute">
+    <parent link="trunk_link"/>
+    <child link="L_HIP_YAW_L"/>
+    <origin xyz="-0.022 0.057775 -0.160593" rpy="0 3.14159 3.14159" />
+    <axis xyz="0 0 1" />
+    <limit effort="${tofa*2.5}" velocity="5.6548668" lower="-0.9250245035547" upper="0.9250245035547" />
+  <dynamics damping="${d}" friction="0.0"/> </joint>
+
+  <joint name="left_hip_roll" type="revolute">
+    <parent link="L_HIP_YAW_L"/>
+    <child link="L_HIP_ROLL_L"/>
+    <origin xyz="-0.025 0 0.038444" rpy="-1.5707963 0 1.5707963" />
+    <axis xyz="0 0 -1" />
+    <limit effort="${tofa*6.0}" velocity="6.597344565" lower="-1.0122909661542001" upper="0.7853981633955001" />
+  <dynamics damping="${d}" friction="0.0"/> </joint>
+
+  <joint name="left_hip_pitch" type="revolute">
+    <parent link="L_HIP_ROLL_L"/>
+    <child link="L_HIP_PITCH_L"/>
+    <origin xyz="0 0 -0.025" rpy="1.5707963 0 1.5707963" />
+    <axis xyz="0 0 -1" />
+    <limit effort="${tofa*8.4}" velocity="4.712388975" lower="-0.48869219055720003" upper="1.919862177189" />
+  <dynamics damping="${d}" friction="0.0"/> </joint>
+
+  <joint name="left_knee" type="revolute">
+    <parent link="L_HIP_PITCH_L"/>
+    <child link="L_KNEE_L"/>
+    <origin xyz="-0.150 0 0" rpy="0 0 0" />
+    <axis xyz="0 0 -1" />
+    <!--<limit effort="${tofa*8.4}" velocity="4.712388975" lower="-2.268928027587" upper="0" />-->
+    -<limit effort="${tofa*8.4}" velocity="4.712388975" lower="-3.14" upper="3.14" />
+  <dynamics damping="${d}" friction="0.0"/> </joint>
+
+  <joint name="left_ankle_pitch" type="revolute">
+    <parent link="L_KNEE_L"/>
+    <child link="L_ANKLE_PITCH_L"/>
+    <origin xyz="-0.150 0 0" rpy="3.14159 0 0" />
+    <axis xyz="0 0 1" />
+    <limit effort="${tofa*8.4}" velocity="4.712388975" lower="-1.6406094968706" upper="1.2391837689129" />
+  <dynamics damping="${d}" friction="0.0"/> </joint>
+
+  <joint name="left_ankle_roll" type="revolute">
+    <parent link="L_ANKLE_PITCH_L"/>
+    <child link="L_ANKLE_ROLL_L"/>
+    <origin xyz="0 0.0275 0" rpy="-1.5707963 0 0" />
+    <axis xyz="0 0 1" />
+    <limit effort="${tofa*6.0}" velocity="6.597344565" lower="-1.4660765716716" upper="1.4660765716716" />
+  <dynamics damping="${d}" friction="0.0"/> </joint>
+
+  <joint name="j_LFootBottom" type="fixed">
+   <parent link="L_ANKLE_ROLL_L"/>
+   <child link="left_foot_sole_link" />
+   <origin xyz="-0.040444 0 0" rpy="3.14159 -1.5707963 0"/>
+  </joint>
+
+  <joint name="j_LFootFront" type="fixed">
+   <parent link="left_foot_sole_link"/>
+   <child link="L_FOOT_FRONT_L" />
+   <origin xyz="0.0849 0 0 "/>
+  </joint>
+
+  <joint name="right_hip_yaw" type="revolute">
+    <parent link="trunk_link"/>
+    <child link="L_HIP_YAW_R"/>
+    <origin xyz="-0.022 -0.057775 -0.160593" rpy="0 3.14159 3.14159" />
+    <axis xyz="0 0 1" />
+    <limit effort="${tofa*2.5}" velocity="5.6548668" lower="-0.9250245035547" upper="0.9250245035547" />
+  <dynamics damping="${d}" friction="0.0"/> </joint>
+
+  <joint name="right_hip_roll" type="revolute">
+    <parent link="L_HIP_YAW_R"/>
+    <child link="L_HIP_ROLL_R"/>
+    <origin xyz="-0.025 0 0.038444" rpy="-1.5707963 0 1.5707963" />
+    <axis xyz="0 0 -1" />
+    <limit effort="${tofa*6.0}" velocity="6.597344565" lower="-1.0122909661542001" upper="0.7853981633955001" />
+  <dynamics damping="${d}" friction="0.0"/> </joint>
+
+  <joint name="right_hip_pitch" type="revolute">
+    <parent link="L_HIP_ROLL_R"/>
+    <child link="L_HIP_PITCH_R"/>
+    <origin xyz="0 0 -0.025" rpy="1.5707963 0 -1.5707963" />
+    <axis xyz="0 0 1" />
+    <limit effort="${tofa*8.4}" velocity="4.712388975" lower="-1.919862177189" upper="0.48869219055720003" />
+  <dynamics damping="${d}" friction="0.0"/> </joint>
+
+  <joint name="right_knee" type="revolute">
+    <parent link="L_HIP_PITCH_R"/>
+    <child link="L_KNEE_R"/>
+    <origin xyz="0.150 0 0" rpy="0 0 0" />
+    <axis xyz="0 0 1" />
+    <limit effort="${tofa*8.4}" velocity="4.712388975" lower="0" upper="2.268928027587" />
+  <dynamics damping="${d}" friction="0.0"/> </joint>
+
+  <joint name="right_ankle_pitch" type="revolute">
+    <parent link="L_KNEE_R"/>
+    <child link="L_ANKLE_PITCH_R"/>
+    <origin xyz="0.150 0 0" rpy="3.14159 0 0" />
+    <axis xyz="0 0 -1" />
+    <limit effort="${tofa*8.4}" velocity="4.712388975" lower="-1.2391837689129" upper="1.6406094968706" />
+  <dynamics damping="${d}" friction="0.0"/> </joint>
+
+  <joint name="right_ankle_roll" type="revolute">
+    <parent link="L_ANKLE_PITCH_R"/>
+    <child link="L_ANKLE_ROLL_R"/>
+    <origin xyz="0 0.0275 0" rpy="-1.5707963 0 0" />
+    <axis xyz="0 0 1" />
+    <limit effort="${tofa*6.0}" velocity="6.597344565" lower="-1.4660765716716" upper="1.4660765716716" />
+  <dynamics damping="${d}" friction="0.0"/> </joint>
+
+  <joint name="j_RFootBottom" type="fixed">
+   <parent link="L_ANKLE_ROLL_R"/>
+   <child link="right_foot_sole_link" />
+   <origin xyz="0.040444 0 0" rpy="0 -1.5707963 0"/>
+  </joint>
+
+  <joint name="j_RFootFront" type="fixed">
+   <parent link="right_foot_sole_link"/>
+   <child link="L_FOOT_FRONT_R" />
+   <origin xyz="0.0849 0 0 "/>
+  </joint>
+  
+  
+
+   <transmission name="head_yawTransmission">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="head_yaw">
+    <xacro:if value="${pos_or_eff == 0}">
+        <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </xacro:if>
+    <xacro:if value="${pos_or_eff == 1}">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </xacro:if>
+    </joint>
+    <actuator name="head_yawMotor">
+        <xacro:if value="${pos_or_eff == 0}">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </xacro:if>
+        <xacro:if value="${pos_or_eff == 1}">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </xacro:if>
+        <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  
+  
+   <transmission name="head_pitchTransmission">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="head_pitch">
+        <xacro:if value="${pos_or_eff == 0}">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </xacro:if>
+        <xacro:if value="${pos_or_eff == 1}">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </xacro:if>
+    </joint>
+    <actuator name="head_pitchMotor">
+        <xacro:if value="${pos_or_eff == 0}">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </xacro:if>
+        <xacro:if value="${pos_or_eff == 1}">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </xacro:if>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  
+  
+   <transmission name="left_shoulder_pitchTransmission">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="left_shoulder_pitch">
+        <xacro:if value="${pos_or_eff == 0}">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </xacro:if>
+        <xacro:if value="${pos_or_eff == 1}">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </xacro:if>
+    </joint>
+    <actuator name="left_shoulder_pitchMotor">
+        <xacro:if value="${pos_or_eff == 0}">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </xacro:if>
+        <xacro:if value="${pos_or_eff == 1}">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </xacro:if>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  
+  
+   <transmission name="left_shoulder_rollTransmission">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="left_shoulder_roll">
+        <xacro:if value="${pos_or_eff == 0}">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </xacro:if>
+        <xacro:if value="${pos_or_eff == 1}">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </xacro:if>
+    </joint>
+    <actuator name="left_shoulder_rollTransmission">
+        <xacro:if value="${pos_or_eff == 0}">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </xacro:if>
+        <xacro:if value="${pos_or_eff == 1}">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </xacro:if>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  
+  
+   <transmission name="left_elbowTransmission">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="left_elbow">
+        <xacro:if value="${pos_or_eff == 0}">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </xacro:if>
+        <xacro:if value="${pos_or_eff == 1}">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </xacro:if>
+    </joint>
+    <actuator name="left_elbowMotor">
+        <xacro:if value="${pos_or_eff == 0}">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </xacro:if>
+        <xacro:if value="${pos_or_eff == 1}">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </xacro:if>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  
+  
+   <transmission name="right_shoulder_pitchTransmission">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="right_shoulder_pitch">
+        <xacro:if value="${pos_or_eff == 0}">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </xacro:if>
+        <xacro:if value="${pos_or_eff == 1}">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </xacro:if>
+    </joint>
+    <actuator name="right_shoulder_pitchMotor">
+        <xacro:if value="${pos_or_eff == 0}">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </xacro:if>
+        <xacro:if value="${pos_or_eff == 1}">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </xacro:if>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  
+  
+   <transmission name="right_shoulder_rollTransmission">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="right_shoulder_roll">
+        <xacro:if value="${pos_or_eff == 0}">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </xacro:if>
+        <xacro:if value="${pos_or_eff == 1}">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </xacro:if>
+    </joint>
+    <actuator name="right_shoulder_rollMotor">
+        <xacro:if value="${pos_or_eff == 0}">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </xacro:if>
+        <xacro:if value="${pos_or_eff == 1}">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </xacro:if>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  
+  
+   <transmission name="right_elbowTransmission">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="right_elbow">
+        <xacro:if value="${pos_or_eff == 0}">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </xacro:if>
+        <xacro:if value="${pos_or_eff == 1}">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </xacro:if>
+    </joint>
+    <actuator name="right_elbowMotor">
+        <xacro:if value="${pos_or_eff == 0}">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </xacro:if>
+        <xacro:if value="${pos_or_eff == 1}">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </xacro:if>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  
+  
+  
+   <transmission name="left_hip_yawTransmission">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="left_hip_yaw">
+        <xacro:if value="${pos_or_eff == 0}">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </xacro:if>
+        <xacro:if value="${pos_or_eff == 1}">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </xacro:if>
+    </joint>
+    <actuator name="left_hip_yawMotor">
+        <xacro:if value="${pos_or_eff == 0}">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </xacro:if>
+        <xacro:if value="${pos_or_eff == 1}">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </xacro:if>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  
+  
+   <transmission name="left_hip_rollTransmission">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="left_hip_roll">
+        <xacro:if value="${pos_or_eff == 0}">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </xacro:if>
+        <xacro:if value="${pos_or_eff == 1}">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </xacro:if>
+    </joint>
+    <actuator name="left_hip_rollMotor">
+        <xacro:if value="${pos_or_eff == 0}">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </xacro:if>
+        <xacro:if value="${pos_or_eff == 1}">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </xacro:if>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  
+  
+   <transmission name="left_hip_pitchTransmission">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="left_hip_pitch">
+        <xacro:if value="${pos_or_eff == 0}">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </xacro:if>
+        <xacro:if value="${pos_or_eff == 1}">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </xacro:if>
+    </joint>
+    <actuator name="left_hip_pitchMotor">
+        <xacro:if value="${pos_or_eff == 0}">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </xacro:if>
+        <xacro:if value="${pos_or_eff == 1}">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </xacro:if>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  
+  
+   <transmission name="left_kneeTransmission">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="left_knee">
+        <xacro:if value="${pos_or_eff == 0}">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </xacro:if>
+        <xacro:if value="${pos_or_eff == 1}">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </xacro:if>
+    </joint>
+    <actuator name="left_kneeMotor">
+        <xacro:if value="${pos_or_eff == 0}">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </xacro:if>
+        <xacro:if value="${pos_or_eff == 1}">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </xacro:if>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  
+  
+   <transmission name="left_ankle_pitchTransmission">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="left_ankle_pitch">
+        <xacro:if value="${pos_or_eff == 0}">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </xacro:if>
+        <xacro:if value="${pos_or_eff == 1}">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </xacro:if>
+    </joint>
+    <actuator name="left_ankle_pitchMotor">
+        <xacro:if value="${pos_or_eff == 0}">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </xacro:if>
+        <xacro:if value="${pos_or_eff == 1}">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </xacro:if>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  
+  
+   <transmission name="left_ankle_rollTransmission">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="left_ankle_roll">
+        <xacro:if value="${pos_or_eff == 0}">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </xacro:if>
+        <xacro:if value="${pos_or_eff == 1}">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </xacro:if>
+    </joint>
+    <actuator name="left_ankle_rollMotor">
+        <xacro:if value="${pos_or_eff == 0}">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </xacro:if>
+        <xacro:if value="${pos_or_eff == 1}">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </xacro:if>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  
+  
+   <transmission name="right_hip_yawTransmission">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="right_hip_yaw">
+        <xacro:if value="${pos_or_eff == 0}">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </xacro:if>
+        <xacro:if value="${pos_or_eff == 1}">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </xacro:if>
+    </joint>
+    <actuator name="right_hip_yawMotor">
+        <xacro:if value="${pos_or_eff == 0}">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </xacro:if>
+        <xacro:if value="${pos_or_eff == 1}">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </xacro:if>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  
+  
+   <transmission name="right_hip_rollTransmission">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="right_hip_roll">
+        <xacro:if value="${pos_or_eff == 0}">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </xacro:if>
+        <xacro:if value="${pos_or_eff == 1}">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </xacro:if>
+    </joint>
+    <actuator name="right_hip_rollMotor">
+        <xacro:if value="${pos_or_eff == 0}">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </xacro:if>
+        <xacro:if value="${pos_or_eff == 1}">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </xacro:if>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  
+  
+   <transmission name="right_hip_pitchTransmission">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="right_hip_pitch">
+        <xacro:if value="${pos_or_eff == 0}">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </xacro:if>
+        <xacro:if value="${pos_or_eff == 1}">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </xacro:if>
+    </joint>
+    <actuator name="right_hip_pitchMotor">
+        <xacro:if value="${pos_or_eff == 0}">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </xacro:if>
+        <xacro:if value="${pos_or_eff == 1}">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </xacro:if>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  
+  
+   <transmission name="right_kneeTransmission">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="right_knee">
+        <xacro:if value="${pos_or_eff == 0}">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </xacro:if>
+        <xacro:if value="${pos_or_eff == 1}">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </xacro:if>
+    </joint>
+    <actuator name="right_kneeMotor">
+        <xacro:if value="${pos_or_eff == 0}">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </xacro:if>
+        <xacro:if value="${pos_or_eff == 1}">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </xacro:if>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  
+  
+   <transmission name="right_ankle_pitchTransmission">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="right_ankle_pitch">
+        <xacro:if value="${pos_or_eff == 0}">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </xacro:if>
+        <xacro:if value="${pos_or_eff == 1}">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </xacro:if>
+    </joint>
+    <actuator name="right_ankle_pitchMotor">
+        <xacro:if value="${pos_or_eff == 0}">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </xacro:if>
+        <xacro:if value="${pos_or_eff == 1}">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </xacro:if>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  
+  
+   <transmission name="right_ankle_rollTransmission">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="right_ankle_roll">
+        <xacro:if value="${pos_or_eff == 0}">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </xacro:if>
+        <xacro:if value="${pos_or_eff == 1}">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </xacro:if>
+    </joint>
+    <actuator name="right_ankle_rollMotor">
+        <xacro:if value="${pos_or_eff == 0}">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </xacro:if>
+        <xacro:if value="${pos_or_eff == 1}">
+            <hardwareInterface>hardware_interface/hardware_interface/EffortJointInterface</hardwareInterface>
+        </xacro:if>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+
+
+<gazebo reference="trunk_link">
+    
+    
+    <material>Gazebo/Grey</material>
+
+  </gazebo>
+
+
+
+<gazebo reference="L_HEAD_PAN">
+    
+    
+    <material>Gazebo/Grey</material>
+
+  </gazebo>
+
+
+
+<gazebo reference="L_HEAD_TILT">
+    
+    
+    <material>Gazebo/Grey</material>
+
+  </gazebo>
+
+
+
+<gazebo reference="L_SHOULDER_L">
+    
+    
+    <material>Gazebo/Grey</material>
+
+  </gazebo>
+
+
+
+<gazebo reference="L_SHOULDER_PITCH_L">
+    
+    
+    <material>Gazebo/Grey</material>
+
+  </gazebo>
+
+
+
+<gazebo reference="L_SHOULDER_ROLL_L">
+    
+    
+    <material>Gazebo/Grey</material>
+
+  </gazebo>
+
+
+
+<gazebo reference="L_ELBOW_L">
+    
+    
+    <material>Gazebo/Grey</material>
+
+  </gazebo>
+
+
+
+
+
+<gazebo reference="L_SHOULDER_R">
+    
+    
+    <material>Gazebo/Grey</material>
+
+  </gazebo>
+
+
+
+<gazebo reference="L_SHOULDER_PITCH_R">
+    
+    
+    <material>Gazebo/Grey</material>
+
+  </gazebo>
+
+
+
+<gazebo reference="L_SHOULDER_ROLL_R">
+    
+    
+    <material>Gazebo/Grey</material>
+
+  </gazebo>
+
+
+
+<gazebo reference="L_ELBOW_R">
+    
+    
+    <material>Gazebo/Grey</material>
+
+  </gazebo>
+
+
+
+
+
+<gazebo reference="L_HIP_YAW_L">
+    
+    
+    <material>Gazebo/Grey</material>
+
+  </gazebo>
+
+
+
+<gazebo reference="L_HIP_ROLL_L">
+    
+    
+    <material>Gazebo/Grey</material>
+
+  </gazebo>
+
+
+
+<gazebo reference="L_HIP_PITCH_L">
+    
+    
+    <material>Gazebo/Grey</material>
+
+  </gazebo>
+
+
+
+<gazebo reference="L_KNEE_L">
+    
+    
+    <material>Gazebo/Grey</material>
+
+  </gazebo>
+
+
+
+<gazebo reference="L_ANKLE_PITCH_L">
+    
+    
+    <material>Gazebo/Grey</material>
+
+  </gazebo>
+
+
+
+<gazebo reference="L_ANKLE_ROLL_L">
+    
+    
+    <material>Gazebo/Grey</material>    
+
+      <kp>1000000.0</kp>
+      <kd>100.0</kd>
+      <mu1>1.0</mu1>
+      <mu2>1.0</mu2>
+      <fdir1>1 0 0</fdir1>
+      <maxVel>1.0</maxVel>
+      <minDepth>0.00</minDepth>
+  </gazebo>
+
+
+
+<gazebo reference="L_HIP_YAW_R">
+    
+    
+    <material>Gazebo/Grey</material>
+
+  </gazebo>
+
+
+
+<gazebo reference="L_HIP_ROLL_R">
+    
+    
+    <material>Gazebo/Grey</material>
+    
+  </gazebo>
+
+
+
+<gazebo reference="L_HIP_PITCH_R">
+    
+    
+    <material>Gazebo/Grey</material>
+
+
+  </gazebo>
+
+
+
+<gazebo reference="L_KNEE_R">
+    
+    
+    <material>Gazebo/Grey</material>
+
+
+  </gazebo>
+
+
+
+<gazebo reference="L_ANKLE_PITCH_R">
+    
+    
+    <material>Gazebo/Grey</material>
+
+
+  </gazebo>
+
+
+
+<gazebo reference="L_ANKLE_ROLL_R">
+    
+    
+    <material>Gazebo/Grey</material>
+      <kp>1000000.0</kp>
+      <kd>100.0</kd>
+      <mu1>1.0</mu1>
+      <mu2>1.0</mu2>
+      <fdir1>1 0 0</fdir1>
+      <maxVel>1.0</maxVel>
+      <minDepth>0.00</minDepth>
+  </gazebo>
+
+
+
+<gazebo reference="L_CAMERA">
+    
+    
+    <material>Gazebo/Grey</material>
+        <self_collide>0</self_collide>
+
+  </gazebo>
+
+
+
+  <!-- joint controller -->
+  <gazebo>
+    <plugin filename="libgazebo_ros_control.so" name="gazebo_ros_control">
+      <robotNamespace>minibot</robotNamespace>
+    </plugin>
+  </gazebo>
+
+    <!-- camera sensor -->
+  <gazebo reference="L_CAMERA">
+        <sensor name='camera' type='camera'>
+          <pose>-0.050000 -0.010000 0.000000 -1.5708 0.000000 -3.141592</pose>
+          <camera name='__default__'>
+            <horizontal_fov>1.012300</horizontal_fov>
+            <image>
+              <width>800</width>
+              <height>600</height>
+            </image>
+            <clip>
+              <near>0.001000</near>
+              <far>100.000000</far>
+            </clip>
+          </camera>
+          <always_on>1</always_on>
+          <update_rate>30.000000</update_rate>
+          <visualize>1</visualize>
+          <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+            <alwaysOn>true</alwaysOn>
+            <updateRate>30</updateRate>
+            <cameraName>camera</cameraName>
+            <imageTopicName>image_raw</imageTopicName>
+            <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+            <frameName>L_CAMERA</frameName>
+            <hackBaseline>0.07</hackBaseline>
+            <distortionK1>0.0</distortionK1>
+            <distortionK2>0.0</distortionK2>
+            <distortionK3>0.0</distortionK3>
+            <distortionT1>0.0</distortionT1>
+            <distortionT2>0.0</distortionT2>
+          </plugin>        
+      </sensor>
+  </gazebo>
+
+
+   <!-- IMU sensor -->
+
+   <gazebo reference="L_IMU">
+    <gravity>true</gravity>
+    <sensor name="imu_sensor" type="imu">
+      <always_on>true</always_on>
+      <update_rate>100</update_rate>
+      <visualize>true</visualize>
+      <topic>imu</topic>
+      <plugin filename="libgazebo_ros_imu_sensor.so" name="imu_plugin">
+        <topicName>imu</topicName>
+        <bodyName>L_IMU</bodyName>
+        <updateRateHZ>100.0</updateRateHZ>
+        <gaussianNoise>0.0</gaussianNoise>
+        <xyzOffset>0 0 0</xyzOffset>
+        <rpyOffset>0 0 0</rpyOffset>
+        <frameName>L_IMU</frameName>
+      </plugin>
+      <pose>0 0 0 0 0 0</pose>
+    </sensor>
+  </gazebo>
+
+   <!--<gazebo>
+    <plugin filename="libhector_gazebo_ros_imu.so" name="gazebo_ros_imu">
+      <robotNamespace>minibot</robotNamespace>
+      <bodyName>L_IMU</bodyName>
+      <updateRate>50</updateRate>
+      <serviceName>imu_service</serviceName>
+      <topicName>imu</topicName>
+      <gaussianNoise>0</gaussianNoise>
+      <xyzOffset>0 0 0</xyzOffset>
+      <rpyOffset>0 0 0</rpyOffset>
+    </plugin>
+  </gazebo>-->
+
+   <!-- fake controller that allows us to move the robot and to get its oposition -->
+   <!-- rostopic pub /minibot/cmd_vel geometry_msgs/Twist "{ linear: [ 0.1, 0, 0], angular: [0.2, 0, 0.1] }" -->
+   <!--<gazebo>
+    <plugin name="object_controller" filename="libgazebo_ros_planar_move.so">
+      <robotNamespace>minibot</robotNamespace>
+      
+      <commandTopic>cmd_vel</commandTopic>
+      <odometryTopic>odom</odometryTopic>
+      <odometryFrame>odom</odometryFrame>
+      <odometryRate>100.0</odometryRate>
+      <robotBaseFrame>base_link</robotBaseFrame>
+    </plugin>
+  </gazebo> -->
+
+
+  <!-- Enable the Joint Feedback -->
+    <gazebo reference="right_knee">
+        <provideFeedback>true</provideFeedback>
+    </gazebo>
+        <!-- The ft_sensor plugin -->
+        <gazebo>
+        <plugin name="ft_sensor" filename="libgazebo_ros_ft_sensor.so">
+        <updateRate>100.0</updateRate>
+        <topicName>ft_sensor_topic</topicName>
+        <jointName>right_knee</jointName>
+        </plugin>
+    </gazebo>
+
+</robot>
+
+
