@@ -653,8 +653,6 @@
     <origin rpy="0 0 0" xyz="-0.150 0 0"/>
     <axis xyz="0 0 -1"/>
     <!--<limit effort="${tofa*8.4}" velocity="4.712388975" lower="-2.268928027587" upper="0" />-->
-    
-    -
     <limit effort="8.4" lower="-3.14" upper="3.14" velocity="4.712388975"/>
     <dynamics damping="0" friction="0.0"/>
   </joint>
@@ -713,7 +711,8 @@
     <child link="L_KNEE_R"/>
     <origin rpy="0 0 0" xyz="0.150 0 0"/>
     <axis xyz="0 0 1"/>
-    <limit effort="8.4" lower="0" upper="2.268928027587" velocity="4.712388975"/>
+    <!--<limit effort="${tofa*8.4}" velocity="4.712388975" lower="0" upper="2.268928027587" />-->
+    <limit effort="8.4" lower="-3.14" upper="3.14" velocity="4.712388975"/>
     <dynamics damping="0" friction="0.0"/>
   </joint>
   <joint name="right_ankle_pitch" type="revolute">
