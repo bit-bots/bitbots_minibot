@@ -1,37 +1,36 @@
 {
     "name": "falling_right",
-    "author": "Marc",
-    "description": "motor values if case of a fall to the right",
-    "hostname": "minibot",
-    "last_edited": "2017-01-23 18:50:40.798386",
-    "version": 1,
+    "default_interpolator": "LinearInterpolator",
     "keyframes": [
         {
-            "duration": "0.001",
+            "duration": 0.001,
             "goals": {
-                "RShoulderPitch":-145,
-                "LShoulderPitch":170,
-                "RShoulderRoll":-10,
-                "LShoulderRoll":-40,
-                "RElbow":-25,
-                "LElbow":60,
-                "RHipYaw":0,
-                "LHipYaw":0,
-                "RHipRoll":30,
-                "LHipRoll":-50,
-                "RHipPitch":30,
-                "LHipPitch":-30,
-                "RKnee":95,
-                "LKnee":0,
-                "RAnklePitch":90,
-                "LAnklePitch":-90,
-                "RAnkleRoll":-20,
-                "LAnkleRoll":20,
-                "HeadTilt":0,
-                "HeadPan":0
+                "LAnklePitch": -29.971,
+                "LAnkleRoll": -0.791,
+                "LElbow": -15.0,
+                "LHipPitch": 36.123,
+                "LHipRoll": -0.352,
+                "LHipYaw": 0.0,
+                "LKnee": -53.174,
+                "LShoulderPitch": 45.0,
+                "LShoulderRoll": 0.0,
+                "RAnklePitch": 29.971,
+                "RAnkleRoll": 0.791,
+                "RElbow": 15.0,
+                "RHipPitch": -36.123,
+                "RHipRoll": 0.352,
+                "RHipYaw": 0.0,
+                "RKnee": 53.174,
+                "RShoulderPitch": -45.0,
+                "BellyRoll": 0.0,
+                "BellyPitch": 0.0,
+                "RToe": 0.0,
+                "LToe": 0.0,
+                "RSchoulderYaw": 0.0,
+                "LShoulderYaw": 0.0,
+                "RShoulderRoll": 0.0
             },
-            "p": {},
-            "pause": "0.000"
+            "pause": 0.0
         }
-      ]
+    ]
 }
