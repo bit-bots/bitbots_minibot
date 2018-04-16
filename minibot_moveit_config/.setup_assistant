@@ -1,0 +1,10 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: minibot_description
+    relative_path: urdf/minibot.urdf
+  SRDF:
+    relative_path: config/Minibot.srdf
+  CONFIG:
+    author_name: Marc Bestmann
+    author_email: bestmann@informatik.uni-hamburg.de
+    generated_timestamp: 1520285679
