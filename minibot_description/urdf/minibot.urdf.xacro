@@ -14,11 +14,11 @@
     <link name="base_link"/>
     <joint name="base_link_to_body" type="fixed">
     <parent link="base_link"/>
-    <child link="trunk_link"/>
+    <child link="base_link"/>
     <origin xyz="0 0 0.384407" rpy="0 0 0" />
   </joint>-->
 
-  <link name="trunk_link">
+  <link name="base_link">
   </link>
 
   <link name="torso_link">
@@ -587,7 +587,7 @@
   </joint>
 
   <joint name="torso" type="fixed">
-  <parent link="trunk_link"/>
+  <parent link="base_link"/>
   <child link="torso_link"/>
   <origin xyz="0.022 0 0.160593" rpy="0 0 0" />
   <axis xyz="0 0 1" />
@@ -678,7 +678,7 @@
   </joint>
 
   <joint name="LHipYaw" type="revolute">
-    <parent link="trunk_link"/>
+    <parent link="base_link"/>
     <child link="L_HIP_YAW_L"/>
     <origin xyz="0 0.057775 0" rpy="0 3.14159 3.14159" />
     <axis xyz="0 0 1" />
@@ -738,7 +738,7 @@
   </joint>
 
   <joint name="RHipYaw" type="revolute">
-    <parent link="trunk_link"/>
+    <parent link="base_link"/>
     <child link="L_HIP_YAW_R"/>
     <origin xyz="0 -0.057775 0" rpy="0 3.14159 3.14159" />
     <axis xyz="0 0 1" />
@@ -1241,7 +1241,7 @@
 
 
 
-<gazebo reference="trunk_link">
+<gazebo reference="base_link">
     
     
     <material>Gazebo/Grey</material>
