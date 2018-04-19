@@ -30,8 +30,6 @@
         <mesh filename="package://minibot_description/meshes/torso_coll.dae" scale="1 1 1"/>
       </geometry>
     </collision>
-     --&gt;
-  
   </link>
   <link name="neck">
     <inertial>
