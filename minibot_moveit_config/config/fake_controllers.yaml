@@ -31,23 +31,23 @@ controller_list:
       - RAnkleRoll
   - name: fake_All_controller
     joints:
-      - HeadPan
-      - HeadTilt
       - LHipYaw
       - LHipRoll
       - LHipPitch
       - LKnee
       - LAnklePitch
       - LAnkleRoll
-      - LShoulderPitch
-      - LShoulderRoll
-      - LElbow
       - RHipYaw
       - RHipRoll
       - RHipPitch
       - RKnee
       - RAnklePitch
       - RAnkleRoll
+      - HeadPan
+      - HeadTilt
+      - LShoulderPitch
+      - LShoulderRoll
+      - LElbow
       - RShoulderPitch
       - RShoulderRoll
       - RElbow

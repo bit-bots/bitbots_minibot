@@ -226,5 +226,5 @@ All:
     - LazyPRMstarkConfigDefault
     - SPARSkConfigDefault
     - SPARStwokConfigDefault
-  projection_evaluator: joints(HeadPan,HeadTilt)
+  projection_evaluator: joints(LHipYaw,LHipRoll)
   longest_valid_segment_fraction: 0.005
