@@ -107,7 +107,7 @@
     <disable_collisions link1="L_ELBOW_L" link2="L_SHOULDER_PITCH_R" reason="Never" />
     <disable_collisions link1="L_ELBOW_L" link2="L_SHOULDER_ROLL_L" reason="Adjacent" />
     <disable_collisions link1="L_ELBOW_L" link2="L_SHOULDER_ROLL_R" reason="Never" />
-    <disable_collisions link1="L_ELBOW_L" link2="trunk_link" reason="Never" />
+    <disable_collisions link1="L_ELBOW_L" link2="base_link" reason="Never" />
     <disable_collisions link1="L_ELBOW_R" link2="L_HEAD_PAN" reason="Never" />
     <disable_collisions link1="L_ELBOW_R" link2="L_HEAD_TILT" reason="Never" />
     <disable_collisions link1="L_ELBOW_R" link2="L_HIP_PITCH_L" reason="Never" />
@@ -117,7 +117,7 @@
     <disable_collisions link1="L_ELBOW_R" link2="L_SHOULDER_PITCH_L" reason="Never" />
     <disable_collisions link1="L_ELBOW_R" link2="L_SHOULDER_ROLL_L" reason="Never" />
     <disable_collisions link1="L_ELBOW_R" link2="L_SHOULDER_ROLL_R" reason="Adjacent" />
-    <disable_collisions link1="L_ELBOW_R" link2="trunk_link" reason="Never" />
+    <disable_collisions link1="L_ELBOW_R" link2="base_link" reason="Never" />
     <disable_collisions link1="L_HEAD_PAN" link2="L_HEAD_TILT" reason="Adjacent" />
     <disable_collisions link1="L_HEAD_PAN" link2="L_HIP_PITCH_L" reason="Never" />
     <disable_collisions link1="L_HEAD_PAN" link2="L_HIP_PITCH_R" reason="Never" />
@@ -131,7 +131,7 @@
     <disable_collisions link1="L_HEAD_PAN" link2="L_SHOULDER_PITCH_R" reason="Never" />
     <disable_collisions link1="L_HEAD_PAN" link2="L_SHOULDER_ROLL_L" reason="Never" />
     <disable_collisions link1="L_HEAD_PAN" link2="L_SHOULDER_ROLL_R" reason="Never" />
-    <disable_collisions link1="L_HEAD_PAN" link2="trunk_link" reason="Adjacent" />
+    <disable_collisions link1="L_HEAD_PAN" link2="base_link" reason="Adjacent" />
     <disable_collisions link1="L_HEAD_TILT" link2="L_HIP_PITCH_L" reason="Never" />
     <disable_collisions link1="L_HEAD_TILT" link2="L_HIP_PITCH_R" reason="Never" />
     <disable_collisions link1="L_HEAD_TILT" link2="L_HIP_ROLL_L" reason="Never" />
@@ -144,7 +144,7 @@
     <disable_collisions link1="L_HEAD_TILT" link2="L_SHOULDER_PITCH_R" reason="Never" />
     <disable_collisions link1="L_HEAD_TILT" link2="L_SHOULDER_ROLL_L" reason="Never" />
     <disable_collisions link1="L_HEAD_TILT" link2="L_SHOULDER_ROLL_R" reason="Never" />
-    <disable_collisions link1="L_HEAD_TILT" link2="trunk_link" reason="Never" />
+    <disable_collisions link1="L_HEAD_TILT" link2="base_link" reason="Never" />
     <disable_collisions link1="L_HIP_PITCH_L" link2="L_HIP_ROLL_L" reason="Adjacent" />
     <disable_collisions link1="L_HIP_PITCH_L" link2="L_KNEE_L" reason="Adjacent" />
     <disable_collisions link1="L_HIP_PITCH_L" link2="L_SHOULDER_PITCH_L" reason="Never" />
@@ -162,7 +162,7 @@
     <disable_collisions link1="L_HIP_ROLL_L" link2="L_SHOULDER_PITCH_R" reason="Never" />
     <disable_collisions link1="L_HIP_ROLL_L" link2="L_SHOULDER_ROLL_L" reason="Never" />
     <disable_collisions link1="L_HIP_ROLL_L" link2="L_SHOULDER_ROLL_R" reason="Never" />
-    <disable_collisions link1="L_HIP_ROLL_L" link2="trunk_link" reason="Never" />
+    <disable_collisions link1="L_HIP_ROLL_L" link2="base_link" reason="Never" />
     <disable_collisions link1="L_HIP_ROLL_R" link2="L_HIP_YAW_L" reason="Never" />
     <disable_collisions link1="L_HIP_ROLL_R" link2="L_HIP_YAW_R" reason="Adjacent" />
     <disable_collisions link1="L_HIP_ROLL_R" link2="L_KNEE_R" reason="Never" />
@@ -170,21 +170,21 @@
     <disable_collisions link1="L_HIP_ROLL_R" link2="L_SHOULDER_PITCH_R" reason="Never" />
     <disable_collisions link1="L_HIP_ROLL_R" link2="L_SHOULDER_ROLL_L" reason="Never" />
     <disable_collisions link1="L_HIP_ROLL_R" link2="L_SHOULDER_ROLL_R" reason="Never" />
-    <disable_collisions link1="L_HIP_ROLL_R" link2="trunk_link" reason="Never" />
+    <disable_collisions link1="L_HIP_ROLL_R" link2="base_link" reason="Never" />
     <disable_collisions link1="L_HIP_YAW_L" link2="L_HIP_YAW_R" reason="Never" />
     <disable_collisions link1="L_HIP_YAW_L" link2="L_KNEE_L" reason="Never" />
     <disable_collisions link1="L_HIP_YAW_L" link2="L_SHOULDER_PITCH_L" reason="Never" />
     <disable_collisions link1="L_HIP_YAW_L" link2="L_SHOULDER_PITCH_R" reason="Never" />
     <disable_collisions link1="L_HIP_YAW_L" link2="L_SHOULDER_ROLL_L" reason="Never" />
     <disable_collisions link1="L_HIP_YAW_L" link2="L_SHOULDER_ROLL_R" reason="Never" />
-    <disable_collisions link1="L_HIP_YAW_L" link2="trunk_link" reason="Adjacent" />
+    <disable_collisions link1="L_HIP_YAW_L" link2="base_link" reason="Adjacent" />
     <disable_collisions link1="L_HIP_YAW_R" link2="L_KNEE_L" reason="Never" />
     <disable_collisions link1="L_HIP_YAW_R" link2="L_KNEE_R" reason="Never" />
     <disable_collisions link1="L_HIP_YAW_R" link2="L_SHOULDER_PITCH_L" reason="Never" />
     <disable_collisions link1="L_HIP_YAW_R" link2="L_SHOULDER_PITCH_R" reason="Never" />
     <disable_collisions link1="L_HIP_YAW_R" link2="L_SHOULDER_ROLL_L" reason="Never" />
     <disable_collisions link1="L_HIP_YAW_R" link2="L_SHOULDER_ROLL_R" reason="Never" />
-    <disable_collisions link1="L_HIP_YAW_R" link2="trunk_link" reason="Adjacent" />
+    <disable_collisions link1="L_HIP_YAW_R" link2="base_link" reason="Adjacent" />
     <disable_collisions link1="L_KNEE_L" link2="L_SHOULDER_PITCH_L" reason="Never" />
     <disable_collisions link1="L_KNEE_L" link2="L_SHOULDER_PITCH_R" reason="Never" />
     <disable_collisions link1="L_KNEE_L" link2="L_SHOULDER_ROLL_L" reason="Never" />
@@ -193,15 +193,15 @@
     <disable_collisions link1="L_KNEE_R" link2="L_SHOULDER_PITCH_R" reason="Never" />
     <disable_collisions link1="L_KNEE_R" link2="L_SHOULDER_ROLL_L" reason="Never" />
     <disable_collisions link1="L_KNEE_R" link2="L_SHOULDER_ROLL_R" reason="Never" />
-    <disable_collisions link1="L_KNEE_R" link2="trunk_link" reason="Never" />
+    <disable_collisions link1="L_KNEE_R" link2="base_link" reason="Never" />
     <disable_collisions link1="L_SHOULDER_PITCH_L" link2="L_SHOULDER_PITCH_R" reason="Never" />
     <disable_collisions link1="L_SHOULDER_PITCH_L" link2="L_SHOULDER_ROLL_L" reason="Adjacent" />
     <disable_collisions link1="L_SHOULDER_PITCH_L" link2="L_SHOULDER_ROLL_R" reason="Never" />
-    <disable_collisions link1="L_SHOULDER_PITCH_L" link2="trunk_link" reason="Adjacent" />
+    <disable_collisions link1="L_SHOULDER_PITCH_L" link2="base_link" reason="Adjacent" />
     <disable_collisions link1="L_SHOULDER_PITCH_R" link2="L_SHOULDER_ROLL_L" reason="Never" />
     <disable_collisions link1="L_SHOULDER_PITCH_R" link2="L_SHOULDER_ROLL_R" reason="Adjacent" />
-    <disable_collisions link1="L_SHOULDER_PITCH_R" link2="trunk_link" reason="Adjacent" />
+    <disable_collisions link1="L_SHOULDER_PITCH_R" link2="base_link" reason="Adjacent" />
     <disable_collisions link1="L_SHOULDER_ROLL_L" link2="L_SHOULDER_ROLL_R" reason="Never" />
-    <disable_collisions link1="L_SHOULDER_ROLL_L" link2="trunk_link" reason="Never" />
-    <disable_collisions link1="L_SHOULDER_ROLL_R" link2="trunk_link" reason="Never" />
+    <disable_collisions link1="L_SHOULDER_ROLL_L" link2="base_link" reason="Never" />
+    <disable_collisions link1="L_SHOULDER_ROLL_R" link2="base_link" reason="Never" />
 </robot>
