@@ -1,6 +1,7 @@
 <?xml version="1.0" ?>
 <robot name="Minibot" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
+<xacro:arg name="sim_ns" default="/" />
 <xacro:property name="tofa" value="1" /> <!--Torque factor-->
 <xacro:property name="infa" value="1" /> <!--inertia factor-->
 <xacro:property name="insu" value="0" /> <!--inertia summand-->
@@ -1473,7 +1474,7 @@
   <!-- joint controller -->
   <gazebo>
     <plugin filename="libgazebo_ros_control.so" name="gazebo_ros_control">
-      <robotNamespace>minibot</robotNamespace>
+      <robotNamespace>$(arg sim_ns)</robotNamespace>
     </plugin>
   </gazebo>
 
