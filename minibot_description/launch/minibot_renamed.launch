@@ -1,7 +1,0 @@
-<launch>
-    <remap from="/minibot/imu" to="/imu"/>
-    <remap from="/minibot/joint_states" to="/current_motor_positions"/>
-    <include file="$(find minibot_description)/launch/minibot_gazebo.launch"/>
-
-
-</launch>
