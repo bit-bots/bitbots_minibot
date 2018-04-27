@@ -571,6 +571,8 @@
 
   <link name="imu">
   </link>
+  <link name="camera_fixed">
+  </link>
 
   <joint name="torso_to_imu" type="fixed">
   <parent link="torso"/>
@@ -585,6 +587,14 @@
   <origin xyz="0.022 0 0.160593" rpy="0 0 0" />
   <axis xyz="0 0 1" />
   </joint>
+
+  <joint name="torso_to_camera_fixed" type="fixed">
+  <parent link="torso"/>
+  <child link="camera_fixed"/>
+  <origin xyz="0.0 0 0.10" rpy="0 0 0" />
+  <axis xyz="0 0 1" />
+  </joint>
+
 
   <joint name="head_to_camera" type="fixed">
   <parent link="head"/>
