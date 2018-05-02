@@ -1,36 +1,35 @@
 {
-    "name": "walkready",
-    "default_interpolator": "LinearInterpolator",
+    "author": "", 
+    "description": "", 
+    "hostname": "deathstar", 
     "keyframes": [
         {
-            "duration": 2.5,
-            "goals": {
-                "LAnklePitch": -29.971,
-                "LAnkleRoll": -0.791,
-                "LElbow": -15.0,
-                "LHipPitch": 36.123,
-                "LHipRoll": -0.352,
-                "LHipYaw": 0.0,
-                "LKnee": -53.174,
-                "LShoulderPitch": 45.0,
-                "LShoulderRoll": 0.0,
-                "RAnklePitch": 29.971,
-                "RAnkleRoll": 0.791,
-                "RElbow": 15.0,
-                "RHipPitch": -36.123,
-                "RHipRoll": 0.352,
-                "RHipYaw": 0.0,
-                "RKnee": 53.174,
-                "RShoulderPitch": -45.0,
-                "BellyRoll": 0.0,
-                "BellyPitch": 0.0,
-                "RToe": 0.0,
-                "LToe": 0.0,
-                "RSchoulderYaw": 0.0,
-                "LShoulderYaw": 0.0,
-                "RShoulderRoll": 0.0
-            },
-            "pause": 0.5
+            "duration": 2.0, 
+            "goals": { 
+                "LAnklePitch": -44, 
+                "LAnkleRoll": -10, 
+                "LElbow": -68, 
+                "LHipPitch": 42, 
+                "LHipRoll": -11, 
+                "LHipYaw": 0, 
+                "LKnee": -84, 
+                "LShoulderPitch": 16, 
+                "LShoulderRoll": 35, 
+                "RAnklePitch": 43, 
+                "RAnkleRoll": 10, 
+                "RElbow": 68, 
+                "RHipPitch": -42, 
+                "RHipRoll": 9, 
+                "RHipYaw": 0, 
+                "RKnee": 83, 
+                "RShoulderPitch": -14, 
+                "RShoulderRoll": -35
+            }, 
+            "name": "walkready", 
+            "pause": 0.0
         }
-    ]
+    ], 
+    "last_edited": "2018-05-02 15:16:25.100015", 
+    "name": "walkready_new", 
+    "version": ""
 }
