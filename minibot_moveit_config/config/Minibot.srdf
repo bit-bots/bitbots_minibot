@@ -39,6 +39,10 @@
         <joint name="RAnklePitch" />
         <joint name="RAnkleRoll" />
     </group>
+    <group name="Head">
+        <joint name="HeadPan" />
+        <joint name="HeadTilt" />
+    </group>
     <group name="All">
         <joint name="HeadPan" />
         <joint name="HeadTilt" />
